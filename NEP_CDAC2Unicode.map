@@ -1,0 +1,191 @@
+; This file was edited using TECkitMappingEditorU.exe v3.1.0.0 on 10/1/2012.
+;   Conversion Type = Legacy_to_from_Unicode
+;   Left-hand side font = NEP Annapurna;21.75
+;   Right-hand side font = Arial Unicode MS;14.25
+;   Main Window Position = 0,0,321,712
+;   Left-hand side Character Map Window Position = 321,4,501,705
+;   Right-hand side Character Map Window Position = 821,0,545,691
+;   Left-hand side code page = 42
+
+EncodingName			"CDAC-ISFOC_DEVANAGARI"
+DescriptiveName		"Winscript Devanagari Nepali"
+Version			"1.0"
+Contact			"mailto:beniza@gmail.com"
+RegistrationAuthority	"NLCI"
+RegistrationName		"Devanagari-Nepali-Winscript"
+
+RHSFlags			(ExpectsNFC)
+
+;=============================================================================
+; Pass 1. Remove horizontal width adjusting white spaces
+;-----------------------------------------------------------------------------
+pass(byte)
+class[hSpace]=(240 241 242 243 244)
+[hSpace] > 
+
+;=============================================================================
+; Pass 2. Split combined glyphs to their respective base forms (Decomposing)
+;-----------------------------------------------------------------------------
+pass(byte)
+;Decompose Vowel Matras
+200 <> 199 198
+203 <> 202 198
+204 <> 199 202
+205 <> 199 202 198
+206  > 202
+207 <> 202 198
+208 <> 202 199
+209 <> 202 198 199
+211 <> 210 198
+212 <> 210 199
+213 <> 210 198 199
+215 <> 195 214 
+216 <> 197 214
+217  > 214
+219 <> 195 218
+220 <> 197 218
+221  > 218
+225 <> 224 198
+226 <> 224 199
+229 <> 228 198
+230 <> 228 199
+231 <> 228 198 199
+233 <> 232 198
+234 <> 232 199
+235 <> 232 198 199
+237 <> 236 198
+238 <> 236 199
+239 <> 236 198 199
+;=============================================================================
+; Pass 3. Re-arrange Matras
+; The following codepoints will not appear in this pass as they're already been
+; converted or deleted in previous passes
+; 240 241 242 243 244 200 203 204 205 206 207 208 209 211 212 213 215 216 217
+; 219 220 221 225 226 229 230 231 233 234 235 237 238 239
+;-----------------------------------------------------------------------------
+pass(byte)
+
+;=============================================================================
+; Pass 4. Map to Unicode
+;-----------------------------------------------------------------------------
+pass(byte_unicode)
+;Various Signs
+196     <> devanagari_sign_candrabindu
+198     <> devanagari_sign_anusvara
+ 58     <> devanagari_sign_visarga
+;Independent Vowels
+ 43     <> devanagari_letter_a
+ 43 201 <> devanagari_letter_aa
+ 60     <> devanagari_letter_i
+ 60 199 <> devanagari_letter_ii
+ 61     <> devanagari_letter_u
+ 62     <> devanagari_letter_uu
+ 64     <> devanagari_letter_vocalic_r
+ 65     <> devanagari_letter_vocalic_rr
+ 66 236 <> devanagari_letter_candra_e
+ 66 224 <> devanagari_letter_short_e
+ 66     <> devanagari_letter_e
+ 66 228 <> devanagari_letter_ai
+ 43 201 236 <> devanagari_letter_candra_o
+ 43 201 224 <> devanagari_letter_short_o
+ 43 201 228 <> devanagari_letter_o
+ 43 201 232 <> devanagari_letter_au
+ 67     <> devanagari_letter_ka devanagari_sign_virama
+ 68     <> devanagari_letter_qa devanagari_sign_virama
+ 69     <> devanagari_letter_ka
+ 70     <> devanagari_letter_qa
+ 71     <> devanagari_letter_ka devanagari_sign_virama devanagari_letter_ra
+ 72     <> devanagari_letter_ka devanagari_sign_virama devanagari_letter_ta
+ 73     <> devanagari_letter_ka devanagari_sign_virama devanagari_letter_ssa devanagari_sign_virama
+ 73 201 <> devanagari_letter_ka devanagari_sign_virama devanagari_letter_ssa 
+ 74     <> devanagari_letter_kha devanagari_sign_virama
+ 74 201 <> devanagari_letter_kha
+ 75     <> devanagari_letter_khha devanagari_sign_virama
+ 75 201 <> devanagari_letter_khha 
+ 76 201 <> devanagari_letter_khha devanagari_sign_virama devanagari_letter_ra
+ 77     <> devanagari_letter_ga devanagari_sign_virama
+ 77 201 <> devanagari_letter_ga
+ 78     <> devanagari_letter_ghha devanagari_sign_virama
+ 78 201 <> devanagari_letter_ghha
+ 79 201 <> devanagari_letter_ghha devanagari_sign_virama devanagari_letter_ra
+ 80     <> devanagari_letter_gha devanagari_sign_virama
+ 80 201 <> devanagari_letter_gha
+ 81 201 <> devanagari_letter_gha devanagari_sign_virama devanagari_letter_ra
+ 82     <> devanagari_letter_nga
+ 83     <> devanagari_letter_ca devanagari_sign_virama
+ 83 201 <> devanagari_letter_ca
+ 84 201 <> devanagari_letter_ca devanagari_sign_virama devanagari_letter_ra
+ 85     <> devanagari_letter_cha
+ 86     <> devanagari_letter_ja devanagari_sign_virama
+ 86 201 <> devanagari_letter_ja
+ 87     <> devanagari_letter_za devanagari_sign_virama
+ 87 201 <> devanagari_letter_za
+ 88 201 <> devanagari_letter_ja devanagari_sign_virama devanagari_letter_ra
+ 89     <> devanagari_letter_ja devanagari_sign_virama devanagari_letter_nya devanagari_sign_virama
+ 89 201 <> devanagari_letter_ja devanagari_sign_virama devanagari_letter_nya
+ 90     <> devanagari_letter_jha devanagari_sign_virama
+ 178    <> devanagari_letter_jha
+ 90     <> devanagari_letter_jha devanagari_sign_virama
+ 91     <> devanagari_letter_jha devanagari_sign_virama devanagari_letter_ra
+ 92     <> devanagari_letter_nya devanagari_sign_virama
+ 92     <> devanagari_letter_nya
+ 93     <> devanagari_letter_tta
+ 94     <> devanagari_letter_tta devanagari_sign_virama devanagari_letter_tta
+ 95     <> devanagari_letter_tta devanagari_sign_virama devanagari_letter_ttha
+ 96     <> devanagari_letter_ttha
+ 97     <> devanagari_letter_ttha devanagari_sign_virama devanagari_letter_ttha
+ 98     <> devanagari_letter_dda
+ 99     <> devanagari_letter_dddha
+100     <> devanagari_letter_dda devanagari_sign_virama devanagari_letter_dda
+101     <> devanagari_letter_dda devanagari_sign_virama devanagari_letter_ddha
+102     <> devanagari_letter_ddha
+103     <> devanagari_letter_rha
+104 201 <> devanagari_letter_nna
+105 201 <> devanagari_letter_ta
+106 201 <> devanagari_letter_ta devanagari_sign_virama devanagari_letter_ra
+107 201 <> devanagari_letter_ta devanagari_sign_virama devanagari_letter_ta
+108 201 <> devanagari_letter_tha
+109 201 <> devanagari_letter_tha devanagari_sign_virama devanagari_letter_ra
+110     <> devanagari_letter_da
+111     <> devanagari_letter_da devanagari_vowel_sign_vocalic_r
+112     <> devanagari_letter_da devanagari_sign_virama devanagari_letter_ra
+113     <> devanagari_letter_da devanagari_sign_virama devanagari_letter_da
+114     <> devanagari_letter_da devanagari_sign_virama devanagari_letter_dha
+115     <> devanagari_letter_da devanagari_sign_virama devanagari_letter_ma
+116     <> devanagari_letter_da devanagari_sign_virama devanagari_letter_ya
+117     <> devanagari_letter_da devanagari_sign_virama devanagari_letter_va
+118 201 <> devanagari_letter_dha
+119 201 <> devanagari_letter_dha devanagari_sign_virama devanagari_letter_ra
+120 201 <> devanagari_letter_na
+121 201 <> devanagari_letter_na devanagari_sign_virama devanagari_letter_ra
+122 201 <> devanagari_letter_na devanagari_sign_virama devanagari_letter_na
+123 201 <> devanagari_letter_pa
+124 201 <> devanagari_letter_pa devanagari_sign_virama devanagari_letter_ra
+125     <> devanagari_letter_pha devanagari_sign_virama
+126     <> devanagari_letter_pha devanagari_sign_nukta devanagari_sign_virama
+
+138     <> devanagari_letter_nga devanagari_sign_virama devanagari_letter_gha
+139     <> devanagari_letter_ka devanagari_sign_virama devanagari_letter_ka
+140     <> devanagari_letter_ka devanagari_sign_virama devanagari_letter_va
+141     <> devanagari_letter_ddha devanagari_sign_virama devanagari_letter_ddha
+142     <> devanagari_letter_ka devanagari_sign_virama devanagari_letter_ta devanagari_sign_virama devanagari_letter_ra
+143     <> devanagari_letter_da devanagari_sign_virama devanagari_letter_gha ; CHK
+144     <> devanagari_letter_da devanagari_sign_virama devanagari_letter_ba
+145     <> devanagari_letter_da devanagari_sign_virama devanagari_letter_bha
+146     <> devanagari_letter_dda devanagari_sign_virama devanagari_letter_tta
+
+153     <> devanagari_letter_nga devanagari_sign_virama devanagari_letter_ka
+154     <> devanagari_letter_nga devanagari_sign_virama devanagari_letter_kha
+155     <> devanagari_letter_nga devanagari_sign_virama devanagari_letter_ga
+
+157     <> devanagari_letter_ssa devanagari_sign_virama devanagari_letter_tta devanagari_sign_virama devanagari_letter_va
+158     <> devanagari_letter_ha devanagari_sign_virama devanagari_letter_la
+159     <> devanagari_letter_ha devanagari_sign_virama devanagari_letter_va
+160     <> devanagari_letter_sha devanagari_sign_virama
+160 201 <> devanagari_letter_sha
+161     <> devanagari_letter_pha
+162     <> devanagari_letter_pha devanagari_sign_nukta
+163     <> devanagari_letter_pha devanagari_sign_virama devanagari_letter_ra
+
+
+
