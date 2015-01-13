@@ -1,10 +1,18 @@
-﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 30-09-2014.
+﻿; This file was edited using TECkitMappingEditorU.exe v3.0.1.0 on 18/05/2009.
 ;   Conversion Type = Legacy_to_from_Unicode
-;   Left-hand side font = ML-TTKarthika;14.25
+;   Left-hand side font = ML-TTRavivarma;14.25
 ;   Right-hand side font = AnjaliOldLipi;12
 ;   Main Window Position = 0,0,624,728
-;   Left-hand side Character Map Window Position = 624,0,710,479
-;   Right-hand side Character Map Window Position = 645,447,596,281
+;   Left-hand side Character Map Window Position = 781,117,449,442
+;   Right-hand side Character Map Window Position = 651,152,587,442
+;   Left-hand side code page = 42
+
+; Winscript Malayalam.map
+
+; Mapping table for CDAC and NLCI's Winscript Malayalam font version 2.0
+; New version by rde based on Winscript  Malayalam map:  By Anitha Vijay and vijay
+; Modified and fine tuned by Beniza May 2008
+; If you are using a unicode font like Thoolika Unicode, to obtain 'Malayalam Chillu' you will have to use Zero_Width_Non_Joiner instead of Zero_Width_Joiner"
 
 EncodingName			"Unknown-BILD-Malayalam"
 DescriptiveName		    "BILD Malayalam"
@@ -18,45 +26,21 @@ RHSFlags			(ExpectsNFC)
 ;=============================================================================
 ; Pass BILD Adjustments
 ;-----------------------------------------------------------------------------
+pass(byte)
 ; The BILD data recovered from the PDF uses an unknown Malayalam font.
 ; However it follows a very close encoding to the CDAC
 ; This pass will re-encode the data to match with the CDAC encoding
-
-pass(Unicode_Byte)
-byteClass[baseChr] = (0 .. 255)
-uniClass[baseChr] = (0 .. 255)
-[baseChr] <> [baseChr]
-'Π' <> 184
-'ƒ' <> 196
-'‚' <> 226
-'≈' <> 197
-'∂' <> 182 30
-'™' <> 170
-'√' <> 195
-'Σ' <> 183
-'≠' <> 173
-'ø' <> 191
-'‘' <> 212
-'‰' <> 228
-'≥' <> 179
-'Ω' <> 189
-'∞' <> 176 30
-'˛' <> 254
-
-pass(byte)
-45 >
-165 > 180
-172 > 194
-174 > 168
-176 30 > 176
-176 > 161
-180 > 171
-182 30 > 182
-182 > 166
-191 > 192
-216 > 175
-223 > 167
-248 > 191
+26 > 226 ;nxrr
+30 > 176 ;qxQ
+45 > ;hyphen
+;72 > 197 ; LxL
+146 > 196 ;Lxx
+160 > 184 ;pxp
+172 > 194 ;lxx
+174 > 168 ;cxc
+176 > 161 ;kxk
+191 > 192 ;rxx
+216 > 175 ;qxq
 
 pass(byte)
 
@@ -203,9 +187,6 @@ UniClass [VwlMatra] = (U+0D3E..U+0D43 U+0D46 U+0D47)
 227 <>  malayalam_letter_ssa malayalam_sign_virama  malayalam_letter_tta
 228 <> malayalam_letter_RRa malayalam_sign_virama malayalam_letter_RRa
 ;229  
-; BILD Adjustments
-254 > en_dash
-
 
 ;This is the old method of obtaining Malayalam_Letter_Chillu_**. Now Chillu is encoded into unicode but no font with new standard is available. 
 ;172 <> malayalam_letter_nna malayalam_sign_virama U+200D ;zero_width_joiner 
@@ -220,5 +201,3 @@ UniClass [VwlMatra] = (U+0D3E..U+0D43 U+0D46 U+0D47)
 192 <> malayalam_letter_chillu_RR ;U+0d7c 
 194 <> malayalam_letter_chillu_L ; U+0d7d
 196 <> malayalam_letter_chillu_LL ; U+0d7e
-
-

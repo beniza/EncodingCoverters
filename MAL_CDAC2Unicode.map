@@ -1,8 +1,8 @@
-﻿; This file was edited using TECkitMappingEditorU.exe v3.0.1.0 on 18/05/2009.
+; This file was edited using TECkitMappingEditorU.exe v3.0.1.0 on 18/05/2009.
 ;   Conversion Type = Legacy_to_from_Unicode
 ;   Left-hand side font = MAL Vayalar;11.25
 ;   Right-hand side font = Rachana_w01;11.25
-;   Main Window Position = 0,0,624,728
+;   Main Window Position = 0,0,624,770
 ;   Left-hand side Character Map Window Position = 650,0,449,442
 ;   Right-hand side Character Map Window Position = 625,114,587,442
 ;   Left-hand side code page = 42
@@ -33,7 +33,6 @@ class[LeftSideMatras]=(115 116)
 class[RighSideMatras]=(109..114 117)
 class[RightSideConsSigns]=(120..122)
 class[RxMatra]=(123)
-45 >
 
 [num]=num 218 > @num 37
 [LeftSideMatras]?=lm [LeftSideMatras]?=lm1 [RxMatra]?=rx [cons]=cons1 [RightSideConsSigns]?=rcs [RighSideMatras]?=rm <> @cons1 @rx @rcs @lm @lm1 @rm
@@ -73,6 +72,7 @@ UniClass [Vwl] = (U+0D05..U+0D07 U+0D09 U+0D0B U+0D0C U+0D0E U+0D0F )
 ByteClass [Cons]=(73..108)
 UniClass [Cons]=(U+0D15..U+0D28 U+0D2A..U+0D39)
 [Cons] <> [Cons]
+
 ;vowel signs
 ByteClass [VwlMatra] = (109..116)
 UniClass [VwlMatra] = (U+0D3E..U+0D43 U+0D46 U+0D47)
@@ -167,8 +167,6 @@ UniClass [VwlMatra] = (U+0D3E..U+0D43 U+0D46 U+0D47)
 227 <>  malayalam_letter_ssa malayalam_sign_virama  malayalam_letter_tta
 228 <> malayalam_letter_RRa malayalam_sign_virama malayalam_letter_RRa
 ;229  
-239 <> malayalam_letter_nna malayalam_sign_virama malayalam_letter_tta
-254 <> en_dash
 
 ;This is the old method of obtaining Malayalam_Letter_Chillu_**. Now Chillu is encoded into unicode but no font with new standard is available. 
 172 <> malayalam_letter_nna malayalam_sign_virama U+200D ;zero_width_joiner 
