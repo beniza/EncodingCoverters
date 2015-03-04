@@ -1,10 +1,10 @@
-; This file was edited using TECkitMappingEditorU.exe v3.0.1.0 on 18/05/2009.
+﻿; This file was edited using TECkitMappingEditorU.exe v3.0.1.0 on 18/05/2009.
 ;   Conversion Type = Legacy_to_from_Unicode
 ;   Left-hand side font = MAL Vayalar;11.25
 ;   Right-hand side font = Rachana_w01;11.25
-;   Main Window Position = 0,0,624,770
-;   Left-hand side Character Map Window Position = 650,0,449,442
-;   Right-hand side Character Map Window Position = 625,114,587,442
+;   Main Window Position = 0,0,683,728
+;   Left-hand side Character Map Window Position = 946,311,420,417
+;   Right-hand side Character Map Window Position = 1068,375,298,353
 ;   Left-hand side code page = 42
 
 ; Winscript Malayalam.map
@@ -34,6 +34,7 @@ class[RighSideMatras]=(109..114 117)
 class[RightSideConsSigns]=(120..122)
 class[RxMatra]=(123)
 
+45 >
 [num]=num 218 > @num 37
 [LeftSideMatras]?=lm [LeftSideMatras]?=lm1 [RxMatra]?=rx [cons]=cons1 [RightSideConsSigns]?=rcs [RighSideMatras]?=rm <> @cons1 @rx @rcs @lm @lm1 @rm
 [LeftSideMatras]?=lm [LeftSideMatras]?=lm1 [RxMatra]?=rx [dblCons]=dblCons1 [RightSideConsSigns]?=rcs [RighSideMatras]?=rm <> @dblCons1 @rx @rcs @lm @lm1 @rm
@@ -112,6 +113,7 @@ UniClass [VwlMatra] = (U+0D3E..U+0D43 U+0D46 U+0D47)
 169 <> malayalam_letter_nya malayalam_sign_virama  malayalam_letter_ca
 170 <> malayalam_letter_nya malayalam_sign_virama  malayalam_letter_nya
 171 <> malayalam_letter_tta malayalam_sign_virama  malayalam_letter_tta
+172 <> malayalam_letter_nna malayalam_sign_virama malayalam_letter_tta
 173 <> malayalam_letter_nna malayalam_sign_virama  malayalam_letter_tta
 174 <> malayalam_letter_nna malayalam_sign_virama  malayalam_letter_nna
 87 245 <> malayalam_letter_nna malayalam_sign_virama  malayalam_letter_nna
@@ -166,18 +168,27 @@ UniClass [VwlMatra] = (U+0D3E..U+0D43 U+0D46 U+0D47)
 226 <>  malayalam_letter_na malayalam_sign_virama malayalam_letter_RRa
 227 <>  malayalam_letter_ssa malayalam_sign_virama  malayalam_letter_tta
 228 <> malayalam_letter_RRa malayalam_sign_virama malayalam_letter_RRa
-;229  
+229 <> malayalam_letter_la malayalam_sign_virama malayalam_letter_pa
+230 <> malayalam_letter_ka malayalam_vowel_sign_u
+231 <> malayalam_letter_ka malayalam_sign_virama malayalam_letter_ka malayalam_vowel_sign_u
+232 <> malayalam_letter_na malayalam_sign_virama malayalam_letter_ka malayalam_vowel_sign_u
+233 <> malayalam_letter_nna malayalam_vowel_sign_u
+234 <> malayalam_letter_ra malayalam_vowel_sign_u
+235 <> malayalam_letter_na malayalam_vowel_sign_u
+236 <> malayalam_letter_na malayalam_sign_virama malayalam_letter_na malayalam_vowel_sign_u
+237 <> malayalam_letter_ya malayalam_sign_virama malayalam_letter_ka malayalam_sign_virama malayalam_letter_ka
 
 ;This is the old method of obtaining Malayalam_Letter_Chillu_**. Now Chillu is encoded into unicode but no font with new standard is available. 
-172 <> malayalam_letter_nna malayalam_sign_virama U+200D ;zero_width_joiner 
-179 <> malayalam_letter_na malayalam_sign_virama U+200D 
-192 <> malayalam_letter_ra malayalam_sign_virama U+200D 
-194 <>  malayalam_letter_la malayalam_sign_virama U+200D
-196 <>  malayalam_letter_lla malayalam_sign_virama U+200D
+;172 <> malayalam_letter_nna malayalam_sign_virama U+200D ;zero_width_joiner 
+;179 <> malayalam_letter_na malayalam_sign_virama U+200D 
+;192 <> malayalam_letter_ra malayalam_sign_virama U+200D 
+;194 <>  malayalam_letter_la malayalam_sign_virama U+200D
+;196 <>  malayalam_letter_lla malayalam_sign_virama U+200D
 
 ; Enable these lines and disable the previous ones, once we get a font with the latest unicode standard. 
-;172 <>  malayalam_letter_chillu_NN ; U+0d7a
-;179 <> malayalam_letter_chillu_N ; U+0d7b
-;192 <> malayalam_letter_chillu_RR ;U+0d7c 
-;194 <> malayalam_letter_chillu_L ; U+0d7d
-;196 <> malayalam_letter_chillu_LL ; U+0d7e
+172 <>  malayalam_letter_chillu_NN ; U+0d7a
+179 <> malayalam_letter_chillu_N ; U+0d7b
+192 <> malayalam_letter_chillu_RR ;U+0d7c 
+194 <> malayalam_letter_chillu_L ; U+0d7d
+196 <> malayalam_letter_chillu_LL ; U+0d7e
+
