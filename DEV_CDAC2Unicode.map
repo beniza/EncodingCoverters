@@ -1,3 +1,11 @@
+﻿; This file was edited using TECkitMappingEditorU.exe v4.0.0.0 on 04-03-2015.
+;   Conversion Type = Legacy_to_from_Unicode
+;   Left-hand side font = DEV Panini;20.25
+;   Right-hand side font = Arial Unicode MS;11.25
+;   Main Window Position = 0,0,658,713
+;   Left-hand side Character Map Window Position = 658,0,622,605
+;   Right-hand side Character Map Window Position = 658,16,564,722
+
 ; DEV Panini.map
 ;Copyright (c) 2002 NLCI
 
@@ -17,6 +25,7 @@ RHSFlags			(ExpectsNFC)
 pass(byte)
 class[all_let] = (33 .. 255)
 
+156 > 198 ; BEN: to handle alternate anuswara character
 [all_let]= all_let1 < @all_let1 63
 ;***************************************************
 ; Pass 1a: Change the writing Order for off cons and cons
@@ -25,6 +34,7 @@ class[all_let] = (33 .. 255)
 
 pass(Byte)
 class[off_cons] = (74 75 76 77 78 79 80 81 82  \
+class[off_cons] = (73 74 75 76 77 78 79 80 81 82  \
                    83 84 86 87 88 89 90 91 92 \
                    104 \
                    105 106 107 108 109 118 119 120 121 122 \
@@ -159,7 +169,7 @@ pass(byte)
 ;***************************************************
 pass(Byte)
 class[cons] = (69 70 71 72 82 85 93 94 95 96 97 98 99 100 101 102 103 112 113 114  115 116 117 110 161 162 163 174 175 179 189 190 191 192 193 ) ; VK: Mark here the problem for 114 '[  x  q I '  this group for change the writing order for I mathras. I did not included the 114 and some other cons. now i done that.
-class[off_cons] = (74 75 76 77 78 79 80 81 82  \
+class[off_cons] = (73 74 75 76 77 78 79 80 81 82  \
                    83 84 86 87 88 89 90 91 92 \
                    104 \
                    105 106 107 108 109 118 119 120 121 122 \
@@ -362,7 +372,7 @@ class[h_cons] = (189 191)
 ; Pass 5: This pass for changeing the possion in reversce version
 ; * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 Pass(Byte)
-class[off_cons] = (74 75 76 77 78 79 80 81 82  \
+class[off_cons] = (73 74 75 76 77 78 79 80 81 82  \
                    83 84 86 87 88 89 90 91 92 \
                    104 \
                    105 106 107 108 109 118 119 120 121 122 \
@@ -387,6 +397,7 @@ class[off_cons_rev] = (74 77 80 83 86 90 104 105 108 118 120 123 164 166 170 180
 ; * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 ; Pass 6: remove all balance space and unwanted glys 
 ; * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+240 >
 241 >
 242 >
 243 >
@@ -430,6 +441,7 @@ UniClass[CTL]  = ( 0 .. 31 138 )
 138 		<>	devanagari_letter_vocalic_l
 
 ;	 Consonants
+;73 201 <>     devanagari_letter_ka devanagari_sign_virama devanagari_letter_ssa
 74 201	<>	devanagari_letter_kha
 75 201 	<>	devanagari_letter_kha devanagari_sign_nukta
 76 201	<>	devanagari_letter_kha devanagari_sign_virama devanagari_letter_ra
@@ -539,6 +551,7 @@ UniClass[CTL]  = ( 0 .. 31 138 )
 71 	<>	devanagari_letter_ka  devanagari_sign_virama devanagari_letter_ra
 72 	<>	devanagari_letter_ka  devanagari_sign_virama devanagari_letter_ta
 73 201	<>	devanagari_letter_ka  devanagari_sign_virama devanagari_letter_ssa  ; MP: d73 was not appearing at all!
+73 	<>	devanagari_letter_ka devanagari_sign_virama devanagari_letter_ssa devanagari_sign_virama ; BEN: d73 half form was missing
 74 	<>	devanagari_letter_kha devanagari_sign_virama 0x200d
 75 	<>	devanagari_letter_kha devanagari_sign_nukta  devanagari_sign_virama  0x200d
 76	<>	devanagari_letter_kha devanagari_sign_virama devanagari_letter_ra devanagari_sign_virama
@@ -657,7 +670,10 @@ UniClass[CTL]  = ( 0 .. 31 138 )
 135	<>	U+0037
 136	<>	U+0038
 137	<>	U+0039
-
+;=================
+;Final adjustments
+;=================
+172    <> '**'
 
 
 
