@@ -24,7 +24,6 @@ RegistrationName		"Devanagari-Winscript"
 RHSFlags			(ExpectsNFC)
 pass(byte)
 class[all_let] = (33 .. 255)
-
 156 > 198 ; BEN: to handle alternate anuswara character
 [all_let]= all_let1 < @all_let1 63
 ;***************************************************
@@ -33,7 +32,6 @@ class[all_let] = (33 .. 255)
 ; VK Mark this for 202 cons and cons it will work off_cons and Full cons 
 
 pass(Byte)
-class[off_cons] = (74 75 76 77 78 79 80 81 82  \
 class[off_cons] = (73 74 75 76 77 78 79 80 81 82  \
                    83 84 86 87 88 89 90 91 92 \
                    104 \
