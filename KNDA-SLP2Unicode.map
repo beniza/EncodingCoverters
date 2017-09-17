@@ -1,10 +1,10 @@
 ﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 01-07-2015.
 ;   Conversion Type = Legacy_to_from_Unicode
-;   Left-hand side font = KN-TTUma;24
+;   Left-hand side font = KN-TTUma;27.75
 ;   Right-hand side font = Arial Unicode MS;11.25
-;   Main Window Position = 0,0,509,714
-;   Left-hand side Character Map Window Position = 510,0,820,727
-;   Right-hand side Character Map Window Position = 810,0,565,447
+;   Main Window Position = 0,0,683,738
+;   Left-hand side Character Map Window Position = 662,0,704,738
+;   Right-hand side Character Map Window Position = 810,0,556,447
 
 EncodingName            "SLP-KNDA2Unicode"
 DescriptiveName         "Srilipi Kannada to Unicode"
@@ -17,12 +17,30 @@ LHSFlags                ()
 RHSFlags                ()
 
 pass(Byte)
+;**********************************************
+; Normalization
+;----------------------------------------------
+
+pass(Byte)
 byteClass[vowelMatra] = (218 219 220 221 222 223 224)
-byteClass[tickCons] = (82 92 100 106 108 121 182 196)
+byteClass[reph]      = (195 239 240 241)
+byteClass[tickCons]   = (82 92 100 106 108 121 182 196)
+byteClass[ConsI]      = (80 84 87 90 95 98 102 110 113 116 119 123 126 163 166 169 172 175 178 184 187 194 198 201 204 207 210 213 216)
+byteClass[iCons]      = (79 82 86 89 94 97 101 109 112 115 118 122 125 162 165 168 171 174 177 183 186 193 197 200 203 206 209 212 215)
 byteClass[noTickCons] = (79 86 89 94 97 112 115 118 125 162 165 168 171 174 186 193 200 203 206 209 212 215)
+byteClass[othu] = (081 085 088 091 093 \
+ 096 099 103 105 107 \
+ 111 114 117 120 124 \
+ 161 164 167 170 173 \
+ 176 181 185 188 189 \
+ 192 195 199 202 205 \
+ 208 211 214 217)
 
 [tickCons]=tc [vowelMatra]?=vm 37 > 37 @tc @vm
 [noTickCons]=ntc [vowelMatra]?=vm 37 > 37 @ntc @vm
+
+[ConsI] <> [iCons]  221
+[othu]=oth <> 218 @oth
 
 pass(Byte)
 37 <> 193 233
@@ -35,16 +53,31 @@ pass(Byte)
 241 > 195
 
 pass(byte_unicode)
-byteclass[CTR] = (0..31)
-uniclass[CTR]  = (0..31)
+byteclass[CTR] = (0..32)
+uniclass[CTR]  = (0..32)
 byteClass[kanDigits] = (48..57)
 uniClass[kanDigits]  = (kannada_digit_zero .. kannada_digit_nine)
 byteClass[indVowels] = (64..69 71..78)
 uniClass[indVowels]  = (kannada_letter_a..kannada_letter_uu kannada_letter_e..kannada_letter_ai kannada_letter_o..kannada_letter_au kannada_sign_anusvara kannada_sign_visarga)
+byteClass[othu] = (081 085 088 091 093 \
+ 096 099 103 105 107 \
+ 111 114 117 120 124 \
+ 161 164 167 170 173 \
+ 176 181 185 188 189 \
+ 192 195 199 202 205 \
+ 208 211 214 217)
 
+uniClass[othuBase] = (kannada_letter_ka kannada_letter_kha kannada_letter_ga kannada_letter_gha kannada_letter_nga \
+                      kannada_letter_ca kannada_letter_cha kannada_letter_ja kannada_letter_jha kannada_letter_nya \
+                      kannada_letter_tta kannada_letter_ttha kannada_letter_dda kannada_letter_ddha kannada_letter_nna \
+                      kannada_letter_ta kannada_letter_tha kannada_letter_da kannada_letter_dha kannada_letter_na \
+                      kannada_letter_pa kannada_letter_pha kannada_letter_ba kannada_letter_bha kannada_letter_ma \
+                      kannada_letter_ya kannada_letter_ra kannada_letter_la kannada_letter_va kannada_letter_ssa \
+                      kannada_letter_sha kannada_letter_sa kannada_letter_ha kannada_letter_lla)
 [CTR] <> [CTR]
 [kanDigits] <> [kanDigits]
 [indVowels] <> [indVowels]
+[othu]<>[othuBase]
 
 33 <> exclamation_mark
 34 <> 0x2018
@@ -52,7 +85,7 @@ uniClass[indVowels]  = (kannada_letter_a..kannada_letter_uu kannada_letter_e..ka
 
 79 218 <> kannada_letter_ka
 79 <> kannada_letter_ka
-80 <> kannada_letter_ka kannada_vowel_sign_i
+;80 <> kannada_letter_ka kannada_vowel_sign_i
 81 <> kannada_sign_virama kannada_letter_ka
 
 82 <> kannada_letter_kha
@@ -169,6 +202,7 @@ uniClass[indVowels]  = (kannada_letter_a..kannada_letter_uu kannada_letter_e..ka
 200 218 223 <> kannada_letter_ma
 
 190 218 223 <> kannada_letter_ya
+190 230 223 222 <> kannada_letter_ya kannada_vowel_sign_ii
 191 223 <> kannada_letter_ya kannada_vowel_sign_i
 192 <> kannada_sign_virama kannada_letter_ya
 
@@ -184,6 +218,7 @@ uniClass[indVowels]  = (kannada_letter_a..kannada_letter_uu kannada_letter_e..ka
 
 200 218 <> kannada_letter_va
 200 <> kannada_letter_va
+200 218<> kannada_letter_va
 201 <> kannada_letter_va kannada_vowel_sign_i
 202 <> kannada_sign_virama kannada_letter_va
 
@@ -227,11 +262,13 @@ uniClass[indVowels]  = (kannada_letter_a..kannada_letter_uu kannada_letter_e..ka
 218 230 224 <> kannada_vowel_sign_o
 218 230 224 222 <> kannada_vowel_sign_oo
 218 230 <> kannada_vowel_sign_e
+230 <> kannada_vowel_sign_e
+230 222 <> kannada_vowel_sign_ee
 232 <> kannada_vowel_sign_au
 233 <> kannada_sign_virama
 
 
-218 > circled_digit_two
+218 > ;circled_digit_seven
 236 > circled_digit_seven
 38 > circled_digit_eight
 
