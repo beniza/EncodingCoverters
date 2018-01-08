@@ -4,7 +4,7 @@
 ;   Right-hand side font = Charis SIL;14.25
 ;   Main Window Position = 0,0,658,713
 ;   Left-hand side Character Map Window Position = 658,0,863,525
-;   Right-hand side Character Map Window Position = 658,447,457,447
+;   Right-hand side Character Map Window Position = 658,447,457,377
 
 LHSName                 "mlym"
 RHSName                 "latn"
@@ -19,109 +19,98 @@ LHSFlags                ()
 RHSFlags                ()
 
 pass(Unicode)
-U+0D02 <> "ṁ"
-U+0D03 <> "ḥ"
-U+0D66 <> "0"
-U+0D67 <> "1"
-U+0D68 <> "2"
-U+0D69 <> "3"
-U+0D6A <> "4"
-U+0D6B <> "5"
-U+0D6C <> "6"
-U+0D6D <> "7"
-U+0D6E <> "8"
-U+0D6F <> "9"
-U+0D05 <> "a"
-U+0D06 <> "ā"
-U+0D07 <> "i"
-U+0D08 <> "ī"
-U+0D09 <> "u"
-U+0D0A <> "ū"
-U+0D0B <> "r̥"
-U+0D60 <> "r̥̄"
-U+0D0C <> "l̥"
-U+0D61 <> "l̥̄"
-U+0D0E <> "e"
-U+0D0F <> "ē"
-U+0D10 <> "ai"
-U+0D12 <> "o"
-U+0D13 <> "ō"
-U+0D14 <> "au"
-U+0D15 <> "ka"
-U+0D15 U+0D4D <> "k"
-U+0D15 U+0D4D U+0D38 <> "ksa"
-U+0D16 <> "kha"
-U+0D17 <> "ga"
-U+0D17 U+0D4D <> "g"
-U+0D18 <> "gha"
-U+0D19 <> "ṅa"
-U+0D1A <> "ca"
-U+0D1A U+0D4D <> "c"
-U+0D1B <> "cha"
-U+0D1C <> "ja"
-U+0D1C U+0D4D <> "j"
-U+0D1D <> "jha"
-U+0D1E <> "ña"
-U+0D1F <> "ṭa"
-U+0D20 <> "ṭha"
-U+0D21 <> "ḍa"
-U+0D22 <> "ḍha"
-U+0D23 <> "ṇa"
-U+0D24 <> "ta"
-U+0D24 U+0D4D <> "t"
-U+0D25 <> "tha"
-U+0D26 <> "da"
-U+0D26 U+0D4D <> "d"
-U+0D27 <> "dha"
-U+0D28 <> "na"
-U+0D28 U+0D4D <> "n"
-U+0D2A <> "pa"
-U+0D2A U+0D4D <> "p"
-U+0D2B <> "pha"
-U+0D2B U+0D4D <> "ph"
-U+0D2C <> "ba"
-U+0D2C U+0D4D <> "b"
-U+0D2D <> "bha"
-U+0D2E <> "ma"
-U+0D2E U+0D4D <> "m"
-U+0D2F <> "ya"
-U+0D2F U+0D4D <> "y"
-U+0D30 <> "ra"
-U+0D30 U+0D4D <> "r"
-U+0D32 <> "la"
-U+0D32 U+0D4D <> "l"
-U+0D35 <> "va"
-U+0D35 U+0D4D <> "v"
-U+0D36 <> "śa"
-U+0D37 <> "ṣa"
-U+0D38 <> "sa"
-U+0D38 U+0D4D <> "s"
-U+0D39 <> "ha"
-U+0D39 U+0D4D <> "h"
-U+0D33 <> "ḷa"
-U+0D34 <> "ḻa"
-U+0D31 <> "ṟa"
-U+0D3E <> "̔ā"
-U+0D3F <> "̔i"
-U+0D40 <> "̔ī"
-U+0D41 <> "̔u"
-U+0D42 <> "̔ū"
-U+0D43 <> "̔r̥"
-U+0D46 <> "̔e"
-U+0D47 <> "̔ē"
-U+0D48 <> "̔ai"
-U+0D4A <> "̔o"
-U+0D4B <> "̔ō"
-U+0D4C <> "̔au"
-U+0D7A <> U+1E47 U+0307
-U+0D7B <> "n" U+0307 
-U+0D7C <> "r" U+0307
-U+0D7D <> "l" U+0307
-U+0D7E <> U+1E37 U+0307
-U+0D7F <> "k" U+0307
+;=======================
+; Vowels 2 Latin
+;=======================
+malayalam_letter_a > 'a'
+malayalam_letter_aa > 'aa'
+malayalam_letter_i > 'i'
+malayalam_letter_ii > 'ee'
+malayalam_letter_u > 'u'
+malayalam_letter_uu > 'oo'
+malayalam_letter_vocalic_r > 'ru'
+malayalam_letter_vocalic_l > 'lu'
+malayalam_letter_e > 'e'
+malayalam_letter_ee > 'e'
+malayalam_letter_ai > 'ai'
+malayalam_letter_o > 'o'
+malayalam_letter_oo > 'o'
+malayalam_letter_au > 'au'
+malayalam_sign_anusvara > 'm'
+malayalam_sign_visarga >
+
+;=======================
+; Consonants 2 Latin
+;=======================
+malayalam_letter_ka > 'ka'
+malayalam_letter_kha > 'kha'
+malayalam_letter_ga > 'ga'
+malayalam_letter_gha > 'gha'
+malayalam_letter_nga malayalam_sign_virama malayalam_letter_nga > 'nga'
+malayalam_letter_ca > 'cha'
+malayalam_letter_cha > 'chha'
+malayalam_letter_ja > 'ja'
+malayalam_letter_jha > 'jha'
+malayalam_letter_nya > 'nja'
+malayalam_letter_tta > 'da'
+malayalam_letter_tta malayalam_sign_virama malayalam_letter_tta > 'tta'
+malayalam_letter_ttha > 'tta'
+malayalam_letter_dda > 'da'
+malayalam_letter_ddha > 'dda'
+malayalam_letter_nna > 'na'
+malayalam_letter_ta > 'tha'
+malayalam_letter_tha > 'dha'
+malayalam_letter_da > 'da'
+malayalam_letter_dha > 'dha'
+malayalam_letter_na > 'na'
+malayalam_letter_pa > 'pa'
+malayalam_letter_pha > 'pha'
+malayalam_letter_ba > 'ba'
+malayalam_letter_bha > 'bha'
+malayalam_letter_ma > 'ma'
+malayalam_letter_ya > 'ya'
+malayalam_letter_ra > 'ra'
+malayalam_letter_rra > 'ra'
+malayalam_letter_rra malayalam_sign_virama malayalam_letter_rra > 'tta'
+malayalam_letter_na malayalam_sign_virama malayalam_letter_rra > 'nta'
+malayalam_letter_la > 'la'
+malayalam_letter_lla > 'la'
+malayalam_letter_llla > 'zha'
+malayalam_letter_va > 'va'
+malayalam_letter_sha > 'za'
+malayalam_letter_ssa > 'sha'
+malayalam_letter_sa > 'sa'
+malayalam_letter_ha > 'ha'
+
 pass(unicode)
-'a' U+0D4D > 
-U+0D4D <> U+0303
-'a' U+0314 <> U+0314
+;=======================
+; Vowels Matra 2 Latin
+;=======================
+'a' malayalam_vowel_sign_aa  > 'aa'
+'a' malayalam_vowel_sign_i > 'i'
+'a' malayalam_vowel_sign_ii > 'ee'
+'a' malayalam_vowel_sign_u > 'u'
+'a' malayalam_vowel_sign_uu > 'oo'
+'a' malayalam_vowel_sign_vocalic_r > 'ru'
+'a' malayalam_vowel_sign_e > 'e'
+'a' malayalam_vowel_sign_ee > 'e'
+'a' malayalam_vowel_sign_ai > 'ai'
+'a' malayalam_vowel_sign_o > 'o'
+'a' malayalam_vowel_sign_oo > 'o'
+'a' malayalam_vowel_sign_au > 'au'
+'a' malayalam_au_length_mark > 'au'
+'a' malayalam_sign_virama >
+malayalam_letter_dot_reph > 'r'
+malayalam_letter_chillu_nn > 'n'
+malayalam_letter_chillu_n > 'n'
+malayalam_letter_chillu_rr > 'r'
+malayalam_letter_chillu_l > 'l'
+malayalam_letter_chillu_ll > 'l'
+malayalam_letter_chillu_k > 'k'
 
-
+pass(unicode)
+'njnj' > 'nj'
+'thth' > 'th'
+'thdh' > 'thh'
+'chch' > 'ch'
+'mp' > 'mb'
