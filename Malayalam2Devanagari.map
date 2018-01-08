@@ -1,0 +1,103 @@
+﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 1/7/2018.
+;   Conversion Type = Unicode_to_from_Unicode
+;   Left-hand side font = Rachana;15.75
+;   Right-hand side font = Annapurna SIL;15.75
+;   Main Window Position = 0,0,658,713
+;   Left-hand side Character Map Window Position = 658,0,457,447
+;   Right-hand side Character Map Window Position = 658,447,457,447
+
+LHSName                 "canonical name of the 'source' encoding or left-hand side of the conversion"
+RHSName                 "canonical name of the 'target' encoding or right-hand side of the conversion"
+LHSDescription          "description for the left-hand side of the mapping"
+RHSDescription          "description for the right-hand side of the mapping"
+Version                 "1"
+Contact                 "mailto:user@addr"
+RegistrationAuthority   "the organization responsible for the encoding"
+RegistrationName        "the name and version of the mapping, as recognized by that authority"
+Copyright               "© 2018 <CompanyName>. All rights reserved."
+LHSFlags                ()
+RHSFlags                ()
+
+pass(Unicode)
+
+; type a 'k' in the 'Left-side Sample' box below to see how this works.
+pass(Unicode)
+
+; type a 'k' in the 'Left-side Sample' box below to see how this works.
+malayalam_letter_a > devanagari_letter_a
+malayalam_letter_aa > devanagari_letter_aa
+malayalam_letter_i > devanagari_letter_i
+malayalam_letter_ii > devanagari_letter_ii
+malayalam_letter_u > devanagari_letter_u
+malayalam_letter_uu > devanagari_letter_uu
+malayalam_letter_vocalic_r > devanagari_letter_vocalic_r
+malayalam_letter_vocalic_l > devanagari_letter_vocalic_l
+malayalam_letter_e > devanagari_letter_candra_e
+malayalam_letter_ee > devanagari_letter_e
+malayalam_letter_ai > devanagari_letter_ai
+malayalam_letter_o > devanagari_letter_candra_o
+malayalam_letter_oo > devanagari_letter_o
+malayalam_letter_au > devanagari_letter_au
+malayalam_letter_ka > devanagari_letter_ka
+malayalam_letter_kha > devanagari_letter_kha
+malayalam_letter_ga > devanagari_letter_ga
+malayalam_letter_gha > devanagari_letter_gha
+malayalam_letter_nga > devanagari_letter_nga
+malayalam_letter_ca > devanagari_letter_ca
+malayalam_letter_cha > devanagari_letter_cha
+malayalam_letter_ja > devanagari_letter_ja
+malayalam_letter_jha > devanagari_letter_jha
+malayalam_letter_nya > devanagari_letter_nya
+malayalam_letter_tta > devanagari_letter_tta
+malayalam_letter_ttha > devanagari_letter_ttha
+malayalam_letter_dda > devanagari_letter_dda
+malayalam_letter_ddha > devanagari_letter_ddha
+malayalam_letter_nna > devanagari_letter_nna
+malayalam_letter_ta > devanagari_letter_ta
+malayalam_letter_tha > devanagari_letter_tha
+malayalam_letter_da > devanagari_letter_da
+malayalam_letter_dha > devanagari_letter_dha
+malayalam_letter_na > devanagari_letter_na
+malayalam_letter_nnna > devanagari_letter_nnna
+malayalam_letter_pa > devanagari_letter_pa
+malayalam_letter_pha > devanagari_letter_pha
+malayalam_letter_ba > devanagari_letter_ba
+malayalam_letter_bha > devanagari_letter_bha
+malayalam_letter_ma > devanagari_letter_ma
+malayalam_letter_ya > devanagari_letter_ya
+malayalam_letter_ra > devanagari_letter_ra
+malayalam_letter_rra > devanagari_letter_rra
+malayalam_letter_la > devanagari_letter_la
+malayalam_letter_lla > devanagari_letter_lla
+malayalam_letter_llla > devanagari_letter_llla
+malayalam_letter_va > devanagari_letter_va
+malayalam_letter_sha > devanagari_letter_sha
+malayalam_letter_ssa > devanagari_letter_ssa
+malayalam_letter_sa > devanagari_letter_sa
+malayalam_letter_ha > devanagari_letter_ha
+
+malayalam_vowel_sign_aa > devanagari_vowel_sign_aa
+malayalam_vowel_sign_i > devanagari_vowel_sign_i
+malayalam_vowel_sign_ii > devanagari_vowel_sign_ii
+malayalam_vowel_sign_u > devanagari_vowel_sign_u
+malayalam_vowel_sign_uu > devanagari_vowel_sign_uu
+malayalam_vowel_sign_vocalic_r > devanagari_vowel_sign_vocalic_r
+malayalam_vowel_sign_vocalic_rr > devanagari_vowel_sign_vocalic_rr
+malayalam_vowel_sign_e > devanagari_vowel_sign_candra_e
+malayalam_vowel_sign_ee > devanagari_vowel_sign_e
+malayalam_vowel_sign_ai > devanagari_vowel_sign_ai
+malayalam_vowel_sign_o > devanagari_vowel_sign_candra_o
+malayalam_vowel_sign_oo > devanagari_vowel_sign_o
+malayalam_vowel_sign_au > devanagari_vowel_sign_au
+malayalam_sign_virama > devanagari_sign_virama
+malayalam_sign_anusvara > devanagari_sign_anusvara
+malayalam_sign_visarga > devanagari_sign_visarga
+
+malayalam_letter_chillu_nn > devanagari_letter_nna devanagari_sign_virama
+malayalam_letter_chillu_n > devanagari_letter_na devanagari_sign_virama
+malayalam_letter_chillu_rr > devanagari_letter_ra devanagari_sign_virama
+malayalam_letter_chillu_l > devanagari_letter_la devanagari_sign_virama
+malayalam_letter_chillu_ll > devanagari_letter_lla devanagari_sign_virama
+malayalam_letter_chillu_k > devanagari_letter_ka devanagari_sign_virama
+
+
