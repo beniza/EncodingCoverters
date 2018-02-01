@@ -1,0 +1,114 @@
+﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 2/2/2018.
+;   Conversion Type = Legacy_to_from_Unicode
+;   Left-hand side font = Arial Narrow;14.25
+;   Right-hand side font = Rachana;15.75
+;   Main Window Position = 0,0,807,831
+;   Left-hand side Character Map Window Position = 807,0,457,447
+;   Right-hand side Character Map Window Position = 760,235,791,497
+
+EncodingName            "a canonical name that uniquely identifies this mapping table from all others"
+DescriptiveName         "a string that describes the mapping"
+Version                 "1"
+Contact                 "mailto:user@addr"
+RegistrationAuthority   "the organization responsible for the encoding"
+RegistrationName        "the name and version of the mapping, as recognized by that authority"
+Copyright               "© 2018 <CompanyName>. All rights reserved."
+LHSFlags                ()
+RHSFlags                ()
+
+pass(Byte)
+ByteClass[cons] = (\
+                     54  56  57  66  72  75  76  78  82  83  87  88  99 \
+                    102 103 104 107 108 109 \
+                    110 112 116 118 119 120 121 164 169 \
+                    115 122 \
+                    229 \
+                    )
+
+ByteClass[lMatra] = (\
+                      69 96 101 \
+                    )
+
+ByteClass[subForm] = (\
+                        86 89 124 \
+                        )
+101 101 [cons]=c [subForm]?=sb <> @c @sb 101 101
+[lMatra]=lm [cons]=c [subForm]?=sb <> @c @sb @lm 
+
+pass(Byte_Unicode)
+ByteClass[ctl] = (0 .. 32)
+UniClass[ctl] = (0 .. 32)
+[ctl] <> [ctl]
+
+
+45 <> malayalam_letter_lla malayalam_sign_virama malayalam_letter_lla
+48 <> malayalam_letter_ma malayalam_sign_virama malayalam_letter_ma
+49 <> malayalam_letter_a
+50 <> malayalam_letter_i
+51 <> malayalam_letter_u
+53 <> malayalam_letter_ee
+54 <> malayalam_letter_ka malayalam_sign_virama malayalam_letter_ka
+55 <> malayalam_letter_tta malayalam_sign_virama malayalam_letter_tta
+56 <> malayalam_letter_ta malayalam_sign_virama malayalam_letter_ta
+57 <> malayalam_letter_na malayalam_sign_virama malayalam_letter_na
+59 <> semicolon
+61 <> malayalam_letter_ka malayalam_sign_virama malayalam_letter_ssa
+65 <> malayalam_letter_aa
+66 <> malayalam_letter_bha
+69 <> malayalam_vowel_sign_ee 
+72 <> malayalam_letter_nna malayalam_sign_virama malayalam_letter_tta
+73 <> malayalam_vowel_sign_ii
+75 <> malayalam_letter_kha
+76 <> malayalam_letter_lla
+77 <> malayalam_sign_anusvara
+78 <> malayalam_letter_nga malayalam_sign_virama malayalam_letter_nga
+82 <> malayalam_letter_rra
+83 <> malayalam_letter_llla
+86 <> malayalam_sign_virama malayalam_letter_va
+87 <> malayalam_letter_ssa
+88 <> malayalam_letter_dha
+89 <> malayalam_sign_virama malayalam_letter_ya
+97 <> malayalam_vowel_sign_aa
+91 <> malayalam_letter_chillu_n
+92 <> malayalam_sign_virama 
+93 <> malayalam_letter_chillu_ll
+95 <> hyphen_minus
+96 <> malayalam_sign_virama malayalam_letter_ra
+99 <> malayalam_letter_ca
+101 <> malayalam_vowel_sign_e
+102 <> malayalam_letter_tta
+103 <> malayalam_letter_ga
+104 <> malayalam_letter_ha
+105 <> malayalam_vowel_sign_i
+106 <> malayalam_letter_ja
+107 <> malayalam_letter_ka
+108 <> malayalam_letter_la
+109 <> malayalam_letter_ma
+110 <> malayalam_letter_na
+111 <> malayalam_letter_o
+112 <> malayalam_letter_pa
+114 <> malayalam_letter_ra
+115 <> malayalam_letter_sa
+116 <> malayalam_letter_ta
+117 <> malayalam_vowel_sign_u
+118 <> malayalam_letter_va
+119 <> malayalam_letter_sha
+120 <> malayalam_letter_da
+121 <> malayalam_letter_ya
+122 <> malayalam_letter_nna
+123 <> malayalam_letter_chillu_rr
+124 <> malayalam_sign_virama malayalam_letter_la
+125 <> malayalam_letter_chillu_l
+146 <> malayalam_letter_ta malayalam_sign_virama malayalam_letter_ma
+147 <> malayalam_letter_da malayalam_sign_virama malayalam_letter_da
+164 <> malayalam_letter_da malayalam_sign_virama malayalam_letter_dha
+169 <> malayalam_letter_ma malayalam_sign_virama malayalam_letter_pa
+186 <> malayalam_letter_na malayalam_sign_virama malayalam_letter_da
+197 <> malayalam_letter_na malayalam_sign_virama malayalam_letter_ma
+229 <> malayalam_letter_na malayalam_sign_virama malayalam_letter_rra
+
+pass(Unicode)
+malayalam_vowel_sign_e malayalam_vowel_sign_aa <> malayalam_vowel_sign_o
+malayalam_vowel_sign_ee malayalam_vowel_sign_aa <> malayalam_vowel_sign_oo
+malayalam_letter_o malayalam_vowel_sign_aa <> malayalam_letter_oo
+malayalam_vowel_sign_e malayalam_vowel_sign_e <> malayalam_vowel_sign_ai
