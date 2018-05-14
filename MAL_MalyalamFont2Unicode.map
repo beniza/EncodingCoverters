@@ -2,9 +2,9 @@
 ;   Conversion Type = Legacy_to_from_Unicode
 ;   Left-hand side font = Arial Narrow;14.25
 ;   Right-hand side font = Rachana;15.75
-;   Main Window Position = 0,0,807,831
+;   Main Window Position = 0,0,807,824
 ;   Left-hand side Character Map Window Position = 807,0,457,447
-;   Right-hand side Character Map Window Position = 760,235,791,497
+;   Right-hand side Character Map Window Position = 760,235,776,497
 
 EncodingName            "a canonical name that uniquely identifies this mapping table from all others"
 DescriptiveName         "a string that describes the mapping"
@@ -18,63 +18,111 @@ RHSFlags                ()
 
 pass(Byte)
 ByteClass[cons] = (\
-                     54  56  57  66  72  75  76  78  82  83  87  88  99 \
+                     48  54  55  56  57  66  71  72  75  76  78  \
+                     81 82  83  87  88  90  99 \
                     102 103 104 107 108 109 \
-                    110 112 116 118 119 120 121 164 169 \
-                    115 122 \
-                    229 \
+                    110 112 113 114 115 116 118 119 120 121 122 \
+                    132 145 149 164 169 176 182 197 \
+                    229 241 \
                     )
 
+ByteClass[reph] = (96)
+ByteClass[virama] = (92)
+
 ByteClass[lMatra] = (\
-                      69 96 101 \
+                      69 101 \
                     )
 
 ByteClass[subForm] = (\
-                        86 89 124 \
-                        )
-101 101 [cons]=c [subForm]?=sb <> @c @sb 101 101
+                        86 89 99 124 240 \
+                     )
+
+101 101 [cons]=c [subForm]?=sb <> @c @sb 101 101 ; to re-order ai
+;[lMatra]?=lm [reph]?=r [cons]=c [subForm]?=sb [virama]?=v [cons]?=c2 <> @c @v @c2 @sb @r @lm ; to re-order reph 
+[lMatra]?=lm [reph]?=r [cons]=c [subForm]?=sb <> @c @sb @r @lm ; to re-order reph 
+[lMatra]=lm [cons]=c [virama]?=v [cons]?=c2 <> @c @v @c2 @lm ; to re-order reph 
 [lMatra]=lm [cons]=c [subForm]?=sb <> @c @sb @lm 
+
+pass(Byte)
+99 47 <> 99 92 99
+118 47 <> 118 92 118
+98 47 <> 98 92 98
+121 47 <> 121 92 121
 
 pass(Byte_Unicode)
 ByteClass[ctl] = (0 .. 32)
 UniClass[ctl] = (0 .. 32)
 [ctl] <> [ctl]
 
+;==================================================================
+; Check the digit session, I'm not sure if they are corrctly mapped
+;32 <> digit_zero
+33 <> digit_one
+64 <> digit_two
+35 <> digit_three
+36 <> digit_four
+37 <> digit_five
+94 <> digit_six
+38 <> digit_seven
+42 <> digit_eight
+40 <> digit_nine
+41 <> digit_zero
+;==================================================================
 
+44 <> comma
 45 <> malayalam_letter_lla malayalam_sign_virama malayalam_letter_lla
+46 <> full_stop
+47 <> registered_sign
+;47 / 99 _ <> malayalam_sign_virama malayalam_letter_ca
+;47 / 118 _ <> malayalam_sign_virama malayalam_letter_va
+;47 /  98 _ <> malayalam_sign_virama malayalam_letter_ba
+;47 / 121 _ <> malayalam_sign_virama malayalam_letter_ya
 48 <> malayalam_letter_ma malayalam_sign_virama malayalam_letter_ma
 49 <> malayalam_letter_a
 50 <> malayalam_letter_i
 51 <> malayalam_letter_u
+52 <> malayalam_letter_e
 53 <> malayalam_letter_ee
 54 <> malayalam_letter_ka malayalam_sign_virama malayalam_letter_ka
 55 <> malayalam_letter_tta malayalam_sign_virama malayalam_letter_tta
 56 <> malayalam_letter_ta malayalam_sign_virama malayalam_letter_ta
 57 <> malayalam_letter_na malayalam_sign_virama malayalam_letter_na
 59 <> semicolon
+60 <> less_than_sign
 61 <> malayalam_letter_ka malayalam_sign_virama malayalam_letter_ssa
+62 <> greater_than_sign
+63 <> question_mark
 65 <> malayalam_letter_aa
 66 <> malayalam_letter_bha
 69 <> malayalam_vowel_sign_ee 
+71 <> malayalam_letter_gha
 72 <> malayalam_letter_nna malayalam_sign_virama malayalam_letter_tta
 73 <> malayalam_vowel_sign_ii
 75 <> malayalam_letter_kha
 76 <> malayalam_letter_lla
 77 <> malayalam_sign_anusvara
 78 <> malayalam_letter_nga malayalam_sign_virama malayalam_letter_nga
+79 <> malayalam_au_length_mark
+80 <> malayalam_letter_pha
+81 <> malayalam_letter_nya malayalam_sign_virama malayalam_letter_nya
 82 <> malayalam_letter_rra
 83 <> malayalam_letter_llla
+84 <> malayalam_letter_tha
+85 <> malayalam_vowel_sign_uu
 86 <> malayalam_sign_virama malayalam_letter_va
 87 <> malayalam_letter_ssa
 88 <> malayalam_letter_dha
 89 <> malayalam_sign_virama malayalam_letter_ya
+90 <> malayalam_letter_chillu_nn
 97 <> malayalam_vowel_sign_aa
 91 <> malayalam_letter_chillu_n
 92 <> malayalam_sign_virama 
 93 <> malayalam_letter_chillu_ll
 95 <> hyphen_minus
 96 <> malayalam_sign_virama malayalam_letter_ra
+98 <> malayalam_letter_ba
 99 <> malayalam_letter_ca
+100 <> malayalam_letter_dda
 101 <> malayalam_vowel_sign_e
 102 <> malayalam_letter_tta
 103 <> malayalam_letter_ga
@@ -83,10 +131,12 @@ UniClass[ctl] = (0 .. 32)
 106 <> malayalam_letter_ja
 107 <> malayalam_letter_ka
 108 <> malayalam_letter_la
+109 109 <> malayalam_letter_ma malayalam_sign_virama malayalam_letter_ma
 109 <> malayalam_letter_ma
 110 <> malayalam_letter_na
 111 <> malayalam_letter_o
 112 <> malayalam_letter_pa
+113 <> malayalam_letter_nya
 114 <> malayalam_letter_ra
 115 <> malayalam_letter_sa
 116 <> malayalam_letter_ta
@@ -95,20 +145,42 @@ UniClass[ctl] = (0 .. 32)
 119 <> malayalam_letter_sha
 120 <> malayalam_letter_da
 121 <> malayalam_letter_ya
+121 92 118 <> malayalam_letter_ya malayalam_sign_virama 0x200d malayalam_letter_va
 122 <> malayalam_letter_nna
 123 <> malayalam_letter_chillu_rr
+123 121 47 <> malayalam_letter_ra malayalam_sign_virama malayalam_letter_ya 
 124 <> malayalam_sign_virama malayalam_letter_la
 125 <> malayalam_letter_chillu_l
+126 <> malayalam_vowel_sign_vocalic_r
+132 <> malayalam_letter_pa malayalam_sign_virama malayalam_letter_pa
+133 <> malayalam_letter_nga malayalam_sign_virama malayalam_letter_ka
+137 <> registered_sign
+145 <> malayalam_letter_ta malayalam_sign_virama malayalam_letter_bha
 146 <> malayalam_letter_ta malayalam_sign_virama malayalam_letter_ma
 147 <> malayalam_letter_da malayalam_sign_virama malayalam_letter_da
+148 <> malayalam_letter_ga malayalam_sign_virama malayalam_letter_ga
+149 <> malayalam_letter_rra malayalam_sign_virama malayalam_letter_rra ;there is a repetition 241 also has the same output
+159 <> malayalam_sign_visarga
+161 <> malayalam_letter_nna malayalam_sign_virama malayalam_letter_nna
 164 <> malayalam_letter_da malayalam_sign_virama malayalam_letter_dha
 169 <> malayalam_letter_ma malayalam_sign_virama malayalam_letter_pa
+176 <> malayalam_letter_sa malayalam_sign_virama malayalam_letter_sa
+182 <> malayalam_letter_nya malayalam_sign_virama malayalam_letter_ca
+184 <> malayalam_letter_sha malayalam_sign_virama malayalam_letter_ca
 186 <> malayalam_letter_na malayalam_sign_virama malayalam_letter_da
 197 <> malayalam_letter_na malayalam_sign_virama malayalam_letter_ma
+198 <> malayalam_letter_na malayalam_sign_virama malayalam_letter_ta
 229 <> malayalam_letter_na malayalam_sign_virama malayalam_letter_rra
+240 <> malayalam_sign_virama malayalam_letter_la
+241 <> malayalam_letter_rra malayalam_sign_virama zero_width_joiner malayalam_letter_rra ;there is a repetition 149 also has the same output
+246 <> malayalam_sign_anusvara registered_sign
 
 pass(Unicode)
 malayalam_vowel_sign_e malayalam_vowel_sign_aa <> malayalam_vowel_sign_o
 malayalam_vowel_sign_ee malayalam_vowel_sign_aa <> malayalam_vowel_sign_oo
 malayalam_letter_o malayalam_vowel_sign_aa <> malayalam_letter_oo
 malayalam_vowel_sign_e malayalam_vowel_sign_e <> malayalam_vowel_sign_ai
+malayalam_letter_i malayalam_au_length_mark <> malayalam_letter_ii
+malayalam_letter_u malayalam_au_length_mark <> malayalam_letter_uu
+malayalam_letter_o malayalam_au_length_mark <> malayalam_letter_au
+
