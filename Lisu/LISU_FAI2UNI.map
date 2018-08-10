@@ -1,0 +1,80 @@
+﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 8/10/2018.
+;   Conversion Type = Legacy_to_from_Unicode
+;   Left-hand side font = Lisu_FA;13.8
+;   Right-hand side font = Arial Unicode MS;10.8
+;   Main Window Position = 0,0,874,877
+;   Left-hand side Character Map Window Position = 1321,75,599,647
+;   Right-hand side Character Map Window Position = 874,549,606,481
+
+EncodingName            "LisuFAI2Unicode"
+DescriptiveName         "Lisu Fai to Unicode converter"
+Version                 ".5"
+Contact                 "mailto:beniza@gmail.com"
+RegistrationAuthority   "NLCI"
+RegistrationName        "NLCI-LisuFAI2Uni"
+Copyright               "© 2018 <NLCI>. MIT license"
+LHSFlags                ()
+RHSFlags                ()
+
+pass(Byte_Unicode)
+
+byteclass[ctr] = (0 .. 32)
+uniclass[ctr] = (0 .. 32)
+[ctr] <> [ctr]
+
+byteclass[punct] = (33 .. 64)
+uniclass[punct] = (33 .. 64)
+[punct] <> [punct]
+
+98 <> 0xA4D0
+112 <> 0XA4D1
+80 <> 0XA4D2
+100 <> 0XA4D3
+116 <> 0XA4D4
+84 <> 0XA4D5
+103 <> 0XA4D6
+107 <> 0XA4D7
+75 <> 0XA4D8
+106 <> 0XA4D9
+99 <> 0XA4DA
+67 <> 0XA4DB
+122 <> 0XA4DC
+102 <> 0XA4DD
+70 <> 0XA4DE
+109 <> 0XA4DF
+110 <> 0XA4E0
+108 <> 0XA4E1
+115 <> 0XA4E2
+114 <> 0XA4E3
+82 <> 0XA4E4
+86 <> 0XA4E5
+118 <> 0XA4E6
+104 <> 0XA4E7
+71 <> 0XA4E8
+74 <> 0XA4E9
+119 <> 0XA4EA
+120 <> 0XA4EB
+121 <> 0XA4EC
+66 <> 0XA4ED
+97 <> 0XA4EE
+65 <> 0XA4EF
+101<> 0XA4F0
+69 <> 0XA4F1
+105 <> 0XA4F2
+111 <> 0XA4F3
+117 <> 0XA4F4
+85 <> 0XA4F5
+76 <> 0XA4F6
+68 <> 0XA4F7
+
+72 <> 0XA4FA
+73 <> 0XA4FE
+79 <> 0x02CD
+83 <> 0XA4FB ; THIS ONE IS AN INCORRECT MAPPING. SINCE I COULDN'T FIND THE RIGHT ONE, I'M USING THIS MAPPING
+88 <> 0X201D
+89 <> 0XA4FB
+90 <> 0X201C
+96 <> 0x0060 ; c I'm not sure if this is a right character
+146 <> 0x2019
+147 <> 0X201C
+148 <> 0X201D

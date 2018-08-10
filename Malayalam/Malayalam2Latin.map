@@ -1,0 +1,118 @@
+﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 4/8/2016.
+;   Conversion Type = Unicode_to_from_Unicode
+;   Left-hand side font = Rachana;15.75
+;   Right-hand side font = Charis SIL;14.25
+;   Main Window Position = 0,0,658,713
+;   Left-hand side Character Map Window Position = 658,0,863,525
+;   Right-hand side Character Map Window Position = 658,447,457,377
+
+LHSName                 "mlym"
+RHSName                 "latn"
+LHSDescription          "Malayalam Script"
+RHSDescription          "Malayalam in Latin Script"
+Version                 "0.1"
+Contact                 "mailto:beniza@gmail.com"
+RegistrationAuthority   "Nalla Malayalam Facebook Community (https://www.facebook.com/groups/nallamalayalam)"
+RegistrationName        "Malayalam to Latin Transliteration by Nalla Malayalam Based on an adapted transliteration scheme found here http://www.unicode.org/cldr/charts/latest/transforms/Latin-Indic.html"
+Copyright               "© 2016 <NallaMalayalam>. CC-BY-SA."
+LHSFlags                ()
+RHSFlags                ()
+
+pass(Unicode)
+;=======================
+; Vowels 2 Latin
+;=======================
+malayalam_letter_a > 'a'
+malayalam_letter_aa > 'aa'
+malayalam_letter_i > 'i'
+malayalam_letter_ii > 'ee'
+malayalam_letter_u > 'u'
+malayalam_letter_uu > 'oo'
+malayalam_letter_vocalic_r > 'ru'
+malayalam_letter_vocalic_l > 'lu'
+malayalam_letter_e > 'e'
+malayalam_letter_ee > 'e'
+malayalam_letter_ai > 'ai'
+malayalam_letter_o > 'o'
+malayalam_letter_oo > 'o'
+malayalam_letter_au > 'au'
+malayalam_sign_anusvara > 'm'
+malayalam_sign_visarga >
+
+;=======================
+; Consonants 2 Latin
+;=======================
+malayalam_letter_ka > 'ka'
+malayalam_letter_kha > 'kha'
+malayalam_letter_ga > 'ga'
+malayalam_letter_gha > 'gha'
+malayalam_letter_nga malayalam_sign_virama malayalam_letter_nga > 'nga'
+malayalam_letter_nga > 'nga'
+malayalam_letter_ca > 'cha'
+malayalam_letter_cha > 'chha'
+malayalam_letter_ja > 'ja'
+malayalam_letter_jha > 'jha'
+malayalam_letter_nya > 'nja'
+malayalam_letter_tta > 'da'
+malayalam_letter_tta malayalam_sign_virama malayalam_letter_tta > 'tta'
+malayalam_letter_ttha > 'tta'
+malayalam_letter_dda > 'da'
+malayalam_letter_ddha > 'dda'
+malayalam_letter_nna > 'na'
+malayalam_letter_ta > 'tha'
+malayalam_letter_tha > 'ttha'
+malayalam_letter_da > 'da'
+malayalam_letter_dha > 'dha'
+malayalam_letter_na > 'na'
+malayalam_letter_pa > 'pa'
+malayalam_letter_pha > 'pha'
+malayalam_letter_ba > 'ba'
+malayalam_letter_bha > 'bha'
+malayalam_letter_ma > 'ma'
+malayalam_letter_ya > 'ya'
+malayalam_letter_ra > 'ra'
+malayalam_letter_rra > 'ra'
+malayalam_letter_rra malayalam_sign_virama malayalam_letter_rra > 'tta'
+malayalam_letter_na malayalam_sign_virama malayalam_letter_rra > 'nta'
+malayalam_letter_la > 'la'
+malayalam_letter_lla > 'la'
+malayalam_letter_llla > 'zha'
+malayalam_letter_va > 'va'
+malayalam_letter_sha > 'sa'
+malayalam_letter_ssa > 'ssa'
+malayalam_letter_sa > 'sha'
+malayalam_letter_ha > 'ha'
+
+pass(unicode)
+;=======================
+; Vowels Matra 2 Latin
+;=======================
+'a' malayalam_vowel_sign_aa  > 'aa'
+'a' malayalam_vowel_sign_i > 'i'
+'a' malayalam_vowel_sign_ii > 'ee'
+'a' malayalam_vowel_sign_u > 'u'
+'a' malayalam_vowel_sign_uu > 'oo'
+'a' malayalam_vowel_sign_vocalic_r > 'ru'
+'a' malayalam_vowel_sign_e > 'e'
+'a' malayalam_vowel_sign_ee > 'e'
+'a' malayalam_vowel_sign_ai > 'ai'
+'a' malayalam_vowel_sign_o > 'o'
+'a' malayalam_vowel_sign_oo > 'o'
+'a' malayalam_vowel_sign_au > 'au'
+'a' malayalam_au_length_mark > 'au'
+'a' malayalam_sign_virama >
+malayalam_letter_dot_reph > 'r'
+malayalam_letter_chillu_nn > 'n'
+malayalam_letter_chillu_n > 'n'
+malayalam_letter_chillu_rr > 'r'
+malayalam_letter_chillu_l > 'l'
+malayalam_letter_chillu_ll > 'l'
+malayalam_letter_chillu_k > 'k'
+
+pass(unicode)
+'njnj' > 'nj'
+'thth' > 'th'
+'thdh' > 'thh'
+'chch' > 'ch'
+'mp' > 'mb'
+'ngk' > 'nk'

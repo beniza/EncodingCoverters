@@ -1,0 +1,127 @@
+﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 4/8/2016.
+;   Conversion Type = Unicode_to_from_Unicode
+;   Left-hand side font = Rachana;15.75
+;   Right-hand side font = Charis SIL;14.25
+;   Main Window Position = 0,0,658,713
+;   Left-hand side Character Map Window Position = 658,0,863,525
+;   Right-hand side Character Map Window Position = 658,447,457,447
+
+LHSName                 "mlym"
+RHSName                 "latn"
+LHSDescription          "Malayalam Script"
+RHSDescription          "Malayalam in Latin Script"
+Version                 "0.1"
+Contact                 "mailto:beniza@gmail.com"
+RegistrationAuthority   "Nalla Malayalam Facebook Community (https://www.facebook.com/groups/nallamalayalam)"
+RegistrationName        "Malayalam to Latin Transliteration by Nalla Malayalam Based on an adapted transliteration scheme found here http://www.unicode.org/cldr/charts/latest/transforms/Latin-Indic.html"
+Copyright               "© 2016 <NallaMalayalam>. CC-BY-SA."
+LHSFlags                ()
+RHSFlags                ()
+
+pass(Unicode)
+U+0D02 <> "ṁ"
+U+0D03 <> "ḥ"
+U+0D66 <> "0"
+U+0D67 <> "1"
+U+0D68 <> "2"
+U+0D69 <> "3"
+U+0D6A <> "4"
+U+0D6B <> "5"
+U+0D6C <> "6"
+U+0D6D <> "7"
+U+0D6E <> "8"
+U+0D6F <> "9"
+U+0D05 <> "a"
+U+0D06 <> "ā"
+U+0D07 <> "i"
+U+0D08 <> "ī"
+U+0D09 <> "u"
+U+0D0A <> "ū"
+U+0D0B <> "r̥"
+U+0D60 <> "r̥̄"
+U+0D0C <> "l̥"
+U+0D61 <> "l̥̄"
+U+0D0E <> "e"
+U+0D0F <> "ē"
+U+0D10 <> "ai"
+U+0D12 <> "o"
+U+0D13 <> "ō"
+U+0D14 <> "au"
+U+0D15 <> "ka"
+U+0D15 U+0D4D <> "k"
+U+0D15 U+0D4D U+0D38 <> "ksa"
+U+0D16 <> "kha"
+U+0D17 <> "ga"
+U+0D17 U+0D4D <> "g"
+U+0D18 <> "gha"
+U+0D19 <> "ṅa"
+U+0D1A <> "ca"
+U+0D1A U+0D4D <> "c"
+U+0D1B <> "cha"
+U+0D1C <> "ja"
+U+0D1C U+0D4D <> "j"
+U+0D1D <> "jha"
+U+0D1E <> "ña"
+U+0D1F <> "ṭa"
+U+0D20 <> "ṭha"
+U+0D21 <> "ḍa"
+U+0D22 <> "ḍha"
+U+0D23 <> "ṇa"
+U+0D24 <> "ta"
+U+0D24 U+0D4D <> "t"
+U+0D25 <> "tha"
+U+0D26 <> "da"
+U+0D26 U+0D4D <> "d"
+U+0D27 <> "dha"
+U+0D28 <> "na"
+U+0D28 U+0D4D <> "n"
+U+0D2A <> "pa"
+U+0D2A U+0D4D <> "p"
+U+0D2B <> "pha"
+U+0D2B U+0D4D <> "ph"
+U+0D2C <> "ba"
+U+0D2C U+0D4D <> "b"
+U+0D2D <> "bha"
+U+0D2E <> "ma"
+U+0D2E U+0D4D <> "m"
+U+0D2F <> "ya"
+U+0D2F U+0D4D <> "y"
+U+0D30 <> "ra"
+U+0D30 U+0D4D <> "r"
+U+0D32 <> "la"
+U+0D32 U+0D4D <> "l"
+U+0D35 <> "va"
+U+0D35 U+0D4D <> "v"
+U+0D36 <> "śa"
+U+0D37 <> "ṣa"
+U+0D38 <> "sa"
+U+0D38 U+0D4D <> "s"
+U+0D39 <> "ha"
+U+0D39 U+0D4D <> "h"
+U+0D33 <> "ḷa"
+U+0D34 <> "ḻa"
+U+0D31 <> "ṟa"
+U+0D3E <> "̔ā"
+U+0D3F <> "̔i"
+U+0D40 <> "̔ī"
+U+0D41 <> "̔u"
+U+0D42 <> "̔ū"
+U+0D43 <> "̔r̥"
+U+0D46 <> "̔e"
+U+0D47 <> "̔ē"
+U+0D48 <> "̔ai"
+U+0D4A <> "̔o"
+U+0D4B <> "̔ō"
+U+0D4C <> "̔au"
+U+0D7A <> U+1E47 U+0307
+U+0D7B <> "n" U+0307 
+U+0D7C <> "r" U+0307
+U+0D7D <> "l" U+0307
+U+0D7E <> U+1E37 U+0307
+U+0D7F <> "k" U+0307
+pass(unicode)
+'a' U+0D4D > 
+U+0D4D <> U+0303
+'a' U+0314 <> U+0314
+
+

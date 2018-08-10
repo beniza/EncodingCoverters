@@ -1,0 +1,274 @@
+﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 01-07-2015.
+;   Conversion Type = Legacy_to_from_Unicode
+;   Left-hand side font = KN-TTUma;27.75
+;   Right-hand side font = Arial Unicode MS;11.25
+;   Main Window Position = 0,0,683,738
+;   Left-hand side Character Map Window Position = 662,0,704,738
+;   Right-hand side Character Map Window Position = 810,0,556,447
+
+EncodingName            "SLP-KNDA2Unicode"
+DescriptiveName         "Srilipi Kannada to Unicode"
+Version                 "0.1"
+Contact                 "mailto:ben@"
+RegistrationAuthority   "NLCI"
+RegistrationName        "in.nlci.enconv.slp.knda"
+Copyright               "Released under MIT License. © 2015 <NLCI>. Some rights reserved."
+LHSFlags                ()
+RHSFlags                ()
+
+pass(Byte)
+;**********************************************
+; Normalization
+;----------------------------------------------
+
+pass(Byte)
+byteClass[vowelMatra] = (218 219 220 221 222 223 224)
+byteClass[reph]      = (195 239 240 241)
+byteClass[tickCons]   = (82 92 100 106 108 121 182 196)
+byteClass[ConsI]      = (80 84 87 90 95 98 102 110 113 116 119 123 126 163 166 169 172 175 178 184 187 194 198 201 204 207 210 213 216)
+byteClass[iCons]      = (79 82 86 89 94 97 101 109 112 115 118 122 125 162 165 168 171 174 177 183 186 193 197 200 203 206 209 212 215)
+byteClass[noTickCons] = (79 86 89 94 97 112 115 118 125 162 165 168 171 174 186 193 200 203 206 209 212 215)
+byteClass[othu] = (081 085 088 091 093 \
+ 096 099 103 105 107 \
+ 111 114 117 120 124 \
+ 161 164 167 170 173 \
+ 176 181 185 188 189 \
+ 192 195 199 202 205 \
+ 208 211 214 217)
+
+[tickCons]=tc [vowelMatra]?=vm 37 > 37 @tc @vm
+[noTickCons]=ntc [vowelMatra]?=vm 37 > 37 @ntc @vm
+
+[ConsI] <> [iCons]  221
+[othu]=oth <> 218 @oth
+
+pass(Byte)
+37 <> 193 233
+234 <> 161 228
+235 <> 161 231
+237 <> 81 228
+238 <> 195 228
+239 > 195
+240 > 195
+241 > 195
+
+pass(byte_unicode)
+byteclass[CTR] = (0..32)
+uniclass[CTR]  = (0..32)
+byteClass[kanDigits] = (48..57)
+uniClass[kanDigits]  = (kannada_digit_zero .. kannada_digit_nine)
+byteClass[indVowels] = (64..69 71..78)
+uniClass[indVowels]  = (kannada_letter_a..kannada_letter_uu kannada_letter_e..kannada_letter_ai kannada_letter_o..kannada_letter_au kannada_sign_anusvara kannada_sign_visarga)
+byteClass[othu] = (081 085 088 091 093 \
+ 096 099 103 105 107 \
+ 111 114 117 120 124 \
+ 161 164 167 170 173 \
+ 176 181 185 188 189 \
+ 192 195 199 202 205 \
+ 208 211 214 217)
+
+uniClass[othuBase] = (kannada_letter_ka kannada_letter_kha kannada_letter_ga kannada_letter_gha kannada_letter_nga \
+                      kannada_letter_ca kannada_letter_cha kannada_letter_ja kannada_letter_jha kannada_letter_nya \
+                      kannada_letter_tta kannada_letter_ttha kannada_letter_dda kannada_letter_ddha kannada_letter_nna \
+                      kannada_letter_ta kannada_letter_tha kannada_letter_da kannada_letter_dha kannada_letter_na \
+                      kannada_letter_pa kannada_letter_pha kannada_letter_ba kannada_letter_bha kannada_letter_ma \
+                      kannada_letter_ya kannada_letter_ra kannada_letter_la kannada_letter_va kannada_letter_ssa \
+                      kannada_letter_sha kannada_letter_sa kannada_letter_ha kannada_letter_lla)
+[CTR] <> [CTR]
+[kanDigits] <> [kanDigits]
+[indVowels] <> [indVowels]
+[othu]<>[othuBase]
+
+33 <> exclamation_mark
+34 <> 0x2018
+35 <> 0x25cc
+
+79 218 <> kannada_letter_ka
+79 <> kannada_letter_ka
+;80 <> kannada_letter_ka kannada_vowel_sign_i
+81 <> kannada_sign_virama kannada_letter_ka
+
+82 <> kannada_letter_kha
+83 <> kannada_letter_kha
+84 <> kannada_letter_kha kannada_vowel_sign_i
+85 <> kannada_sign_virama kannada_letter_kha
+
+86 218 <> kannada_letter_ga
+86 <> kannada_letter_ga
+87 <> kannada_letter_ga kannada_vowel_sign_i
+88 <> kannada_sign_virama kannada_letter_ga
+
+89 218 <> kannada_letter_gha
+89 <> kannada_letter_gha
+90 <> kannada_letter_gha kannada_vowel_sign_i
+91 <> kannada_sign_virama kannada_letter_gha
+
+92 <> kannada_letter_nga
+93 <> kannada_sign_virama kannada_letter_nga
+
+94 218 <> kannada_letter_ca
+94 <> kannada_letter_ca
+95 <> kannada_letter_ca kannada_vowel_sign_i
+96 <> kannada_sign_virama kannada_letter_ca
+
+97 218 <> kannada_letter_cha
+97 <> kannada_letter_cha
+98 <> kannada_letter_cha kannada_vowel_sign_i
+99 <> kannada_sign_virama kannada_letter_cha
+
+100 <> kannada_letter_ja
+101 <> kannada_letter_ja
+102 <> kannada_letter_ja kannada_vowel_sign_i
+103 <> kannada_sign_virama kannada_letter_ja
+
+193 218 104 223 <> kannada_letter_jha
+105 <> kannada_sign_virama kannada_letter_jha
+
+106 <> kannada_letter_nya
+107 <> kannada_sign_virama kannada_letter_nya
+
+108 <> kannada_letter_tta
+109 <> kannada_letter_tta
+110 <> kannada_letter_tta kannada_vowel_sign_i
+111 <> kannada_sign_virama kannada_letter_tta
+
+112 218 <> kannada_letter_ttha
+112 <> kannada_letter_ttha
+113 <> kannada_letter_ttha kannada_vowel_sign_i
+114 <> kannada_sign_virama kannada_letter_ttha
+
+115 218 <> kannada_letter_dda
+115 <> kannada_letter_dda
+116 <> kannada_letter_dda kannada_vowel_sign_i
+117 <> kannada_sign_virama kannada_letter_dda
+
+118 218 <> kannada_letter_ddha
+118 <> kannada_letter_ddha
+119 <> kannada_letter_ddha kannada_vowel_sign_i
+120 <> kannada_sign_virama kannada_letter_ddha
+
+121 <> kannada_letter_nna
+122 <> kannada_letter_nna
+123 <> kannada_letter_nna kannada_vowel_sign_i 
+124 <> kannada_sign_virama kannada_letter_nna
+
+125 218 <> kannada_letter_ta
+125 <> kannada_letter_ta
+126 <> kannada_letter_ta kannada_vowel_sign_i 
+161 <> kannada_sign_virama kannada_letter_ta
+
+162 218 <> kannada_letter_tha
+162 <> kannada_letter_tha
+163 <> kannada_letter_tha kannada_vowel_sign_i
+164 <> kannada_sign_virama kannada_letter_tha
+
+165 218 <> kannada_letter_da
+165 <> kannada_letter_da
+166 <> kannada_letter_da kannada_vowel_sign_i
+167 <> kannada_sign_virama kannada_letter_da
+
+168 218 <> kannada_letter_dha
+168 <> kannada_letter_dha
+169 <> kannada_letter_dha kannada_vowel_sign_i
+170 <> kannada_sign_virama kannada_letter_dha
+
+171 218 <> kannada_letter_na
+171 <> kannada_letter_na
+172 <> kannada_letter_na kannada_vowel_sign_i
+173 <> kannada_sign_virama kannada_letter_na
+
+174 218 <> kannada_letter_pa
+174 <> kannada_letter_pa
+175 <> kannada_letter_pa kannada_vowel_sign_i
+176 <> kannada_sign_virama kannada_letter_pa
+
+177 218 <> kannada_letter_pha
+177 <> kannada_letter_pha
+178 <> kannada_letter_pha kannada_vowel_sign_i
+181 <> kannada_sign_virama kannada_letter_pha
+
+182 <> kannada_letter_ba
+183 <> kannada_letter_ba
+184 <> kannada_letter_ba kannada_vowel_sign_i
+185 <> kannada_sign_virama kannada_letter_ba
+
+186 218 <> kannada_letter_bha
+186 <> kannada_letter_bha
+187 <> kannada_letter_bha kannada_vowel_sign_i
+188 <> kannada_sign_virama kannada_letter_bha
+
+189 <> kannada_sign_virama kannada_letter_ma
+
+200 218 223 <> kannada_letter_ma
+
+190 218 223 <> kannada_letter_ya
+190 230 223 222 <> kannada_letter_ya kannada_vowel_sign_ii
+191 223 <> kannada_letter_ya kannada_vowel_sign_i
+192 <> kannada_sign_virama kannada_letter_ya
+
+193 218 <> kannada_letter_ra
+193 <> kannada_letter_ra
+194 <> kannada_letter_ra kannada_vowel_sign_i
+195 <> kannada_sign_virama kannada_letter_ra
+
+196 <> kannada_letter_la 
+197 <> kannada_letter_la
+198 <> kannada_letter_la kannada_vowel_sign_i
+199 <> kannada_sign_virama kannada_letter_la
+
+200 218 <> kannada_letter_va
+200 <> kannada_letter_va
+200 218<> kannada_letter_va
+201 <> kannada_letter_va kannada_vowel_sign_i
+202 <> kannada_sign_virama kannada_letter_va
+
+203 <> kannada_letter_sha
+204 <> kannada_letter_sha kannada_vowel_sign_i
+205 <> kannada_sign_virama kannada_letter_sha
+
+206 218 <> kannada_letter_ssa
+206 <> kannada_letter_ssa
+207 <> kannada_letter_ssa kannada_vowel_sign_i
+208 <> kannada_sign_virama kannada_letter_ssa
+
+209 218 <> kannada_letter_sa
+209 <> kannada_letter_sa
+210 <> kannada_letter_sa kannada_vowel_sign_i
+211 <> kannada_sign_virama kannada_letter_sa
+
+212 218 <> kannada_letter_ha
+212 <> kannada_letter_ha
+213 <> kannada_letter_ha kannada_vowel_sign_i 
+214 <> kannada_sign_virama kannada_letter_ha
+
+215 218 <> kannada_letter_lla
+215 <> kannada_letter_lla
+216 <> kannada_letter_lla kannada_vowel_sign_i
+217 <> kannada_sign_virama kannada_letter_lla
+
+219 <> kannada_vowel_sign_aa
+220 > circled_digit_three
+221 222 <> kannada_vowel_sign_ii
+221 <> kannada_vowel_sign_i
+223 <> kannada_vowel_sign_u
+224 <> kannada_vowel_sign_uu 
+225 <> circled_digit_four
+226 <> circled_digit_five
+227 <> circled_digit_six
+228 <> kannada_vowel_sign_vocalic_r
+229 <> kannada_vowel_sign_vocalic_rr
+218 230 222 <> kannada_vowel_sign_ee
+218 230 231 <> kannada_vowel_sign_ai
+218 230 224 <> kannada_vowel_sign_o
+218 230 224 222 <> kannada_vowel_sign_oo
+218 230 <> kannada_vowel_sign_e
+230 <> kannada_vowel_sign_e
+230 222 <> kannada_vowel_sign_ee
+232 <> kannada_vowel_sign_au
+233 <> kannada_sign_virama
+
+
+218 > ;circled_digit_seven
+236 > circled_digit_seven
+38 > circled_digit_eight
+
