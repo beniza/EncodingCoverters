@@ -16,6 +16,10 @@ Copyright               "© 2018 <NLCI>. MIT license"
 LHSFlags                ()
 RHSFlags                ()
 
+; References
+; Unicode Chart: https://unicode.org/charts/PDF/UA4D0.pdf
+; Discussion on Lisu orthography: Ref: http://www.unicode.org/versions/Unicode6.2.0/ch13.pdf#page=26
+
 pass(Byte_Unicode)
 
 byteclass[ctr] = (0 .. 32)
@@ -70,11 +74,12 @@ uniclass[punct] = (33 .. 64)
 72 <> 0XA4FA
 73 <> 0XA4FE
 79 <> 0x02CD
-83 <> 0XA4FB ; THIS ONE IS AN INCORRECT MAPPING. SINCE I COULDN'T FIND THE RIGHT ONE, I'M USING THIS MAPPING
+83 <> 0XA4F8 0XA4FC 
+87 <> 0XA4F9 0XA4FC
 88 <> 0X201D
 89 <> 0XA4FB
 90 <> 0X201C
 96 <> 0x0060 ; c I'm not sure if this is a right character
-146 <> 0x2019
+146 <> 0x02BC
 147 <> 0X201C
 148 <> 0X201D
