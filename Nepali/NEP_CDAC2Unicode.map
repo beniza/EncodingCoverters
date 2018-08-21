@@ -7,14 +7,16 @@
 ;   Right-hand side Character Map Window Position = 821,0,545,691
 ;   Left-hand side code page = 42
 
-EncodingName			"CDAC-ISFOC_DEVANAGARI"
-DescriptiveName		"Winscript Devanagari Nepali"
-Version			"1.0"
-Contact			"mailto:beniza@gmail.com"
-RegistrationAuthority	"NLCI"
-RegistrationName		"Devanagari-Nepali-Winscript"
-
-RHSFlags			(ExpectsNFC)
+EncodingName            "CDAC-ISFOC_DEVANAGARI"
+DescriptiveName         "Winscript Devanagari Nepali"
+Version                 "1.0"
+Contact                 "mailto:sg@nlife.in"
+CreatedBy               "Varghese, Benjamin C."
+RegistrationAuthority   "NLCI"
+RegistrationName        "in.nlci.enconv.winscript.nepa"
+Copyright               "Released under MIT License. © 2012 <NLCI>. Some rights reserved."
+LHSFlags                ()
+RHSFlags                ()
 
 ;=============================================================================
 ; Pass 1. Remove horizontal width adjusting white spaces

@@ -1,4 +1,4 @@
-﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 8/10/2018.
+﻿; This file was created by <beniza@gmail.com> using TECkitMappingEditorU.exe v4.0.0.0 on 8/10/2018.
 ;   Conversion Type = Legacy_to_from_Unicode
 ;   Left-hand side font = Lisu_FA;13.8
 ;   Right-hand side font = Arial Unicode MS;10.8
@@ -9,10 +9,11 @@
 EncodingName            "LisuFAI2Unicode"
 DescriptiveName         "Lisu Fai to Unicode converter"
 Version                 ".5"
-Contact                 "mailto:beniza@gmail.com"
+Contact                 "mailto:sg@nlife.in"
+CreatedBy               "Varghese, Benjamin C."
 RegistrationAuthority   "NLCI"
-RegistrationName        "NLCI-LisuFAI2Uni"
-Copyright               "© 2018 <NLCI>. MIT license"
+RegistrationName        "in.nlci.enconv.fai.lisu"
+Copyright               "Released under MIT License. © 2018 NLCI. Some rights reserved."
 LHSFlags                ()
 RHSFlags                ()
 

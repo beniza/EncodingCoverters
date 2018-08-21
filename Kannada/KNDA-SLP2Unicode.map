@@ -7,11 +7,12 @@
 ;   Right-hand side Character Map Window Position = 810,0,556,447
 
 EncodingName            "SLP-KNDA2Unicode"
-DescriptiveName         "Srilipi Kannada to Unicode"
+DescriptiveName         "Sreelipi Kannada to Unicode"
 Version                 "0.1"
-Contact                 "mailto:ben@"
+Contact                 "mailto:sg@nlife.in"
+CreatedBy               "Varghese, Benjamin C."
 RegistrationAuthority   "NLCI"
-RegistrationName        "in.nlci.enconv.slp.knda"
+RegistrationName        "in.nlci.enconv.sreelipi.knda"
 Copyright               "Released under MIT License. © 2015 <NLCI>. Some rights reserved."
 LHSFlags                ()
 RHSFlags                ()

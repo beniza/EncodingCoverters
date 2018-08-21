@@ -6,13 +6,14 @@
 ;   Left-hand side Character Map Window Position = 807,0,457,447
 ;   Right-hand side Character Map Window Position = 760,235,776,497
 
-EncodingName            "a canonical name that uniquely identifies this mapping table from all others"
-DescriptiveName         "a string that describes the mapping"
-Version                 "1"
-Contact                 "mailto:user@addr"
-RegistrationAuthority   "the organization responsible for the encoding"
-RegistrationName        "the name and version of the mapping, as recognized by that authority"
-Copyright               "© 2018 <CompanyName>. All rights reserved."
+EncodingName            "Other-Malayalam"
+DescriptiveName         "For an unknown Malayalam font"
+Version                 "1.0"
+Contact                 "mailto:sg@nlife.in"
+CreatedBy               "Varghese, Benjamin C."
+RegistrationAuthority   "NLCI"
+RegistrationName        "in.nlci.enconv.other.mlym"
+Copyright               "Released under MIT License. © 2002-2016 NLCI. Some rights reserved."
 LHSFlags                ()
 RHSFlags                ()
 

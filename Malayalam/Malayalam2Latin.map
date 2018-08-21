@@ -6,15 +6,14 @@
 ;   Left-hand side Character Map Window Position = 658,0,863,525
 ;   Right-hand side Character Map Window Position = 658,447,457,377
 
-LHSName                 "mlym"
-RHSName                 "latn"
-LHSDescription          "Malayalam Script"
-RHSDescription          "Malayalam in Latin Script"
+EncodingName            "MLYM2LATN-Transliteration-Simplified"
 Version                 "0.1"
 Contact                 "mailto:beniza@gmail.com"
+CreatedBy               "Varghese, Benjamin C."
 RegistrationAuthority   "Nalla Malayalam Facebook Community (https://www.facebook.com/groups/nallamalayalam)"
-RegistrationName        "Malayalam to Latin Transliteration by Nalla Malayalam Based on an adapted transliteration scheme found here http://www.unicode.org/cldr/charts/latest/transforms/Latin-Indic.html"
-Copyright               "© 2016 <NallaMalayalam>. CC-BY-SA."
+RegistrationName        "Malayalam to Simplified Latin Transliteration" 
+RegistrationName        "me.beniza.enconv.transliteration.simplified.malym2latn"
+Copyright               "Released under MIT License. © 2016 <Varghese, Benjamin C.>. Some rights reserved."
 LHSFlags                ()
 RHSFlags                ()
 

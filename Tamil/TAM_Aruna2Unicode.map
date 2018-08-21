@@ -7,11 +7,12 @@
 
 EncodingName            "TAM_Aruna2Unicode"
 DescriptiveName         "To convert text created using Tamil Aruna font to Unicode"
-Version                 "1"
-Contact                 "mailto:beniza@gmail.com"
-RegistrationAuthority   "beniza"
-RegistrationName        "ATSP_Aruna2Unicode_BiDirection"
-Copyright               "© 2009 Beniza. Some rights reserved."
+Version                 "1.0"
+Contact                 "mailto:sg@nlife.in"
+CreatedBy               "Varghese, Benjamin C."
+RegistrationAuthority   "NLCI"
+RegistrationName        "in.nlci.enconv.aruna.taml"
+Copyright               "Released under MIT License. © 2009 <NLCI>. Some rights reserved."
 LHSFlags                ()
 RHSFlags                ()
 

@@ -15,9 +15,13 @@
 EncodingName			"CDAC-ISFOC_DEVANAGARI"
 DescriptiveName		    "Winscript and iLeap Devanagari"
 Version			        "1.2"
-Contact			        "mailto:vijaya_kumar@kastanet.org"
+Contact			        "mailto:sg@nlife.in"
+CreatedBy               "Vijayakumar"
 RegistrationAuthority	"NLCI"
-RegistrationName		"Devanagari-Winscript"
+RegistrationName        "in.nlci.enconv.winscript.deva"
+Copyright               "Released under MIT License. © 2015 <NLCI>. Some rights reserved."
+LHSFlags                ()
+RHSFlags                ()
 
 
 
