@@ -10,13 +10,14 @@ EncodingName            "GUJ_CDAC2Unicode"
 DescriptiveName         "To convert text created using CDAC/WinScript Gujarati fonts"
 Version                 "1"
 Contact                 "mailto:beniza@gmail.com"
-RegistrationAuthority   "beniza"
+RegistrationAuthority   "NLCI"
 RegistrationName        "CDAC/WinScript2Unicode"
-Copyright               "© 2010 beniza. Some rights reserved."
+Copyright               "© 2010 NLCI. Some rights reserved."
 LHSFlags                ()
 RHSFlags                ()
 
 ;================================================================================================================================================================================
+; Status: Incomplete
 ;Existing Issues in the table
 ;================================================================================================================================================================================
 ;0xAF > is not handled in this project as I don't to which Uni_sequence it should be matched
