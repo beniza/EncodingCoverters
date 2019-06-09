@@ -20,6 +20,9 @@ There are several major challenges involved in transliterating from one language
   * **Encoding issues**:
     * Keyboarding systems (`zw-standardization`)
 
+| Previous | Home | Next |
+| :--- | :---: | ---: |
+| # | # | [Urdu-Devanagari Mappings](./docs/ur-dev-map-tables.md) |
 
 ## References
 
