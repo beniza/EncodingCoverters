@@ -14,7 +14,11 @@ There are several major challenges involved in transliterating from one language
   * **Contextual substitutions**: This happens when a character takes a different shape according to the context it appear. 
     *(give an example of free and bound vowels in Hindi, and an example from Urdu)*
 
-  * **Inconsistent spellings**: These are not accidental spelling mistakes, but the different spelling choices due to socio-cultural or geographical factors. (mez or mej/ quda or khuda). 
+  * **Inconsistent spellings**: These are not accidental spelling mistakes, but the differences by deliberate spelling choices.
+    * Socio-cultural or geographical factors. (precense of silent Urdu phonemes `baRi-he` or `ain`)
+    * Phonemic mismatches (`mez` or `mej`/`quda` or `khuda`).
+    * Keyboarding systems (`zw-standardization`)
+
 
 ## References
 
