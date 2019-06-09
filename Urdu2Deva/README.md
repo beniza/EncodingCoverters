@@ -17,6 +17,7 @@ There are several major challenges involved in transliterating from one language
   * **Inconsistent spellings**: These are not accidental spelling mistakes, but the differences by deliberate spelling choices.
     * Socio-cultural or geographical factors. (precense of silent Urdu phonemes `baRi-he` or `ain`)
     * Phonemic mismatches (`mez` or `mej`/`quda` or `khuda`).
+  * **Encoding issues**:
     * Keyboarding systems (`zw-standardization`)
 
 
