@@ -37,7 +37,7 @@ pass(Unicode)
 0x0d7f > 0x0d15 0x0d4d
 
 ;Bypass contextual substitutions
-0x0d1f 0x0d4d 0d1f > kannada_letter_tta kannada_sign_virama kannada_letter_tta
+0x0d1f 0x0d4d 0x0d1f > kannada_letter_tta kannada_sign_virama kannada_letter_tta
 
 ; Substitution of Malayalam conjuncts with Nasal + Plosive
 0x0d19 0x0d4d 0x0d15 > kannada_sign_anusvara kannada_letter_ga ; ങ്ക എഴുതുമ്പോള്‍ ക യ്ക്കു പകരം ഗ എഴുതണം
@@ -49,7 +49,7 @@ pass(Unicode)
 0x0d23 0x0d4d 0x0d1f > kannada_sign_anusvara kannada_letter_dda
 0x0d2e 0x0d4d 0x0d2a > kannada_sign_anusvara kannada_letter_ba
 0x0d1e 0x0d4d 0x0d1a > kannada_sign_anusvara kannada_letter_ja ; 
-
+0x0d31 0x0d4d 0x0d31 > kannada_letter_ca kannada_sign_virama kannada_letter_ca
 
 pass(Unicode)
 ; 0x0D00	>	0x0C80
