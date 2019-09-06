@@ -40,7 +40,7 @@ pass(Unicode)
 0x0d19 0x0d4d 0x0d15 > kannada_sign_anusvara kannada_letter_ga ; ങ്ക എഴുതുമ്പോള്‍ ക യ്ക്കു പകരം ഗ എഴുതണം
 0x0d7b 0x0d4d 0x0d31 > kannada_sign_anusvara kannada_letter_ca ; ന്റ - യില്‍ റ -യ്ക്കു  പകരം അ വരുന്നതുകൊണ്ട് റ യെ ജ -യാക്കുവാനും പറ്റുന്നില്ല. അവര്‍ക്ക് വേണ്ടത് “അം + ജ”
 0x0d28 0x0d4d 0x0d26 > kannada_sign_anusvara kannada_letter_da
-0x0d28 0x0d4d 0x0d24 > kannada_sign_anusvara kannada_letter_ta
+0x0d28 0x0d4d 0x0d24 > kannada_sign_anusvara kannada_letter_da
 0x0d28 0x0d4d 0x0d28 > kannada_sign_anusvara kannada_letter_na
 0x0d28 0x0d4d 0x0d31 > kannada_sign_anusvara  kannada_letter_ja
 0x0d23 0x0d4d 0x0d1f > kannada_sign_anusvara kannada_letter_dda
