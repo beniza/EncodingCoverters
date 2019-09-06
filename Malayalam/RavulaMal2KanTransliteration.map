@@ -44,7 +44,7 @@ pass(Unicode)
 0x0d28 0x0d4d 0x0d28 > kannada_sign_anusvara kannada_letter_na
 0x0d28 0x0d4d 0x0d31 > kannada_sign_anusvara  kannada_letter_ja
 0x0d23 0x0d4d 0x0d1f > kannada_sign_anusvara kannada_letter_dda
-0x0d2e 0x0d4d 0x0d2a > kannada_sign_anusvara kannada_letter_pa
+0x0d2e 0x0d4d 0x0d2a > kannada_sign_anusvara kannada_letter_ba
 0x0d1e 0x0d4d 0x0d1a > kannada_sign_anusvara kannada_letter_ja ; 
 
 
