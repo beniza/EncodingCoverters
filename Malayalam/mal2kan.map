@@ -2,7 +2,7 @@
 ;   Conversion Type = Unicode
 ;   Left-hand side font = Rachana;16.2
 ;   Right-hand side font = Arial Unicode MS;16.2
-;   Main Window Position = 1042,113,874,877
+;   Main Window Position = 0,0,874,877
 ;   Left-hand side Character Map Window Position = 874,0,606,549
 ;   Right-hand side Character Map Window Position = 869,574,606,456
 
@@ -19,13 +19,12 @@ RHSFlags                ()
 
 ;========== TODO List ============
 ; ഴ യുടെ മാപ്പിംഗ്\
-; ന്ന =x> ನ್ನ => ಂನ [x]
-; ന്ദ =x> ನ್ದ; => ಂದ [x]
-; ന്ത =x> ನ್ತ => ಂತ [x]
-; ണ്ട =x> ಣ್ಟ => ಂಟ [x]
-; മ്പ =x> ಮ್ಪ => ಂಪ [x]
-; ഞ്ച =x> ಞ್ಚ => ಂಚ [x]
-; ങ്ക എഴുതുമ്പോള്‍ ക യ്ക്കു പകരം ഗ എഴുതണം [x]
+; ന്ന =x> ನ್ನ => ಂನ
+; ന്ദ =x> ನ್ದ; => ಂದ
+; ന്ത =x> ನ್ತ => ಂತ
+; ണ്ട =x> ಣ್ಟ => ಂಟ
+; മ്പ =x> ಮ್ಪ => ಂಪ
+; ഞ്ച =x> ಞ್ಚ => ಂಚ
 ;=================================
 
 pass(Unicode)
@@ -37,15 +36,13 @@ pass(Unicode)
 0x0d7f > 0x0d15 0x0d4d
 
 ; Substitution of Malayalam conjuncts with Nasal + Plosive
-0x0d19 0x0d4d 0x0d15 > kannada_sign_anusvara kannada_letter_ga ; ങ്ക എഴുതുമ്പോള്‍ ക യ്ക്കു പകരം ഗ എഴുതണം
-0x0d7b 0x0d4d 0x0d31 > kannada_sign_anusvara kannada_letter_ca ; ന്റ - യില്‍ റ -യ്ക്കു  പകരം അ വരുന്നതുകൊണ്ട് റ യെ ജ -യാക്കുവാനും പറ്റുന്നില്ല. അവര്‍ക്ക് വേണ്ടത് “അം + ജ”
+0x0d19 0x0d4d 0x0d15 > kannada_sign_anusvara kannada_letter_ka
+0x0d7b 0x0d4d 0x0d31 > kannada_sign_anusvara kannada_letter_rra
 0x0d28 0x0d4d 0x0d26 > kannada_sign_anusvara kannada_letter_da
 0x0d28 0x0d4d 0x0d24 > kannada_sign_anusvara kannada_letter_ta
-0x0d28 0x0d4d 0x0d28 > kannada_sign_anusvara kannada_letter_na
-0x0d28 0x0d4d 0x0d31 > kannada_sign_anusvara  kannada_letter_ja
-0x0d23 0x0d4d 0x0d1f > kannada_sign_anusvara kannada_letter_dda
+0x0d23 0x0d4d 0x0d1f > kannada_sign_anusvara kannada_letter_tta
 0x0d2e 0x0d4d 0x0d2a > kannada_sign_anusvara kannada_letter_pa
-0x0d1e 0x0d4d 0x0d1a > kannada_sign_anusvara kannada_letter_ja ; 
+0x0d1e 0x0d4d 0x0d1a > kannada_sign_anusvara kannada_letter_ca
 
 
 pass(Unicode)
@@ -98,7 +95,7 @@ pass(Unicode)
 0x0D2E	>	0x0CAE
 0x0D2F	>	0x0CAF
 0x0D30	>	0x0CB0
-0x0D31	>	0x0CB0 ; റ യ്‍ക്കു പകരം ആയി മാറിപ്പോകുന്നു
+0x0D31	>	0x0CB1
 0x0D32	>	0x0CB2
 0x0D33	>	0x0CB3
 0x0D34	>	0x0CB4

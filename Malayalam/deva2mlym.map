@@ -1,0 +1,23 @@
+﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 7/1/2019.
+;   Conversion Type = Legacy_to_from_Unicode
+;   Left-hand side font = Arial Unicode MS;10.8
+;   Right-hand side font = Rachana;16.2
+;   Main Window Position = 0,0,874,877
+;   Left-hand side Character Map Window Position = 874,0,606,549
+;   Right-hand side Character Map Window Position = 874,549,606,549
+
+EncodingName            "a canonical name that uniquely identifies this mapping table from all others"
+DescriptiveName         "a string that describes the mapping"
+Version                 "1"
+Contact                 "mailto:user@addr"
+RegistrationAuthority   "the organization responsible for the encoding"
+RegistrationName        "the name and version of the mapping, as recognized by that authority"
+Copyright               "© 2019 <CompanyName>. All rights reserved."
+LHSFlags                ()
+RHSFlags                ()
+
+pass(Unicode)
+45 >
+
+0x0915 <> 0x0d15
+0x0916 <> 0x0d16
