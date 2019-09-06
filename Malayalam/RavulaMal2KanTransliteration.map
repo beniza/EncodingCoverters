@@ -8,7 +8,7 @@
 
 EncodingName            "Malayalam2KannadaTransliteration"
 DescriptiveName         "Unidirectional Transliteration from Malayalam to Kannada"
-Version                 "0.1"
+Version                 "0.03"
 Contact                 "mailto:beniza@gamil.com"
 RegistrationAuthority   "HiDreamz"
 RegistrationName        "com.hidreamz.teckit.mal2kan"
