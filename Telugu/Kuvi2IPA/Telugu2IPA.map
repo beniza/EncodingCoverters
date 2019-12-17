@@ -1,0 +1,98 @@
+﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 12/17/2019.
+;   Conversion Type = Legacy_to_from_Unicode
+;   Left-hand side font = Gautami;18
+;   Right-hand side font = Charis SIL;15.75
+;   Main Window Position = 0,0,658,713
+;   Left-hand side Character Map Window Position = 658,0,457,447
+;   Right-hand side Character Map Window Position = 658,447,457,447
+
+EncodingName            "Kuvi2IPA"
+DescriptiveName         "A scale down Telugu to IPA converter for Kuvi Language"
+Version                 "1"
+Contact                 "mailto:beniza@gmail.com"
+RegistrationAuthority   "New Life Computer Institute"
+RegistrationName        "in.nlci.encodingconverter.kuvi2ipa"
+Copyright               "© 2019 NLCI. CC-BY-SA."
+LHSFlags                ()
+RHSFlags                ()
+
+pass(Unicode)
+
+'ఆ' <> 'aː'
+'ద' <> 'd̪'
+'ి' <> 'i'
+'క' <> 'k'
+'ా' <> 'aː'
+'ం' <> 'm'
+'డ' <> 'd'
+' ' <> ' '
+'్' >
+'త' <> 't̪'
+'ొ' <> 'o'
+'ల' <> 'l'
+; '్' > ''
+'మ' <> 'm'
+'ూ' <> 'uː'
+'ు' <> 'u'
+'హ' <> 'h'
+'ప' <> 'p'
+'ర' <> 'ɾ'
+',' <> ','
+'గ' <> 'g'
+'బ' <> 'b'
+'చ' <> 't͡ʃ'
+'ె' <> 'e'
+'స' <> 's'
+'.' <> '.'
+'ఏ' <> 'eː'
+'న' <> 'n'
+'య' <> 'y'
+'అ' <> 'a'
+'వ' <> 'ʋ'
+'ణ' <> 'ɳ'
+'ఎ' <> 'e'
+'ఁ' <> '̃̃'
+'జ' <> 'd͡ʒ'
+'ీ' <> 'iː'
+'ఉ' <> 'u'
+'ఇ' <> 'i'
+'ట' <> 'ʈ'
+'ో' <> 'oː'
+'ే' <> 'eː'
+'ఓ' <> 'oː'
+'ఈ' <> 'iː'
+'(' <> '('
+')' <> ')'
+; '‍' <> ''
+; '‌' <> ''
+'ఊ' <> 'uː'
+'ఒ' <> 'o'
+'శ' <> 'ʃ'
+'ఙ' <> 'ŋ'
+'?' <> '?'
+'ష' <> 'ɕ'
+'ఐ' <> 'aⁱ'
+'+' <> '+'
+':' <> 'ː'
+'\' <> '\'
+'*' <> '*'
+'ై' <> 'aⁱ'
+'ౌ' <> 'aᵘ'
+'-' <> '-'
+';' <> ';'
+'_' <> '_'
+'ఖ' <> 'kʰ'
+'భ' <> 'bʰ'
+'“' <> '“'
+'‘' <> '‘'
+'’' <> '’'
+'”' <> '”'
+'|' <> '|'
+'!' <> '!'
+'ఔ' <> 'aᵘ'
+'<' <> '<'
+'@' <> '@'
+'>' <> '>'
+'/' <> '/'
+'…' <> '…'
+
