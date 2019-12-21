@@ -4,7 +4,7 @@
 ;   Right-hand side font = Charis SIL;15.75
 ;   Main Window Position = 0,0,658,713
 ;   Left-hand side Character Map Window Position = 658,0,457,447
-;   Right-hand side Character Map Window Position = 658,447,457,447
+;   Right-hand side Character Map Window Position = 658,447,457,413
 
 EncodingName            "Kuvi2IPA"
 DescriptiveName         "A scale down Telugu to IPA converter for Kuvi Language"
@@ -17,16 +17,19 @@ LHSFlags                ()
 RHSFlags                ()
 
 pass(Unicode)
-
+uniclass[cons] = (0x0c15 .. 0x0c39)
+uniclass[vowSigns] = (0x0c3e .. 0x0c4d)
+'ి' <> 'i'
+'క' <> 'ka'
+'క' / _[vowSigns] > 'k'
 'ఆ' <> 'aː'
 'ద' <> 'd̪'
 'ి' <> 'i'
-'క' <> 'k'
+; 'క' <> 'k'
 'ా' <> 'aː'
 'ం' <> 'm'
 'డ' <> 'd'
 ' ' <> ' '
-'్' >
 'త' <> 't̪'
 'ొ' <> 'o'
 'ల' <> 'l'
@@ -51,7 +54,7 @@ pass(Unicode)
 'వ' <> 'ʋ'
 'ణ' <> 'ɳ'
 'ఎ' <> 'e'
-'ఁ' <> '̃̃'
+'ఁ' <> '◌̃'
 'జ' <> 'd͡ʒ'
 'ీ' <> 'iː'
 'ఉ' <> 'u'
@@ -96,3 +99,5 @@ pass(Unicode)
 '/' <> '/'
 '…' <> '…'
 
+pass(unicode)
+'a్' >
