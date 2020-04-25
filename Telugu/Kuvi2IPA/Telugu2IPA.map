@@ -21,71 +21,24 @@ uniclass[cons] = (0x0c15 .. 0x0c39)
 uniclass[vowSigns] = (0x0c3e .. 0x0c4d)
 'ి' <> 'i'
 'క' <> 'ka'
-'క' / _[vowSigns] > 'k'
-'ఆ' <> 'aː'
-'ద' <> 'd̪'
-'ి' <> 'i'
-; 'క' <> 'k'
-'ా' <> 'aː'
-'ం' <> 'm'
-'డ' <> 'd'
-' ' <> ' '
-'త' <> 't̪'
-'ొ' <> 'o'
-'ల' <> 'l'
-; '్' > ''
-'మ' <> 'm'
-'ూ' <> 'uː'
-'ు' <> 'u'
-'హ' <> 'h'
-'ప' <> 'p'
-'ర' <> 'ɾ'
-',' <> ','
-'గ' <> 'g'
-'బ' <> 'b'
-'చ' <> 't͡ʃ'
-'ె' <> 'e'
-'స' <> 's'
-'.' <> '.'
-'ఏ' <> 'eː'
-'న' <> 'n'
-'య' <> 'y'
-'అ' <> 'a'
-'వ' <> 'ʋ'
-'ణ' <> 'ɳ'
-'ఎ' <> 'e'
-'ఁ' <> '◌̃'
-'జ' <> 'd͡ʒ'
-'ీ' <> 'iː'
-'ఉ' <> 'u'
-'ఇ' <> 'i'
-'ట' <> 'ʈ'
-'ో' <> 'oː'
-'ే' <> 'eː'
-'ఓ' <> 'oː'
-'ఈ' <> 'iː'
+'క' / _[vowSigns] <> 'k'
+
+
+pass(unicode)
+; Punctuations and marks
+
 '(' <> '('
 ')' <> ')'
 ; '‍' <> ''
 ; '‌' <> ''
-'ఊ' <> 'uː'
-'ఒ' <> 'o'
-'శ' <> 'ʃ'
-'ఙ' <> 'ŋ'
 '?' <> '?'
-'ష' <> 'ɕ'
-'ఐ' <> 'aⁱ'
 '+' <> '+'
 ':' <> 'ː'
 '\' <> '\'
 '*' <> '*'
-'ై' <> 'aⁱ'
-'ౌ' <> 'aᵘ'
 '-' <> '-'
 ';' <> ';'
 '_' <> '_'
-'ఖ' <> 'kʰ'
-'భ' <> 'bʰ'
 '“' <> '“'
 '‘' <> '‘'
 '’' <> '’'
@@ -100,4 +53,114 @@ uniclass[vowSigns] = (0x0c3e .. 0x0c4d)
 '…' <> '…'
 
 pass(unicode)
+
+uniclass[teluCons] = (telugu_letter_ka telugu_letter_kha telugu_letter_ga telugu_letter_gha telugu_letter_nga telugu_letter_ca telugu_letter_cha telugu_letter_ja telugu_letter_jha telugu_letter_nya telugu_letter_tta telugu_letter_ttha telugu_letter_dda telugu_letter_ddha telugu_letter_nna telugu_letter_ta telugu_letter_tha telugu_letter_da telugu_letter_dha telugu_letter_na telugu_letter_pa telugu_letter_pha telugu_letter_ba telugu_letter_bha telugu_letter_ma telugu_letter_ya telugu_letter_ra telugu_letter_rra telugu_letter_la telugu_letter_lla telugu_letter_llla telugu_letter_va telugu_letter_sha telugu_letter_ssa telugu_letter_sa telugu_letter_ha)
+uniClass[teluVowelSigns] = (telugu_vowel_sign_aa telugu_vowel_sign_i telugu_vowel_sign_ii telugu_vowel_sign_u telugu_vowel_sign_uu telugu_vowel_sign_vocalic_r telugu_vowel_sign_vocalic_rr telugu_vowel_sign_e telugu_vowel_sign_ee telugu_vowel_sign_ai telugu_vowel_sign_o telugu_vowel_sign_oo telugu_vowel_sign_au telugu_sign_virama telugu_length_mark telugu_ai_length_mark)
+
+uniclass[teluCons1] = (telugu_letter_ka telugu_letter_kha)
+uniclass[teluCons2] = ("k" "kh")
+[teluCons]=tC /_ [teluVowelSigns] > @tC "_"
+pass(unicode)
+"a_" > 
+; Telugu alphabets
+telugu_sign_candrabindu <> "candrabindu" ; ఁ
+telugu_sign_anusvara <> "anusvara" ; ం
+telugu_sign_visarga <> "visarga" ; ః
+; telugu_sign_combining_anusvara_above <> "above" ; ఄ
+telugu_letter_a <> "a" ; అ
+telugu_letter_aa <> "aa" ; ఆ
+telugu_letter_i <> "i" ; ఇ
+telugu_letter_ii <> "ii" ; ఈ
+telugu_letter_u <> "u" ; ఉ
+telugu_letter_uu <> "uu" ; ఊ
+telugu_letter_vocalic_r <> "r" ; ఋ
+telugu_letter_vocalic_l <> "l" ; ఌ
+telugu_letter_e <> "e" ; ఎ
+telugu_letter_ee <> "ee" ; ఏ
+telugu_letter_ai <> "ai" ; ఐ
+telugu_letter_o <> "o" ; ఒ
+telugu_letter_oo <> "oo" ; ఓ
+telugu_letter_au <> "au" ; ఔ
+telugu_letter_ka <> "ka" ; క
+telugu_letter_kha <> "kha" ; ఖ
+telugu_letter_ga <> "ga" ; గ
+telugu_letter_gha <> "gha" ; ఘ
+telugu_letter_nga <> "nga" ; ఙ
+telugu_letter_ca <> "ca" ; చ
+telugu_letter_cha <> "cha" ; ఛ
+telugu_letter_ja <> "ja" ; జ
+telugu_letter_jha <> "jha" ; ఝ
+telugu_letter_nya <> "nya" ; ఞ
+telugu_letter_tta <> "tta" ; ట
+telugu_letter_ttha <> "ttha" ; ఠ
+telugu_letter_dda <> "dda" ; డ
+telugu_letter_ddha <> "ddha" ; ఢ
+telugu_letter_nna <> "nna" ; ణ
+telugu_letter_ta <> "ta" ; త
+telugu_letter_tha <> "tha" ; థ
+telugu_letter_da <> "da" ; ద
+telugu_letter_dha <> "dha" ; ధ
+telugu_letter_na <> "na" ; న
+telugu_letter_pa <> "pa" ; ప
+telugu_letter_pha <> "pha" ; ఫ
+telugu_letter_ba <> "ba" ; బ
+telugu_letter_bha <> "bha" ; భ
+telugu_letter_ma <> "ma" ; మ
+telugu_letter_ya <> "ya" ; య
+telugu_letter_ra <> "ra" ; ర
+telugu_letter_rra <> "rra" ; ఱ
+telugu_letter_la <> "la" ; ల
+telugu_letter_lla <> "lla" ; ళ
+telugu_letter_llla <> "llla" ; ఴ
+telugu_letter_va <> "va" ; వ
+telugu_letter_sha <> "sha" ; శ
+telugu_letter_ssa <> "ssa" ; ష
+telugu_letter_sa <> "sa" ; స
+telugu_letter_ha <> "ha" ; హ
+telugu_sign_avagraha <> "avagraha" ; ఽ
+telugu_vowel_sign_aa <> "aa" ; ా
+telugu_vowel_sign_i <> "i" ; ి
+telugu_vowel_sign_ii <> "ii" ; ీ
+telugu_vowel_sign_u <> "u" ; ు
+telugu_vowel_sign_uu <> "uu" ; ూ
+telugu_vowel_sign_vocalic_r <> "r" ; ృ
+telugu_vowel_sign_vocalic_rr <> "rr" ; ౄ
+telugu_vowel_sign_e <> "e" ; ె
+telugu_vowel_sign_ee <> "ee" ; ే
+telugu_vowel_sign_ai <> "ai" ; ై
+telugu_vowel_sign_o <> "o" ; ొ
+telugu_vowel_sign_oo <> "oo" ; ో
+telugu_vowel_sign_au <> "au" ; ౌ
+telugu_sign_virama <> "virama" ; ్
+telugu_length_mark <> "mark" ; ౕ
+telugu_ai_length_mark <> "mark" ; ౖ
+telugu_letter_tsa <> "tsa" ; ౘ
+telugu_letter_dza <> "dza" ; ౙ
+; telugu_letter_rrra <> "rrra" ; ౚ
+telugu_letter_vocalic_rr <> "rr" ; ౠ
+telugu_letter_vocalic_ll <> "ll" ; ౡ
+telugu_vowel_sign_vocalic_l <> "l" ; ౢ
+telugu_vowel_sign_vocalic_ll <> "ll" ; ౣ
+telugu_digit_zero <> "zero" ; ౦
+telugu_digit_one <> "one" ; ౧
+telugu_digit_two <> "two" ; ౨
+telugu_digit_three <> "three" ; ౩
+telugu_digit_four <> "four" ; ౪
+telugu_digit_five <> "five" ; ౫
+telugu_digit_six <> "six" ; ౬
+telugu_digit_seven <> "seven" ; ౭
+telugu_digit_eight <> "eight" ; ౮
+telugu_digit_nine <> "nine" ; ౯
+telugu_fraction_digit_zero_for_odd_powers_of_four <> "four" ; ౸
+telugu_fraction_digit_one_for_odd_powers_of_four <> "four" ; ౹
+telugu_fraction_digit_two_for_odd_powers_of_four <> "four" ; ౺
+telugu_fraction_digit_three_for_odd_powers_of_four <> "four" ; ౻
+telugu_fraction_digit_one_for_even_powers_of_four <> "four" ; ౼
+telugu_fraction_digit_two_for_even_powers_of_four <> "four" ; ౽
+telugu_fraction_digit_three_for_even_powers_of_four <> "four" ; ౾
+telugu_sign_tuumu <> "tuumu" ; ౿
+
+pass(unicode)
+; get rid of the virama sign
 'a్' >
+
