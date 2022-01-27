@@ -1,13 +1,15 @@
-﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 1/25/2022.
+﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 1/27/2022.
 ;   Conversion Type = Unicode_to_from_Unicode
-;   Left-hand side font = Code2000;11.25
-;   Right-hand side font = Rachana;11.25
-;   Main Window Position = 1358,-8,1382,744
-;   Left-hand side Character Map Window Position = 658,0,443,529
-;   Right-hand side Character Map Window Position = 648,285,586,435
+;   Left-hand side font = Code2000;14.25
+;   Right-hand side font = Rachana;15.75
+;   Main Window Position = 1354,0,755,735
+;   Left-hand side Character Map Window Position = 2140,64,576,464
+;   Right-hand side Character Map Window Position = 494,46,727,492
 
-EncodingName            "a canonical name that uniquely identifies this mapping table from all others"
-DescriptiveName         "a string that describes the mapping"
+LHSName                 "canonical name of the 'source' encoding or left-hand side of the conversion"
+RHSName                 "canonical name of the 'target' encoding or right-hand side of the conversion"
+LHSDescription          "description for the left-hand side of the mapping"
+RHSDescription          "description for the right-hand side of the mapping"
 Version                 "1"
 Contact                 "mailto:user@addr"
 RegistrationAuthority   "the organization responsible for the encoding"
@@ -15,7 +17,8 @@ RegistrationName        "the name and version of the mapping, as recognized by t
 Copyright               "© 2022 <CompanyName>. All rights reserved."
 LHSFlags                ()
 RHSFlags                ()
-pass(unicode)
+
+pass(Unicode)
 
 class[deva_marks]=(0x0901 .. 0x0903)
 class[mala_marks]=(0x0d01 .. 0x0d03)
@@ -33,8 +36,11 @@ class[mala_news]=(0x0d60 .. 0x0d63)
 class[deva_let]=(0x0966 .. 0x096f)
 class[mala_let]=(0x0d66 .. 0x0d6f)
 
+class[deva_nomatch] = (U+0900 U+0904 U+090D U+0911 U+093A..U+093C U+0945 U+0949 U+094E U+094F U+0950..U+095F U+0964 U+0965 U+0970..U+097F)
 
 
+
+[deva_nomatch] > U+00BF ; inverted question mark: to represent characters that do not have a match in Malayalam
 [deva_marks] <> [mala_marks]
 [deva_vowels] <> [mala_vowels]
 [deva_cons]<>[mala_cons]
