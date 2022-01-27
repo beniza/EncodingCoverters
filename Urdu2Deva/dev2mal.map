@@ -1,0 +1,44 @@
+﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 1/25/2022.
+;   Conversion Type = Unicode_to_from_Unicode
+;   Left-hand side font = Code2000;11.25
+;   Right-hand side font = Rachana;11.25
+;   Main Window Position = 1358,-8,1382,744
+;   Left-hand side Character Map Window Position = 658,0,443,529
+;   Right-hand side Character Map Window Position = 648,285,586,435
+
+EncodingName            "a canonical name that uniquely identifies this mapping table from all others"
+DescriptiveName         "a string that describes the mapping"
+Version                 "1"
+Contact                 "mailto:user@addr"
+RegistrationAuthority   "the organization responsible for the encoding"
+RegistrationName        "the name and version of the mapping, as recognized by that authority"
+Copyright               "© 2022 <CompanyName>. All rights reserved."
+LHSFlags                ()
+RHSFlags                ()
+pass(unicode)
+
+class[deva_marks]=(0x0901 .. 0x0903)
+class[mala_marks]=(0x0d01 .. 0x0d03)
+
+class[deva_vowels]=(0x0905..0x090c 0x090e..0x0910 0x0912..0x0914)
+class[mala_vowels]=(0x0d05..0x0d0c 0x0d0e..0x0d10 0x0d12..0x0d14)
+class[deva_cons]=(0x0915 .. 0x0993)
+class[mala_cons]=(0x0d15 .. 0x0d93)
+class[deva_letters]=(0x093d .. 0x0944)
+class[mala_letters]=(0x0d3d .. 0x0d44)
+class[deva_others]=(0x0946 .. 0x094d)
+class[mala_others]=(0x0d46 .. 0x0d4d)
+class[deva_news]=(0x0960 .. 0x0963)
+class[mala_news]=(0x0d60 .. 0x0d63)
+class[deva_let]=(0x0966 .. 0x096f)
+class[mala_let]=(0x0d66 .. 0x0d6f)
+
+
+
+[deva_marks] <> [mala_marks]
+[deva_vowels] <> [mala_vowels]
+[deva_cons]<>[mala_cons]
+[deva_letters]<>[mala_letters]
+[deva_others]<>[mala_others]
+[deva_news]<>[mala_news]
+[deva_let]<>[mala_let]
