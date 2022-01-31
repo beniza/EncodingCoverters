@@ -2,9 +2,9 @@
 ;   Conversion Type = Unicode_to_from_Unicode
 ;   Left-hand side font = Annapurna SIL;14.25
 ;   Right-hand side font = Rachana;15.75
-;   Main Window Position = 2,7,748,721
-;   Left-hand side Character Map Window Position = 733,6,641,484
-;   Right-hand side Character Map Window Position = 1361,0,735,493
+;   Main Window Position = 0,0,747,728
+;   Left-hand side Character Map Window Position = 733,6,633,488
+;   Right-hand side Character Map Window Position = 1361,0,743,492
 
 LHSName                 "canonical name of the 'source' encoding or left-hand side of the conversion"
 RHSName                 "canonical name of the 'target' encoding or right-hand side of the conversion"
@@ -21,9 +21,15 @@ RHSFlags                ()
 pass(Unicode)
 class[deva_cons]=(U+0915 .. U+092F U+0931 .. U+0939)
 class[mala_cons]=(U+0d15 .. U+0D2F U+0D31 .. U+0d39)
+class[ws] = (0x9 0xA 0xD 0x20)
+class[punct] = (0x21 .. 0x2F 0x3A .. 0x40 0x5E .. 0x60 0x7B .. 0x7F)
+
 
 ; Consonant clusters
 ;[deva_cons]=dc / _ [deva_cons] <> @dc U+0D4D / _ [mala_cons]
+
+; Handling implicit virama in word filnal consonants in Devanagari
+[deva_cons]=dc / _ (# | [ws] | [punct]) <> @dc U+0D4D
 
 pass(Unicode)
 
@@ -49,7 +55,7 @@ class[deva_fullstop]=(U+0964)
 class[mala_fullstop]=(".")
 
 class[deva_nomatch] = (U+0900 U+0904 U+090D U+0911 U+093A..U+093C U+0945\
-                       U+0949 U+094E U+094F U+0950..U+095F U+0965\
+                       U+0949 U+094E U+094F U+0950..U+095F\
                        U+0970..U+097F)
 class[mala_nomatch] = (U+0d00 U+0d04 U+0D0D U+0D11 U+0D3A..U+0D3C U+0D45\
                        U+0D49 U+0D4E U+0D4F U+0D50..U+0D5F U+0D65\
@@ -76,9 +82,13 @@ U+0930 / (# | [ws] | [punct]) _ <> U+0d30
 [deva_cons]<>[mala_cons]
 [deva_vowel_sign]<>[mala_vowel_sign]
 [deva_virama] <> [mala_virama]
-[deva_fullstop] <> [mala_fullstop]
+;[deva_fullstop] <> [mala_fullstop]
 [deva_ri_lu]<>[mala_ri_lu]
 [deva_digits]<>[mala_digits]
 
 pass(unicode)
+class[ws] = (0x9 0xA 0xD 0x20)
+class[punct] = (0x21 .. 0x2F 0x3A .. 0x40 0x5E .. 0x60 0x7B .. 0x7F)
+
+"ന്" / ( # | [ws] | [punct] ) _ ( # | [ws] | [punct] )> "ന"
 
