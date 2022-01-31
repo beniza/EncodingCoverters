@@ -1,10 +1,10 @@
 ﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 1/27/2022.
 ;   Conversion Type = Unicode_to_from_Unicode
-;   Left-hand side font = Noto Sans Cond;14.25
+;   Left-hand side font = Annapurna SIL;14.25
 ;   Right-hand side font = Rachana;15.75
-;   Main Window Position = 2,7,748,728
-;   Left-hand side Character Map Window Position = 734,7,634,475
-;   Right-hand side Character Map Window Position = 1361,0,843,564
+;   Main Window Position = 2,7,748,721
+;   Left-hand side Character Map Window Position = 733,6,641,484
+;   Right-hand side Character Map Window Position = 1361,0,735,493
 
 LHSName                 "canonical name of the 'source' encoding or left-hand side of the conversion"
 RHSName                 "canonical name of the 'target' encoding or right-hand side of the conversion"
@@ -19,33 +19,33 @@ LHSFlags                ()
 RHSFlags                ()
 
 pass(Unicode)
-class[deva_cons]=(0x0915 .. U+092F U+0931 .. 0x0939)
-class[mala_cons]=(0x0d15 .. 0x0D2F 0x0D31 .. 0x0d39)
+class[deva_cons]=(U+0915 .. U+092F U+0931 .. U+0939)
+class[mala_cons]=(U+0d15 .. U+0D2F U+0D31 .. U+0d39)
 
 ; Consonant clusters
-;[deva_cons]=dc / _ [deva_cons] <> @dc 0x0D4D / _ [mala_cons]
+;[deva_cons]=dc / _ [deva_cons] <> @dc U+0D4D / _ [mala_cons]
 
 pass(Unicode)
 
 class[ws] = (0x9 0xA 0xD 0x20)
 class[punct] = (0x21 .. 0x2F 0x3A .. 0x40 0x5E .. 0x60 0x7B .. 0x7F)
 
-class[deva_marks]=(0x0901 .. 0x0903)
-class[mala_marks]=(0x0d01 .. 0x0d03)
+class[deva_marks]=(U+0901 .. U+0903)
+class[mala_marks]=(U+0d01 .. U+0d03)
 
-class[deva_vowels]=(0x0905..0x090c 0x090e..0x0910 0x0912..0x0914)
-class[mala_vowels]=(0x0d05..0x0d0c 0x0d0e..0x0d10 0x0d12..0x0d14)
-class[deva_cons]=(0x0915 .. U+092F U+0931 .. 0x0939)
-class[mala_cons]=(0x0d15 .. 0x0D2F 0x0D31 .. 0x0d39)
-class[deva_vowel_sign]=(0x093d .. 0x0944 0x0946 .. 0x094C)
-class[mala_vowel_sign]=(0x0d3d .. 0x0d44 0x0d46 .. 0x0d4C)
-class[deva_virama] = (0x094D)
-class[mala_virama] = (0x0D4D)
-class[deva_ri_lu]=(0x0960 .. 0x0963)
-class[mala_ri_lu]=(0x0d60 .. 0x0d63)
-class[deva_digits]=(0x0966 .. 0x096f)
-class[mala_digits]=(0x0d66 .. 0x0d6f)
-class[deva_fullstop]=(0x0964)
+class[deva_vowels]=(U+0905..U+090c U+090e..U+0910 U+0912..U+0914)
+class[mala_vowels]=(U+0d05..U+0d0c U+0d0e..U+0d10 U+0d12..U+0d14)
+class[deva_cons]=(U+0915 .. U+092F U+0931 .. U+0939)
+class[mala_cons]=(U+0d15 .. U+0D2F U+0D31 .. U+0d39)
+class[deva_vowel_sign]=(U+093d .. U+0944 U+0946 .. U+094C)
+class[mala_vowel_sign]=(U+0d3d .. U+0d44 U+0d46 .. U+0d4C)
+class[deva_virama] = (U+094D)
+class[mala_virama] = (U+0D4D)
+class[deva_ri_lu]=(U+0960 .. U+0963)
+class[mala_ri_lu]=(U+0d60 .. U+0d63)
+class[deva_digits]=(U+0966 .. U+096f)
+class[mala_digits]=(U+0d66 .. U+0d6f)
+class[deva_fullstop]=(U+0964)
 class[mala_fullstop]=(".")
 
 class[deva_nomatch] = (U+0900 U+0904 U+090D U+0911 U+093A..U+093C U+0945\
@@ -53,21 +53,21 @@ class[deva_nomatch] = (U+0900 U+0904 U+090D U+0911 U+093A..U+093C U+0945\
                        U+0970..U+097F)
 class[mala_nomatch] = (U+0d00 U+0d04 U+0D0D U+0D11 U+0D3A..U+0D3C U+0D45\
                        U+0D49 U+0D4E U+0D4F U+0D50..U+0D5F U+0D65\
-                       U+0D70..U+0D7B 0x0D7D .. 0x0D7F)
+                       U+0D70..U+0D7B U+0D7D .. U+0D7F)
 
-[deva_nomatch] > 0x00bf ; inverted question mark: to represent characters that do not have a match in Malayalam
-0x00bf < [mala_nomatch]
+[deva_nomatch] > U+00bf ; inverted question mark: to represent characters that do not have a match in Malayalam
+U+00bf < [mala_nomatch]
 
 U+0907 / [deva_vowel_sign] _ <> U+0D2F U+0D3F / [deva_vowel_sign] _ 
 U+0908 / [deva_vowel_sign] _ <> U+0D2F U+0D40 / [deva_vowel_sign] _ 
 
 
 ; Handling the rendring of 'r'
-0x0930 <> 0x0D7C
-0x0930 0x094D <> 0x0D7C zero_width_space
-0x0930 / 0x094D _ <> 0x0D30
-0x0930 /  _ [deva_vowel_sign] <> 0x0D30
-0x0930 / (# | [ws] | [punct]) _ <> 0x0d30
+U+0930 <> U+0D7C
+U+0930 U+094D <> U+0D7C zero_width_space
+U+0930 / U+094D _ <> U+0D30
+U+0930 /  _ [deva_vowel_sign] <> U+0D30
+U+0930 / (# | [ws] | [punct]) _ <> U+0d30
 
 ; General mappings
 
