@@ -6,15 +6,15 @@
 ;   Left-hand side Character Map Window Position = 733,6,633,488
 ;   Right-hand side Character Map Window Position = 1361,0,738,492
 
-LHSName                 "canonical name of the 'source' encoding or left-hand side of the conversion"
-RHSName                 "canonical name of the 'target' encoding or right-hand side of the conversion"
-LHSDescription          "description for the left-hand side of the mapping"
-RHSDescription          "description for the right-hand side of the mapping"
-Version                 "1"
-Contact                 "mailto:user@addr"
-RegistrationAuthority   "the organization responsible for the encoding"
-RegistrationName        "the name and version of the mapping, as recognized by that authority"
-Copyright               "© 2022 <CompanyName>. All rights reserved."
+LHSName                 "Devanagari"
+RHSName                 "Malayalam"
+LHSDescription          "Malayalam compatible Devanagari characters (Unicode v.14)"
+RHSDescription          "Malayalam (Unicode v.14)"
+Version                 "0.701"
+Contact                 "mailto:beniza@gmail.com"
+RegistrationAuthority   "NLCI"
+RegistrationName        "Devanagari2Malayalam Teckit Converter"
+Copyright               "© 2022 <NLCI>. CC-BY-SA, Some rights reserved."
 LHSFlags                ()
 RHSFlags                ()
 
@@ -29,6 +29,8 @@ DEFINE DEVAVOWELS     U+0905 .. U+090C U+090E..U+0910 U+0912..U+0914 ; Devanagar
 DEFINE MALAVOWELS     U+0D05 .. U+0D0C U+0D0E..U+0D10 U+0D12..U+0D14 ; Malayalam  Vowels
 DEFINE DEVAVOWELSIGNS U+093D .. U+0944 U+0946 .. U+094C ; Devanagari Vowel Signs
 DEFINE MALAVOWELSIGNS U+0D3D .. U+0D44 U+0D46 .. U+0D4C ; Malayalam  Vowel Signs
+DEFINE DEVADIGITS     U+0966 .. U+096F
+DEFINE MALADIGITS     U+0D66 .. U+0D6F
 
 ; Devanagari Codepoints that does not have a corresponding Malayalam match
 DEFINE DEVANOMATCHES  U+0900 U+0904 U+090D U+0911 U+093A..U+093B U+0945\
@@ -41,6 +43,10 @@ DEFINE MALANOMATCHES  U+0d00 U+0d04 U+0D0D U+0D11 U+0D3A..U+0D3C U+0D45\
                              U+0D70..U+0D7B U+0D7D .. U+0D7F
 
 pass(Unicode)
+; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;       SOME PREPROCESSING AND CLEAN UPS HAPPENS IN THIS PASS
+; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 class[deva_cons]=(DEVACONS)
 class[mala_cons]=(MALACONS)
 class[ws] = (WHITESPACES)
@@ -55,12 +61,15 @@ class[nukta_composed_bases] = ( U+0928 U+0930 U+0915 U+0916 U+0917 U+091C U+0921
 [nukta_composed_chars] <> [nukta_composed_bases] U+093C
 
 pass(Unicode)
+; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;       DEVANAGARI TO MALAYALAM CONVERSION HAPPENS IN THIS PASS
+; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 class[ws] = (WHITESPACES)
 class[punct] = (PUNCTUATIONS)
 
-class[deva_marks]=(U+0901 .. U+0903)
-class[mala_marks]=(U+0D01 .. U+0D03)
+class[deva_marks]=(U+0901 U+0902 U+0903)
+class[mala_marks]=(U+0D02 U+0D02 U+0D03)
 
 class[deva_vowels]=(DEVAVOWELS)
 class[mala_vowels]=(MALAVOWELS)
@@ -72,8 +81,8 @@ class[deva_virama] = (U+094D)
 class[mala_virama] = (U+0D4D)
 class[deva_ri_lu]=(U+0960 .. U+0963)
 class[mala_ri_lu]=(U+0D60 .. U+0D63)
-class[deva_digits]=(U+0966 .. U+096F)
-class[mala_digits]=(U+0D66 .. U+0d6F)
+class[deva_digits]=(DEVADIGITS)
+class[mala_digits]=(MALADIGITS)
 class[deva_fullstop]=(U+0964)
 class[mala_fullstop]=(".")
 
@@ -124,6 +133,10 @@ U+0932 / _ [deva_vowel_sign] <> U+0D32
 [deva_digits]<>[mala_digits]
 
 pass(unicode)
+; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;       POST PROCESS FOR HANDLING EXCEPTIONS AND INCORRECT CONVERSIONS (MAL > MAL)
+; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 class[ws] = (0x9 0xA 0xD 0x20)
 class[punct] = (0x21 .. 0x2F 0x3A .. 0x40 0x5E .. 0x60 0x7B .. 0x7F)
 
