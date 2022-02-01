@@ -23,15 +23,15 @@ DEFINE PUNCTUATIONS   0x21 .. 0x2F 0x3A .. 0x40 0x5E .. 0x60 0x7B .. 0x7F
 
 ; NOTE: In the MACROS below, only the codepoints that have a 
 ;       direct mapping availble in both languages are included
-DEFINE DEVACONS       U+0915 .. U+092C U+092F U+0931 U+0933 .. U+0939 ; Devanagari Consonants
-DEFINE MALACONS       U+0D15 .. U+0D2C U+0D2F U+0D31 U+0D33 .. U+0D39 ; Malayalam  Consonants
+DEFINE DEVACONS       U+0915 .. U+092D U+092F U+0931 U+0933 .. U+0939 ; Devanagari Consonants
+DEFINE MALACONS       U+0D15 .. U+0D2D U+0D2F U+0D31 U+0D33 .. U+0D39 ; Malayalam  Consonants
 DEFINE DEVAVOWELS     U+0905 .. U+090C U+090E..U+0910 U+0912..U+0914 ; Devanagari Vowels
 DEFINE MALAVOWELS     U+0D05 .. U+0D0C U+0D0E..U+0D10 U+0D12..U+0D14 ; Malayalam  Vowels
 DEFINE DEVAVOWELSIGNS U+093D .. U+0944 U+0946 .. U+094C ; Devanagari Vowel Signs
 DEFINE MALAVOWELSIGNS U+0D3D .. U+0D44 U+0D46 .. U+0D4C ; Malayalam  Vowel Signs
 
 ; Devanagari Codepoints that does not have a corresponding Malayalam match
-DEFINE DEVANOMATCHES  U+0900 U+0904 U+090D U+0911 U+093A..U+093C U+0945\
+DEFINE DEVANOMATCHES  U+0900 U+0904 U+090D U+0911 U+093A..U+093B U+0945\
                              U+0949 U+094E U+094F U+0950..U+095F\
                              U+0970..U+097F 
 
@@ -45,10 +45,14 @@ class[deva_cons]=(DEVACONS)
 class[mala_cons]=(MALACONS)
 class[ws] = (WHITESPACES)
 class[punct] = (PUNCTUATIONS)
-
+class[nukta_composed_chars] = ( U+0929 U+0931 U+0958 U+0959 U+095A U+095B U+095C U+095D U+095E U+095F )
+class[nukta_composed_bases] = ( U+0928 U+0930 U+0915 U+0916 U+0917 U+091C U+0921 U+0922 U+092B U+092F )
 
 ; Handling implicit virama in word filnal consonants in Devanagari
 [deva_cons]=dc / _ ( # | [ws] | [punct] ) <> @dc U+0D4D
+
+; Decompose nukta
+[nukta_composed_chars] <> [nukta_composed_bases] U+093C
 
 pass(Unicode)
 
@@ -78,6 +82,8 @@ class[mala_nomatch] = (MALANOMATCHES)
 
 [deva_nomatch] > 0xBF ; inverted question mark: to represent characters that do not have a match in Malayalam
 0xBF < [mala_nomatch]
+
+U+093C >  ; eliminate the nukta
 
 U+0907 / ( [deva_cons] | [deva_vowel_sign] ) _ <> U+0D2F U+0D3F ; / [deva_vowel_sign] _ 
 U+0908 / ( [deva_cons] | [deva_vowel_sign] ) _ <> U+0D2F U+0D40 ; / [deva_vowel_sign] _ 
