@@ -4,7 +4,7 @@
 ;   Right-hand side font = Rachana;15.75
 ;   Main Window Position = 0,0,747,728
 ;   Left-hand side Character Map Window Position = 733,6,633,488
-;   Right-hand side Character Map Window Position = 1361,0,743,492
+;   Right-hand side Character Map Window Position = 1361,0,738,492
 
 LHSName                 "canonical name of the 'source' encoding or left-hand side of the conversion"
 RHSName                 "canonical name of the 'target' encoding or right-hand side of the conversion"
@@ -18,54 +18,80 @@ Copyright               "© 2022 <CompanyName>. All rights reserved."
 LHSFlags                ()
 RHSFlags                ()
 
+DEFINE WHITESPACES    0x9 0xA 0xD 0x20
+DEFINE PUNCTUATIONS   0x21 .. 0x2F 0x3A .. 0x40 0x5E .. 0x60 0x7B .. 0x7F
+
+; NOTE: In the MACROS below, only the codepoints that have a 
+;       direct mapping availble in both languages are included
+DEFINE DEVACONS       U+0915 .. U+092C U+092F U+0931 U+0933 .. U+0939 ; Devanagari Consonants
+DEFINE MALACONS       U+0D15 .. U+0D2C U+0D2F U+0D31 U+0D33 .. U+0D39 ; Malayalam  Consonants
+DEFINE DEVAVOWELS     U+0905 .. U+090C U+090E..U+0910 U+0912..U+0914 ; Devanagari Vowels
+DEFINE MALAVOWELS     U+0D05 .. U+0D0C U+0D0E..U+0D10 U+0D12..U+0D14 ; Malayalam  Vowels
+DEFINE DEVAVOWELSIGNS U+093D .. U+0944 U+0946 .. U+094C ; Devanagari Vowel Signs
+DEFINE MALAVOWELSIGNS U+0D3D .. U+0D44 U+0D46 .. U+0D4C ; Malayalam  Vowel Signs
+
+; Devanagari Codepoints that does not have a corresponding Malayalam match
+DEFINE DEVANOMATCHES  U+0900 U+0904 U+090D U+0911 U+093A..U+093C U+0945\
+                             U+0949 U+094E U+094F U+0950..U+095F\
+                             U+0970..U+097F 
+
+; Malayalam Codepoints that does not have a corresponding Devanagari match
+DEFINE MALANOMATCHES  U+0d00 U+0d04 U+0D0D U+0D11 U+0D3A..U+0D3C U+0D45\
+                             U+0D49 U+0D4E U+0D4F U+0D50..U+0D5F U+0D65\
+                             U+0D70..U+0D7B U+0D7D .. U+0D7F
+
 pass(Unicode)
-class[deva_cons]=(U+0915 .. U+092F U+0931 .. U+0939)
-class[mala_cons]=(U+0d15 .. U+0D2F U+0D31 .. U+0d39)
-class[ws] = (0x9 0xA 0xD 0x20)
-class[punct] = (0x21 .. 0x2F 0x3A .. 0x40 0x5E .. 0x60 0x7B .. 0x7F)
+class[deva_cons]=(DEVACONS)
+class[mala_cons]=(MALACONS)
+class[ws] = (WHITESPACES)
+class[punct] = (PUNCTUATIONS)
 
-
-; Consonant clusters
-;[deva_cons]=dc / _ [deva_cons] <> @dc U+0D4D / _ [mala_cons]
 
 ; Handling implicit virama in word filnal consonants in Devanagari
-[deva_cons]=dc / _ (# | [ws] | [punct]) <> @dc U+0D4D
+[deva_cons]=dc / _ ( # | [ws] | [punct] ) <> @dc U+0D4D
 
 pass(Unicode)
 
-class[ws] = (0x9 0xA 0xD 0x20)
-class[punct] = (0x21 .. 0x2F 0x3A .. 0x40 0x5E .. 0x60 0x7B .. 0x7F)
+class[ws] = (WHITESPACES)
+class[punct] = (PUNCTUATIONS)
 
 class[deva_marks]=(U+0901 .. U+0903)
-class[mala_marks]=(U+0d01 .. U+0d03)
+class[mala_marks]=(U+0D01 .. U+0D03)
 
-class[deva_vowels]=(U+0905..U+090c U+090e..U+0910 U+0912..U+0914)
-class[mala_vowels]=(U+0d05..U+0d0c U+0d0e..U+0d10 U+0d12..U+0d14)
-class[deva_cons]=(U+0915 .. U+092F U+0931 .. U+0939)
-class[mala_cons]=(U+0d15 .. U+0D2F U+0D31 .. U+0d39)
-class[deva_vowel_sign]=(U+093d .. U+0944 U+0946 .. U+094C)
-class[mala_vowel_sign]=(U+0d3d .. U+0d44 U+0d46 .. U+0d4C)
+class[deva_vowels]=(DEVAVOWELS)
+class[mala_vowels]=(MALAVOWELS)
+class[deva_cons]=(DEVACONS)
+class[mala_cons]=(MALACONS)
+class[deva_vowel_sign]=(DEVAVOWELSIGNS)
+class[mala_vowel_sign]=(MALAVOWELSIGNS)
 class[deva_virama] = (U+094D)
 class[mala_virama] = (U+0D4D)
 class[deva_ri_lu]=(U+0960 .. U+0963)
-class[mala_ri_lu]=(U+0d60 .. U+0d63)
-class[deva_digits]=(U+0966 .. U+096f)
-class[mala_digits]=(U+0d66 .. U+0d6f)
+class[mala_ri_lu]=(U+0D60 .. U+0D63)
+class[deva_digits]=(U+0966 .. U+096F)
+class[mala_digits]=(U+0D66 .. U+0d6F)
 class[deva_fullstop]=(U+0964)
 class[mala_fullstop]=(".")
 
-class[deva_nomatch] = (U+0900 U+0904 U+090D U+0911 U+093A..U+093C U+0945\
-                       U+0949 U+094E U+094F U+0950..U+095F\
-                       U+0970..U+097F)
-class[mala_nomatch] = (U+0d00 U+0d04 U+0D0D U+0D11 U+0D3A..U+0D3C U+0D45\
-                       U+0D49 U+0D4E U+0D4F U+0D50..U+0D5F U+0D65\
-                       U+0D70..U+0D7B U+0D7D .. U+0D7F)
+class[deva_nomatch] = (DEVANOMATCHES)
+class[mala_nomatch] = (MALANOMATCHES)
 
-[deva_nomatch] > U+00bf ; inverted question mark: to represent characters that do not have a match in Malayalam
-U+00bf < [mala_nomatch]
+[deva_nomatch] > 0xBF ; inverted question mark: to represent characters that do not have a match in Malayalam
+0xBF < [mala_nomatch]
 
-U+0907 / [deva_vowel_sign] _ <> U+0D2F U+0D3F / [deva_vowel_sign] _ 
-U+0908 / [deva_vowel_sign] _ <> U+0D2F U+0D40 / [deva_vowel_sign] _ 
+U+0907 / ( [deva_cons] | [deva_vowel_sign] ) _ <> U+0D2F U+0D3F ; / [deva_vowel_sign] _ 
+U+0908 / ( [deva_cons] | [deva_vowel_sign] ) _ <> U+0D2F U+0D40 ; / [deva_vowel_sign] _ 
+U+090F / ( [deva_cons] | [deva_vowel_sign] ) _ <> U+0D2F U+0D47
+U+090A / ( [deva_cons] | [deva_vowel_sign] ) _ <> U+0D35 U+0D42
+
+; ### Adjustments for 'Chillu'
+
+; Handling the rendering of 'anusvara'
+U+092E <> U+0D2E
+U+092E U+094D <> U+0D02
+U+092E / _ ( # | [ws] | [punct] ) <> U+0D02
+
+; Handling the rendering of 'n'
 
 
 ; Handling the rendring of 'r'
@@ -73,7 +99,12 @@ U+0930 <> U+0D7C
 U+0930 U+094D <> U+0D7C zero_width_space
 U+0930 / U+094D _ <> U+0D30
 U+0930 /  _ [deva_vowel_sign] <> U+0D30
-U+0930 / (# | [ws] | [punct]) _ <> U+0d30
+U+0930 / ( # | [ws] | [punct] ) _ <> U+0d30
+
+; Handling the rendering of 'l'
+U+0932 <> U+0D7D
+U+0932 U+094D <> U+0D7D zero_width_space
+U+0932 / _ [deva_vowel_sign] <> U+0D32
 
 ; General mappings
 
