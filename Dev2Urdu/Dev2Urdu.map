@@ -1,0 +1,272 @@
+﻿; This file was edited using TECkitMappingEditorU.exe v3.0.2.0 on 12/31/2008.
+;   Conversion Type = Unicode_to_from_Unicode
+;   Left-hand side font = Arial Unicode MS;11.25
+;   Right-hand side font = Nafees Nastaleeq;15.75
+;   Main Window Position = 0,0,650,708
+;   Left-hand side Character Map Window Position = 650,0,471,421
+;   Right-hand side Character Map Window Position = 650,419,817,584
+
+;UDev2UIpa.map
+;Copyright (c) 2002 SIL International.
+
+; Mapping table for converting between Unicode Devanagari and Unicode Arabic
+; This is a very basic transliterator covering only the main correspondences
+; It is anticipated that this will be used with a Lexically-based approach
+; for handling the exceptions.
+
+LHSName			        "UNICODE_DEVANAGARI"
+RHSName			        "UNICODE_ARABIC"
+LHSDescription          "Unicode (Devanagari range)"
+RHSDescription          "Unicode (Arabic range)"
+Version			        "0.1"
+Contact			        "mailto:bob_eaton@sall.com"
+RegistrationAuthority	"SIL International"
+RegistrationName		"Unicode_Devanagari-Unicode_Arabic"
+
+LHSFlags (ExpectsNFD)   ; normalize the chars with built-in low dots so they always have the dot.
+RHSFlags ()
+
+; This map is specifically set up to be strictly bi-directional.
+; Thus where context doesn't allow a disambiguation, the default
+; behavior of this map is to *fail* to convert the non-common 
+; ambiguous form. This is because it is anticipated that a lexical 
+; solution will be implemented for such ambiguities. If this table
+; were to fix the ambiguities in the one direction, then the lexical
+; solution (probably AdaptIt knowledgebase) will not be used for 
+; a form and therefore it won't be reversable.
+; However, by *failing* to map such ambiguities, the lexical solution
+; will be used to 'fix' it (creating a bi-directional exception),
+; which then covers the form.
+
+; Having said all that, the table was also written with the maximally 
+; uni-directional rules (from Devanagari to Urdu) implemented as well,
+; but then commented out. So if your need is *only* to go from Devanagari
+; to Urdu, then you can search the file below for the words 
+; "Optimum Unidirectional" and uncomment out those rules (and comment
+; out the corresponding rules) and it will work in the one direction
+; much more usefully.
+
+Pass(Unicode)
+
+Class [VdDevCons] = ( \
+    devanagari_letter_ba                devanagari_letter_dha \
+    devanagari_letter_ddha              devanagari_letter_gha \
+    DEVANAGARI_LETTER_GA                devanagari_letter_ja \
+    devanagari_letter_jha               devanagari_letter_la \
+    devanagari_letter_lla               devanagari_letter_ma \
+    devanagari_letter_na                devanagari_letter_nna \
+    devanagari_letter_ra                DEVANAGARI_LETTER_DDA \
+    DEVANAGARI_LETTER_JA )
+
+; this class of chars followed by devanagari_sign_nukta have special Arabic forms (see LowDotWallahsArabic)
+Class[LowDotWallahsDevanagari] = ( \
+    DEVANAGARI_LETTER_KA \
+    DEVANAGARI_LETTER_KHA \
+    DEVANAGARI_LETTER_GA \
+    DEVANAGARI_LETTER_JA \
+    DEVANAGARI_LETTER_DDA \
+    DEVANAGARI_LETTER_PHA \
+)
+
+Class[LowDotWallahsArabic] = ( \
+    ARABIC_LETTER_QAF \
+    ARABIC_LETTER_KHAH \
+    ARABIC_LETTER_GHAIN \
+    ARABIC_LETTER_ZAIN \
+    ARABIC_LETTER_RREH \
+    ARABIC_LETTER_FEH \
+)
+
+; here are the rules that apply to the above classes
+[LowDotWallahsDevanagari] devanagari_sign_nukta     <>  [LowDotWallahsArabic]
+DEVANAGARI_LETTER_DDHA devanagari_sign_nukta        <>  ARABIC_LETTER_RREH ARABIC_LETTER_HEH_DOACHASHMEE
+
+; Here are the classes for consonants that have a 1 to 1 correspondence to Arabic chars
+Class[One2OneConsonantsDevanagari] = ( \
+    devanagari_letter_ka    devanagari_letter_ga \
+	devanagari_letter_ca    devanagari_letter_ja \
+	devanagari_letter_tta   devanagari_letter_dda       devanagari_letter_nna \
+    devanagari_letter_ta    devanagari_letter_da        devanagari_letter_na \
+    devanagari_letter_pa    devanagari_letter_ba        devanagari_letter_ma \
+    devanagari_letter_ra    devanagari_letter_la        devanagari_letter_lla \
+    devanagari_letter_sha   devanagari_letter_sa        devanagari_letter_ha )
+
+Class[One2OneConsonantsArabic] = ( \
+    ARABIC_LETTER_KEHEH         ARABIC_LETTER_GAF \
+	ARABIC_LETTER_TCHEH         ARABIC_LETTER_JEEM \
+	ARABIC_LETTER_TTEH          ARABIC_LETTER_DDAL      arabic_letter_rnoon \
+	ARABIC_LETTER_TEH           ARABIC_LETTER_DAL       ARABIC_LETTER_NOON \
+    ARABIC_LETTER_PEH           ARABIC_LETTER_BEH       ARABIC_LETTER_MEEM \
+    ARABIC_LETTER_REH           ARABIC_LETTER_LAM       arabic_letter_lam_with_small_v \
+    ARABIC_LETTER_SHEEN         ARABIC_LETTER_SEEN      ARABIC_LETTER_HEH_GOAL )
+
+; here is the rule for these two classes
+[One2OneConsonantsDevanagari]       <>  [One2OneConsonantsArabic]
+
+; the ARABIC_LETTER_WAW word-initial means wakar (consonant)
+devanagari_letter_va / # _          <>  ARABIC_LETTER_WAW / # _
+
+; disable ya since it is ambiguous with iikar and is less frequent
+; devanagari_letter_ya    <>    ARABIC_LETTER_FARSI_YEH
+; disable since it is ambiguous with okar and since it doesn't occur in Kangri/Dogri
+; devanagari_letter_va    <>    ARABIC_LETTER_WAW
+
+; Here are the classes for the aspirated consonants that have a 1 to 2 (+asp) correspondence in Arabic
+Class[One2TwoAspConsonantsDevanagari] = ( \
+    devanagari_letter_kha       devanagari_letter_cha \
+    devanagari_letter_ttha      devanagari_letter_tha \
+    devanagari_letter_pha \
+    )
+
+Class[One2TwoAspConsonantsArabic] = ( \
+    ARABIC_LETTER_KEHEH         ARABIC_LETTER_TCHEH \
+    ARABIC_LETTER_TTEH          ARABIC_LETTER_TEH \
+    ARABIC_LETTER_PEH \
+    )
+
+; here is the rule that applies to these two classes
+[One2TwoAspConsonantsDevanagari]    <>  [One2TwoAspConsonantsArabic] ARABIC_LETTER_HEH_DOACHASHMEE
+
+; Here are the tone wallah consonants in Dogri and Kangri (fourth column letters always have following nyukta)
+Class[Two2OneConsonantsDevanagari] = ( \
+    devanagari_letter_gha       devanagari_letter_jha \
+    devanagari_letter_ddha      devanagari_letter_dha \
+    devanagari_letter_bha \
+    )
+
+Class[Two2OneAspConsonantsArabic] = ( \
+    ARABIC_LETTER_GAF           ARABIC_LETTER_JEEM \
+    ARABIC_LETTER_DDAL          ARABIC_LETTER_DAL \
+    ARABIC_LETTER_BEH \
+    )
+    
+Class [DevCons] = ( \
+    [LowDotWallahsDevanagari] \
+    [One2OneConsonantsDevanagari] \
+    devanagari_letter_va \
+    [One2TwoAspConsonantsDevanagari] \
+    [Two2OneConsonantsDevanagari] )
+
+Class [AbsCons] = ( \
+    [LowDotWallahsArabic] \
+    [One2OneConsonantsArabic] \
+    [One2TwoAspConsonantsArabic] \
+    [Two2OneAspConsonantsArabic] \
+    ARABIC_LETTER_HEH_DOACHASHMEE )
+
+; here is the rule that applies to these two classes
+; Optimum Unidirectional:
+;   For Hindi to Urdu, the Two2OneConsonantsDevanagari consonants generate the same thing without
+;   the nyukta, but for Dogri/Kangri they should fail, because the following represents a mis-spelling
+;   [Two2OneConsonantsDevanagari] >  [Two2OneAspConsonantsArabic] ARABIC_LETTER_HEH_DOACHASHMEE
+[Two2OneConsonantsDevanagari] devanagari_sign_nukta <>  [Two2OneAspConsonantsArabic] ARABIC_LETTER_HEH_DOACHASHMEE
+
+; Optimum Unidirectional:
+;   These combinations are unique since they can't be bidirectional (thus the need for a combined lexical approach)
+;   As is (commented out), these forms will fail to convert trigger the user to manually create a bi-directional 
+;   exception rule.
+;   devanagari_letter_nga   >  ARABIC_LETTER_NOON
+;   devanagari_letter_nya   >  ARABIC_LETTER_NOON
+;   devanagari_letter_llla  >   ARABIC_LETTER_LAM 
+;   devanagari_letter_ssa   >   ARABIC_LETTER_SHEEN 
+
+Class[ClassDevMatras] = ( \
+    devanagari_vowel_sign_aa \
+    devanagari_vowel_sign_i     devanagari_vowel_sign_ii \
+    devanagari_vowel_sign_u     devanagari_vowel_sign_uu \
+    devanagari_vowel_sign_e     devanagari_vowel_sign_e \
+    devanagari_vowel_sign_o     devanagari_vowel_sign_au )
+
+; Independent vowel rules
+devanagari_letter_a         <>  ARABIC_LETTER_ALEF ARABIC_FATHA
+devanagari_letter_aa        <>  ARABIC_LETTER_ALEF_WITH_MADDA_ABOVE
+devanagari_letter_i         <>  ARABIC_LETTER_ALEF ARABIC_KASRA
+devanagari_letter_ii        <>  ARABIC_LETTER_ALEF ARABIC_KASRA ARABIC_LETTER_FARSI_YEH
+devanagari_letter_u         <>  ARABIC_LETTER_ALEF ARABIC_DAMMA
+devanagari_letter_uu        <>  ARABIC_LETTER_ALEF ARABIC_DAMMA ARABIC_LETTER_WAW
+devanagari_letter_e / # _ # <>  ARABIC_LETTER_ALEF ARABIC_LETTER_YEH_BARREE / # _ #
+devanagari_letter_e / # _   <>  ARABIC_LETTER_ALEF ARABIC_LETTER_FARSI_YEH / # _
+devanagari_letter_e / [ClassDevMatras] _ #   <>  ARABIC_LETTER_YEH_BARREE / ^[AbsCons] _ #
+devanagari_letter_ai        <>  ARABIC_LETTER_ALEF ARABIC_FATHA ARABIC_LETTER_FARSI_YEH
+devanagari_letter_o         <>  ARABIC_LETTER_ALEF ARABIC_LETTER_WAW
+devanagari_letter_au        <>  ARABIC_LETTER_ALEF ARABIC_FATHA ARABIC_LETTER_WAW
+
+; Dependent (matra) vowel rules
+devanagari_vowel_sign_aa        <>  ARABIC_LETTER_ALEF
+devanagari_vowel_sign_i         <>  ARABIC_KASRA
+devanagari_vowel_sign_ii / _ #  <>  ARABIC_LETTER_FARSI_YEH / _ #
+devanagari_vowel_sign_ii        <>  ARABIC_KASRA ARABIC_LETTER_FARSI_YEH
+devanagari_vowel_sign_u         <>  ARABIC_DAMMA
+devanagari_vowel_sign_uu        <>  ARABIC_DAMMA ARABIC_LETTER_WAW
+devanagari_vowel_sign_e / _ #   <>  ARABIC_LETTER_YEH_BARREE / _ #
+devanagari_vowel_sign_e         <>  ARABIC_LETTER_FARSI_YEH
+devanagari_vowel_sign_o         <>  ARABIC_LETTER_WAW   ; condition this to disambuate from wa
+devanagari_vowel_sign_ai / _ #  <>  ARABIC_FATHA ARABIC_LETTER_YEH_BARREE / _ #
+devanagari_vowel_sign_ai        <>  ARABIC_FATHA ARABIC_LETTER_FARSI_YEH
+devanagari_vowel_sign_au        <>  ARABIC_FATHA ARABIC_LETTER_WAW
+
+; ARABIC_LETTER_FARSI_YEH / _ (space|#) <>  ARABIC_LETTER_YEH_BARREE
+; devanagari_letter_candra_e  <>  ARABIC_LETTER_ALEF ARABIC_LETTER_FARSI_YEH
+
+; Optimum Unidirectional:
+; These can't be distinguished, so they should always trigger an exception.
+; devanagari_vowel_sign_vocalic_r  >  ARABIC_LETTER_REH
+; 
+
+; Optimum Unidirectional:
+; Since Kangri and Dogri only use anusvara, make that the only mapping
+; For Hindi to Urdu, you could allow both, but then it won't be bi-directional
+; here is the rule for this class
+; [Nasals]    <>  ARABIC_LETTER_NOON_GHUNNA
+; Class[Nasals] = (devanagari_sign_candrabindu devanagari_sign_anusvara)
+devanagari_sign_anusvara / _ [DevCons]  <>  ARABIC_LETTER_NOON zero_width_joiner
+devanagari_sign_anusvara                <>  ARABIC_LETTER_NOON_GHUNNA
+
+; Dogri tone:
+; Use the right single quote mark when following short vowels:
+Class[ShortMatraVowels] = ( \
+    devanagari_letter_a         devanagari_letter_i         devanagari_letter_u \
+    devanagari_vowel_sign_i     devanagari_vowel_sign_u \
+    )
+    
+RIGHT_SINGLE_QUOTATION_MARK / [ShortMatraVowels] devanagari_sign_anusvara? _  <>  arabic_letter_heh_doachashmee
+
+; for the rest, just use "H dot"
+Class[OtherMatraVowels] = ( \
+    devanagari_letter_aa        devanagari_letter_ii        devanagari_letter_uu        devanagari_letter_e \
+    devanagari_letter_ai        devanagari_letter_o         devanagari_letter_au \
+    devanagari_vowel_sign_aa    devanagari_vowel_sign_ii    devanagari_vowel_sign_uu \
+    devanagari_vowel_sign_e     devanagari_vowel_sign_ai    devanagari_vowel_sign_o     devanagari_vowel_sign_au \
+    )
+    
+devanagari_letter_ha devanagari_sign_nukta / [OtherMatraVowels]? devanagari_sign_anusvara? _  <>  arabic_letter_heh_doachashmee
+
+; halant
+DEVANAGARI_SIGN_VIRAMA zero_width_non_joiner    <>  zero_width_non_joiner
+DEVANAGARI_SIGN_VIRAMA zero_width_joiner        <>  zero_width_joiner
+
+; Optimum Unidirectional:
+; Without either, ZW(N)J, make it an exception
+; DEVANAGARI_SIGN_VIRAMA                           >  zero_width_joiner
+
+; special forms for ZWJ
+; DEVANAGARI_SIGN_VIRAMA zero_width_joiner devanagari_letter_ya   <>  zero_width_joiner ARABIC_LETTER_FARSI_YEH
+
+; misc extras
+horizontal_ellipsis     <>  horizontal_ellipsis
+
+; these are unidirectional only because I don't want to ever use devanagari digits in texts (so this will fix it on reversing)
+devanagari_digit_zero	>	digit_zero  ; zero
+devanagari_digit_one	>	digit_one   ; one
+devanagari_digit_two	>	digit_two   ; two
+devanagari_digit_three	>	digit_three ; three
+devanagari_digit_four	>	digit_four  ; four
+devanagari_digit_five	>	digit_five  ; five
+devanagari_digit_six	>	digit_six   ; six
+devanagari_digit_seven	>	digit_seven ; seven
+devanagari_digit_eight	>	digit_eight ; eight
+devanagari_digit_nine	>	digit_nine  ; nine
+
+devanagari_danda            <>  full_stop
+devanagari_double_danda     <>	full_stop full_stop
+QUESTION_MARK               <>  ARABIC_QUESTION_MARK

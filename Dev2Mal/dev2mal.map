@@ -23,8 +23,8 @@ DEFINE PUNCTUATIONS   0x21 .. 0x2F 0x3A .. 0x40 0x5E .. 0x60 0x7B .. 0x7F
 
 ; NOTE: In the MACROS below, only the codepoints that have a 
 ;       direct mapping availble in both languages are included
-DEFINE DEVACONS       U+0915 .. U+092D U+092F U+0931 U+0933 .. U+0939 ; Devanagari Consonants
-DEFINE MALACONS       U+0D15 .. U+0D2D U+0D2F U+0D31 U+0D33 .. U+0D39 ; Malayalam  Consonants
+DEFINE DEVACONS       U+0915 .. U+0927 U+0929 .. U+092D U+092F U+0931 U+0933 .. U+0939 ; Devanagari Consonants
+DEFINE MALACONS       U+0D15 .. U+0D27 U+0D29 .. U+0D2D U+0D2F U+0D31 U+0D33 .. U+0D39 ; Malayalam  Consonants
 DEFINE DEVAVOWELS     U+0905 .. U+090C U+090E..U+0910 U+0912..U+0914 ; Devanagari Vowels
 DEFINE MALAVOWELS     U+0D05 .. U+0D0C U+0D0E..U+0D10 U+0D12..U+0D14 ; Malayalam  Vowels
 DEFINE DEVAVOWELSIGNS U+093D .. U+0944 U+0946 .. U+094C ; Devanagari Vowel Signs
@@ -56,6 +56,9 @@ class[nukta_composed_bases] = ( U+0928 U+0930 U+0915 U+0916 U+0917 U+091C U+0921
 
 ; Handling implicit virama in word filnal consonants in Devanagari
 [deva_cons]=dc / _ ( # | [ws] | [punct] ) <> @dc U+0D4D
+
+; Handling of CC clusters
+;[deva_cons]=dc [deva_cons]=dc1 / (# | [ws] | [punct]) _ <> @dc U+094D @dc1
 
 ; Decompose nukta
 [nukta_composed_chars] <> [nukta_composed_bases] U+093C
@@ -100,14 +103,22 @@ U+090F / ( [deva_cons] | [deva_vowel_sign] ) _ <> U+0D2F U+0D47
 U+090A / ( [deva_cons] | [deva_vowel_sign] ) _ <> U+0D35 U+0D42
 
 ; ### Adjustments for 'Chillu'
-
+class[deva_chillu_base]=(U+0923 U+0928 U+0930 U+0932 U+0933 U+0915 U+092E)
 ; Handling the rendering of 'anusvara'
 U+092E <> U+0D2E
 U+092E U+094D <> U+0D02
 U+092E / _ ( # | [ws] | [punct] ) <> U+0D02
 
 ; Handling the rendering of 'n'
+class[na_non_clustarable]=(U+0915 U+0939)
 
+U+0928 <> U+0D7B
+U+0928 U+094D / _ [na_non_clustarable] <> U+0D7B ; half-na to n if followed by a non-clustarable consonant
+U+0928 / _ ( # | [ws] | [punct] ) <> U+0D7B
+
+U+0928 / ( [deva_vowels] | [deva_chillu_base] | [deva_cons] ) _ <> U+0D28
+U+0928 / _ [deva_vowel_sign] <> U+0D28
+U+0928 / (# | [ws] | [punct] ) _ ( # | [ws] | [punct] )<> U+0D28
 
 ; Handling the rendring of 'r'
 U+0930 <> U+0D7C
@@ -120,6 +131,7 @@ U+0930 / ( # | [ws] | [punct] ) _ <> U+0d30
 U+0932 <> U+0D7D
 U+0932 U+094D <> U+0D7D zero_width_space
 U+0932 / _ [deva_vowel_sign] <> U+0D32
+U+0932 / ( # | [ws] | [punct] ) _ <> U+0D32
 
 ; General mappings
 
@@ -140,5 +152,6 @@ pass(unicode)
 class[ws] = (0x9 0xA 0xD 0x20)
 class[punct] = (0x21 .. 0x2F 0x3A .. 0x40 0x5E .. 0x60 0x7B .. 0x7F)
 
-"ന്" / ( # | [ws] | [punct] ) _ ( # | [ws] | [punct] )> "ന"
+;"ന്" / ( # | [ws] | [punct] ) _ ( # | [ws] | [punct] )> "ന"
+;" ൻ " / ( # | [ws] | [punct] ) _ ( # | [ws] | [punct] )> "ന"
 
