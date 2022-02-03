@@ -1,0 +1,102 @@
+﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 2/3/2022.
+;   Conversion Type = Legacy_to_from_Legacy
+;   Left-hand side font = TAMMaduram;15.75
+;   Right-hand side font = Code2000;11.25
+;   Main Window Position = 0,0,753,713
+;   Left-hand side Character Map Window Position = 740,0,631,559
+;   Right-hand side Character Map Window Position = 615,317,746,447
+
+EncodingName            "LEGACY-TAM-MADHURAM/KALYANI"
+DescriptiveName         "UNICODE TAMIL BLOCK"
+Version                 "1.0"
+Contact                 "mailto:beniza@gmail.com"
+RegistrationAuthority   "NLCI"
+RegistrationName        "TAM-MADHURAM2UNICODE"
+Copyright               "© 2022 NLCI. CC-BY-SA. Some rights reserved."
+LHSFlags                ()
+RHSFlags                ()
+
+pass(byte)
+byteclass[iCons]     = ( 65  66  67  68 174  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86)
+byteclass[iiCons]    = ( 87  88  89  90 175  97  98  99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114)
+byteclass[uCons]     = (176 177 178 179 180 181 182 184 185 186 187 188 189 190 191 192 193 194)
+byteclass[uuCons]    = (195 196 197 198 199 200 201 203 204 205 206 207 215 216 217 218 219)
+byteclass[pulliCons] = (130 131 132 133 134 135 136 137 138 139 140 152 153 154 155 156 159 161 118 119 120 121 122)
+
+byteclass[cBaseAa]   = (232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248)
+byteclass[cBaseAb]   = (249)
+byteclass[cBaseA]    = ( [cBaseAa] [cBaseAb] )
+byteclass[cBaseB]    = (250 251 252 253 254)
+byteclass[cBase]     = ( [cBaseA] [cBaseB] )
+
+[iCons]     <> [cBase]   164
+[iiCons]    <> [cBase]   166
+[uCons]     <> [cBaseA]  167
+[uuCons]    <> [cBaseAa] 168
+[pulliCons] <> [cBase]   162
+
+170 [cBase]=cb <> @cb 170
+171 [cBase]=cb <> @cb 171
+172 [cBase]=cb <> @cb 172
+
+210 > 147
+211 > 148
+212 > 145
+213 > 146
+
+pass(Byte_Unicode)
+byteclass[CTL] = ( 0 .. 32 )
+uniclass[CTL] = ( 0 .. 32 )
+byteclass[PUNCT] = ( 33 .. 64 91 .. 96 123 .. 126)
+uniclass[PUNCT] = ( 33 .. 64 91 .. 96 123 .. 126)
+byteclass[vowels] = (220 .. 231)
+uniclass[vowels] = (tamil_letter_a .. tamil_letter_uu tamil_letter_e .. tamil_letter_ai tamil_letter_o .. tamil_letter_oo tamil_sign_visarga)
+
+[CTL] <> [CTL]
+[PUNCT] <> [PUNCT]
+[vowels] <> [vowels]
+
+169 <> copyright_sign
+145 <> U+2018
+146 <> U+2019
+147 <> U+201C
+148 <> U+201D
+
+
+162 <> tamil_sign_anusvara
+163 <> tamil_vowel_sign_aa
+164 <> tamil_vowel_sign_i
+166 <> tamil_vowel_sign_ii
+167 <> tamil_vowel_sign_u
+168 <> tamil_vowel_sign_uu
+170 <> tamil_vowel_sign_e
+171 <> tamil_vowel_sign_ee
+170 163 <> tamil_vowel_sign_o
+171 163 <> tamil_vowel_sign_oo
+172 <> tamil_vowel_sign_ai
+
+232 <> tamil_letter_ka
+233 <> tamil_letter_nga
+234 <> tamil_letter_ca
+235 <> tamil_letter_nya
+236 <> tamil_letter_tta
+237 <> tamil_letter_nna
+238 <> tamil_letter_ta
+239 <> tamil_letter_na
+240 <> tamil_letter_pa
+241 <> tamil_letter_ma
+242 <> tamil_letter_ya
+243 <> tamil_letter_ra
+244 <> tamil_letter_la
+245 <> tamil_letter_va
+246 <> tamil_letter_llla
+247 <> tamil_letter_lla
+248 <> tamil_letter_rra
+249 <> tamil_letter_nnna
+250 <> tamil_letter_sa
+251 <> tamil_letter_ssa
+252 <> tamil_letter_ja
+253 <> tamil_letter_ha
+254 <> tamil_letter_ka tamil_sign_virama tamil_letter_ssa
+; 255 <> tamil_letter_ca tamil_sign_virama tamil_letter_rra tamil_vowel_sign_ii
+255 >
