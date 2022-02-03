@@ -1,0 +1,60 @@
+﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 2/1/2022.
+;   Conversion Type = Unicode_to_from_Unicode
+;   Left-hand side font = Scheherazade;12.75
+;   Right-hand side font = Annapurna SIL;14.25
+;   Main Window Position = -10,7,764,728
+;   Left-hand side Character Map Window Position = 740,0,608,679
+;   Right-hand side Character Map Window Position = 1375,0,608,491
+
+LHSName                 "canonical name of the 'source' encoding or left-hand side of the conversion"
+RHSName                 "canonical name of the 'target' encoding or right-hand side of the conversion"
+LHSDescription          "description for the left-hand side of the mapping"
+RHSDescription          "description for the right-hand side of the mapping"
+Version                 "1"
+Contact                 "mailto:user@addr"
+RegistrationAuthority   "the organization responsible for the encoding"
+RegistrationName        "the name and version of the mapping, as recognized by that authority"
+Copyright               "© 2022 <CompanyName>. All rights reserved."
+LHSFlags                ()
+RHSFlags                ()
+
+DEFINE WHITESPACES 0x9 0xA 0xD 0x20
+DEFINE PUNCTUATIONS 0x21 .. 0x2F 0x3A .. 0x40 0x5B .. 0x60 0x7B .. 0x7E
+DEFINE URDUCONS arabic_letter_beh arabic_letter_teh arabic_letter_jeem arabic_letter_khah \
+                arabic_letter_reh arabic_letter_seen arabic_letter_sheen arabic_letter_feh \
+                
+DEFINE URDU_E_BASE_CONS arabic_letter_jeem
+
+pass(unicode)
+class[urCons]=(URDUCONS)
+;[urCons]=uc1 arabic_letter_waw <> @uc1 devanagari_sign_virama arabic_letter_waw
+pass(Unicode)
+
+class[ws]=(WHITESPACES)
+class[punct]=(PUNCTUATIONS)
+class[wb] = ( [ws] [punct] )
+class[urCons]=(URDUCONS)
+class[ur_e_base]=(URDU_E_BASE_CONS)
+
+arabic_letter_beh <> devanagari_letter_ba
+arabic_letter_teh <> devanagari_letter_ta
+arabic_letter_jeem <> devanagari_letter_ja
+arabic_letter_hah <> devanagari_letter_ha
+arabic_letter_khah <> devanagari_letter_khha
+
+arabic_letter_reh <> devanagari_letter_ra
+arabic_letter_seen <> devanagari_letter_sa
+arabic_letter_sheen <> devanagari_letter_sha
+arabic_letter_ain / _ ( # | [wb] ) <> devanagari_letter_a
+arabic_letter_ain <> devanagari_vowel_sign_aa
+arabic_letter_feh <> devanagari_letter_fa
+arabic_letter_meem <> devanagari_letter_ma
+arabic_letter_noon <> devanagari_letter_na
+arabic_letter_heh <> devanagari_letter_ha ; arabic hah and arabic heh transliterated to 'ha'
+arabic_letter_waw <> devanagari_vowel_sign_uu
+arabic_letter_yeh / [urCons] _ <> devanagari_vowel_sign_e
+arabic_letter_alef arabic_letter_yeh / # _ <> devanagari_letter_ii
+arabic_letter_yeh <> devanagari_letter_ya
+arabic_letter_peh <> devanagari_letter_pa devanagari_vowel_sign_u ;where does this u matra come from?
+arabic_letter_teh_with_three_dots_above_downwards <> devanagari_letter_tta devanagari_vowel_sign_u
+arabic_letter_teheh <> devanagari_letter_tha
