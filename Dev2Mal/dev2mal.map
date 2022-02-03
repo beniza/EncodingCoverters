@@ -4,7 +4,7 @@
 ;   Right-hand side font = Rachana;15.75
 ;   Main Window Position = 0,0,747,728
 ;   Left-hand side Character Map Window Position = 733,6,633,488
-;   Right-hand side Character Map Window Position = 1361,0,738,492
+;   Right-hand side Character Map Window Position = 423,29,717,492
 
 LHSName                 "Devanagari"
 RHSName                 "Malayalam"
