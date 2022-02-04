@@ -4,7 +4,7 @@
 ;   Right-hand side font = Rachana;15.75
 ;   Main Window Position = 0,0,747,728
 ;   Left-hand side Character Map Window Position = 733,6,633,488
-;   Right-hand side Character Map Window Position = 423,29,717,492
+;   Right-hand side Character Map Window Position = 1629,0,745,492
 
 LHSName                 "Devanagari"
 RHSName                 "Malayalam"
@@ -97,9 +97,11 @@ class[mala_nomatch] = (MALANOMATCHES)
 
 U+093C >  ; eliminate the nukta
 
+; handling vowel clusters
+U+0906 / ( [deva_cons] | [deva_vowel_sign] ) _ <> U+0D35 U+0D3E
 U+0907 / ( [deva_cons] | [deva_vowel_sign] ) _ <> U+0D2F U+0D3F ; / [deva_vowel_sign] _ 
 U+0908 / ( [deva_cons] | [deva_vowel_sign] ) _ <> U+0D2F U+0D40 ; / [deva_vowel_sign] _ 
-U+090F / ( [deva_cons] | [deva_vowel_sign] ) _ <> U+0D2F U+0D47
+U+090F / ( [deva_cons] | [deva_vowel_sign] ) _ <> U+0D35 U+0D47
 U+090A / ( [deva_cons] | [deva_vowel_sign] ) _ <> U+0D35 U+0D42
 
 ; ### Adjustments for 'Chillu'
