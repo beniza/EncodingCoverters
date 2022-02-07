@@ -2,15 +2,15 @@
 ;   Conversion Type = Unicode_to_from_Unicode
 ;   Left-hand side font = Annapurna SIL;14.25
 ;   Right-hand side font = Rachana;15.75
-;   Main Window Position = 0,0,747,728
+;   Main Window Position = 280,3,747,728
 ;   Left-hand side Character Map Window Position = 733,6,633,488
-;   Right-hand side Character Map Window Position = 1629,0,745,492
+;   Right-hand side Character Map Window Position = 822,384,474,292
 
 LHSName                 "Devanagari"
 RHSName                 "Malayalam"
 LHSDescription          "Malayalam compatible Devanagari characters (Unicode v.14)"
 RHSDescription          "Malayalam (Unicode v.14)"
-Version                 "0.701"
+Version                 "0.703"
 Contact                 "mailto:beniza@gmail.com"
 RegistrationAuthority   "NLCI"
 RegistrationName        "Devanagari2Malayalam Teckit Converter"
@@ -19,7 +19,7 @@ LHSFlags                ()
 RHSFlags                ()
 
 DEFINE WHITESPACES    0x9 0xA 0xD 0x20
-DEFINE PUNCTUATIONS   0x21 .. 0x2F 0x3A .. 0x40 0x5E .. 0x60 0x7B .. 0x7F
+DEFINE PUNCTUATIONS   0x21 .. 0x2F 0x3A .. 0x40 0x5E .. 0x60 0x7B .. 0x7F U+0964 U+0965
 
 ; NOTE: In the MACROS below, only the codepoints that have a 
 ;       direct mapping availble in both languages are included
@@ -106,9 +106,12 @@ U+090A / ( [deva_cons] | [deva_vowel_sign] ) _ <> U+0D35 U+0D42
 
 ; ### Adjustments for 'Chillu'
 class[deva_chillu_base]=(U+0923 U+0928 U+0930 U+0932 U+0933 U+0915 U+092E)
+
 ; Handling the rendering of 'anusvara'
 U+092E <> U+0D2E
 U+092E U+094D <> U+0D02
+U+092E U+094D / _ U+092E <> U+0D2E U+0D4D ; to handle gemination
+U+092E / U+094D _ <> U+0D2E
 U+092E / _ ( # | [ws] | [punct] ) <> U+0D02
 
 ; Handling the rendering of 'n'
@@ -146,14 +149,4 @@ U+0932 / ( # | [ws] | [punct] ) _ <> U+0D32
 [deva_ri_lu]<>[mala_ri_lu]
 [deva_digits]<>[mala_digits]
 
-pass(unicode)
-; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;       POST PROCESS FOR HANDLING EXCEPTIONS AND INCORRECT CONVERSIONS (MAL > MAL)
-; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-class[ws] = (0x9 0xA 0xD 0x20)
-class[punct] = (0x21 .. 0x2F 0x3A .. 0x40 0x5E .. 0x60 0x7B .. 0x7F)
-
-;"ന്" / ( # | [ws] | [punct] ) _ ( # | [ws] | [punct] )> "ന"
-;" ൻ " / ( # | [ws] | [punct] ) _ ( # | [ws] | [punct] )> "ന"
 
