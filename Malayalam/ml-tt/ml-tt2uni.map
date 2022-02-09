@@ -1,0 +1,137 @@
+﻿; This file was created by <author> using TECkitMappingEditorU.exe v4.0.0.0 on 2/8/2022.
+;   Conversion Type = Legacy_to_from_Unicode
+;   Left-hand side font = Microsoft Sans Serif;11.25
+;   Right-hand side font = Rachana;14.25
+;   Main Window Position = 0,0,658,713
+;   Left-hand side Character Map Window Position = 658,0,457,447
+;   Right-hand side Character Map Window Position = 593,69,698,553
+
+EncodingName            "a canonical name that uniquely identifies this mapping table from all others"
+DescriptiveName         "a string that describes the mapping"
+Version                 "1"
+Contact                 "mailto:user@addr"
+RegistrationAuthority   "the organization responsible for the encoding"
+RegistrationName        "the name and version of the mapping, as recognized by that authority"
+Copyright               "© 2022 <CompanyName>. All rights reserved."
+LHSFlags                ()
+RHSFlags                ()
+
+
+; VOWEL SIGNS
+DEFINE AAm      0x6D
+DEFINE Im       0x6E
+DEFINE IIm      0x6F
+DEFINE Um       0x70
+DEFINE UUm      0x71
+DEFINE Rm       0x72
+DEFINE Em       0x73
+DEFINE EEm      0x74
+DEFINE AUm      0x75
+DEFINE VIR      0x76
+DEFINE ANU      0x77
+DEFINE VISARGA  0x78
+
+; CONSONANT SIGNS
+DEFINE VIR_Y    0x79
+DEFINE VIR_V    0x7A
+DEFINE VIR_R    0x7B
+DEFINE VIR_L    0x7C
+
+; CONSONANTS
+DEFINE K    0x49
+DEFINE KH   0x4A
+DEFINE G    0x4B
+DEFINE GH   0x4C
+DEFINE NG   0x4D
+
+DEFINE C    0x4E
+DEFINE CH   0x4f
+DEFINE J    0x50
+DEFINE JH   0x51
+DEFINE NY   0x52
+
+DEFINE T    0x53
+DEFINE TH   0x54
+DEFINE D    0x55
+DEFINE DH   0x56
+DEFINE NN   0x57
+
+DEFINE TT   0x58
+DEFINE TTH  0x59
+DEFINE DD   0x5A
+DEFINE DDH  0x5B
+DEFINE N    0x5C
+
+DEFINE P    0x5D
+DEFINE PH   0x5E
+DEFINE B    0x5F
+DEFINE BH   0x60
+DEFINE M    0x61
+
+DEFINE Y    0x62
+DEFINE R    0x63
+DEFINE RR   0x64
+DEFINE L    0x65
+DEFINE LL   0x66
+DEFINE LLL  0x67
+DEFINE V    0x68
+DEFINE Z    0x69
+DEFINE SH   0x6A
+DEFINE S    0x6B
+DEFINE H    0x6C
+
+pass(byte)
+0xA1 <> K VIR K   ; 0x49 0x76 0x49
+0xA2 <> K VIR L   ; 0x49 0x76 0x65
+0xA3 <> K VIR SH  ; 0x49 0x76 0x6A
+0xA4 <> G VIR G   ; 0x4B 0x76 0x4B
+0xA5 <> G VIR L
+0xA6 <> NG VIR K
+
+
+
+
+pass(Byte_Unicode)
+K   <> malayalam_letter_ka
+KH  <> malayalam_letter_kha
+G   <> malayalam_letter_ga
+GH  <> malayalam_letter_gha
+NG  <> malayalam_letter_nga
+
+C   <> malayalam_letter_ca
+CH  <> malayalam_letter_cha
+J   <> malayalam_letter_ja
+JH  <> malayalam_letter_jha
+NY  <> malayalam_letter_nya
+
+T   <> malayalam_letter_tta
+TH  <> malayalam_letter_ttha
+D   <> malayalam_letter_dda
+DH  <> malayalam_letter_ddha
+NN  <> malayalam_letter_nna
+
+TT  <> malayalam_letter_ta
+TTH <> malayalam_letter_tha
+DD  <> malayalam_letter_da
+DDH <> malayalam_letter_dha
+N   <> malayalam_letter_na
+
+P   <> malayalam_letter_pa
+PH  <> malayalam_letter_pha
+B   <> malayalam_letter_ba
+BH  <> malayalam_letter_bha
+M   <> malayalam_letter_ma
+
+Y   <> malayalam_letter_ya
+R   <> malayalam_letter_ra
+RR  <> malayalam_letter_rra
+L   <> malayalam_letter_la
+LL  <> malayalam_letter_lla
+LLL <> malayalam_letter_llla
+V   <> malayalam_letter_va
+Z   <> malayalam_letter_sha
+SH  <> malayalam_letter_ssa
+S   <> malayalam_letter_sa
+H   <> malayalam_letter_ha
+
+VIR <> malayalam_sign_virama
