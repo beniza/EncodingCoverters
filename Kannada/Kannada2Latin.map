@@ -23,13 +23,17 @@ RHSFlags                ()
 DEFINE VOWELMATRAS U+0CBE U+0CBF U+0CC0 U+0CC1 U+0CC2 U+0CC3 U+0CC4 U+0CC6 U+0CC7 U+0CC8 U+0CCA U+0CCB U+0CCC U+0CCD
 DEFINE UCASEPUNCT 0x21 0x2E
 DEFINE WS 0x20 0x9 0x13
+DEFINE MACONTEXT U+0CAA U+0CAB U+0CAC U+0CAD U+0CAE
 
 pass(Unicode)
 Uniclass[vowelMatras] = (VOWELMATRAS)
 Uniclass[UCASEpunct]  = (UCASEPUNCT)
 Uniclass[ws]          = (WS)
+Uniclass[maContext]   = (MACONTEXT)
 
 U+0C82 <> 'n'
+U+0C82 / _ [maContext] <> 'm'
+
 U+0C83 <> 'h'
 
 U+0C85 <> 'a'
