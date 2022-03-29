@@ -3,8 +3,9 @@
 ;   Left-hand side font = Microsoft Sans Serif;11.25
 ;   Right-hand side font = Rachana;14.25
 ;   Main Window Position = 0,0,658,713
-;   Left-hand side Character Map Window Position = 658,0,457,447
-;   Right-hand side Character Map Window Position = 593,69,698,553
+;   Left-hand side Character Map Window Position = 2044,1,683,546
+;   Right-hand side Character Map Window Position = 1360,0,698,553
+;   Right-hand range = 0000-007F
 
 EncodingName            "a canonical name that uniquely identifies this mapping table from all others"
 DescriptiveName         "a string that describes the mapping"
