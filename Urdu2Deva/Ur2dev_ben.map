@@ -2,9 +2,9 @@
 ;   Conversion Type = Unicode_to_from_Unicode
 ;   Left-hand side font = Scheherazade;12.75
 ;   Right-hand side font = Annapurna SIL;14.25
-;   Main Window Position = -10,7,764,728
+;   Main Window Position = 0,7,754,721
 ;   Left-hand side Character Map Window Position = 740,0,608,679
-;   Right-hand side Character Map Window Position = 1375,0,608,491
+;   Right-hand side Character Map Window Position = 706,194,608,417
 
 LHSName                 "canonical name of the 'source' encoding or left-hand side of the conversion"
 RHSName                 "canonical name of the 'target' encoding or right-hand side of the conversion"
