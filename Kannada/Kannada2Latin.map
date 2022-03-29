@@ -1,0 +1,267 @@
+﻿; This file was created by <author> using TECkitMappingEditorU.exe v5.0.0.0 on 3/28/2022.
+;   Conversion Type = Unicode_to_from_Unicode
+;   Left-hand side font = Nirmala UI;14.25
+;   Right-hand side font = Charis SIL;11.25
+;   Main Window Position = 0,0,0,0
+;   Left-hand side Character Map Window Position = 600,0,735,473
+;   Right-hand side Character Map Window Position = 522,420,457,308
+;   Left-hand range = Kannada
+;   Right-hand range = 0000-007F
+
+LHSName                 "Kannada"
+RHSName                 "Latin"
+LHSDescription          "Kannada Unicode Block"
+RHSDescription          "Latin Subsets for Kannada"
+Version                 "1"
+Contact                 "mailto:beniza@gmail.com"
+RegistrationAuthority   "HiDreamz Software Solutions Pvt. Ltd"
+RegistrationName        "com.hidreamz.enconv.kan2lat"
+Copyright               "© 2022 HiDreamz. CC-By-SA. Some rights reserved."
+LHSFlags                ()
+RHSFlags                ()
+
+DEFINE VOWELMATRAS U+0CBE U+0CBF U+0CC0 U+0CC1 U+0CC2 U+0CC3 U+0CC4 U+0CC6 U+0CC7 U+0CC8 U+0CCA U+0CCB U+0CCC U+0CCD
+DEFINE UCASEPUNCT 0x21 0x2E
+DEFINE WS 0x20 0x9 0x13
+
+pass(Unicode)
+Uniclass[vowelMatras] = (VOWELMATRAS)
+Uniclass[UCASEpunct]  = (UCASEPUNCT)
+Uniclass[ws]          = (WS)
+
+U+0C82 <> 'n'
+U+0C83 <> 'h'
+
+U+0C85 <> 'a'
+U+0C86 <> 'aa'
+U+0C87 <> 'i'
+U+0C88 <> 'ii'
+U+0C89 <> 'u'
+U+0C8A <> 'uu'
+U+0C8B <> 'ri'
+U+0C8C <> 'lu'
+U+0C8E <> 'e'
+U+0C8F <> 'ee'
+U+0C90 <> 'ai'
+U+0C92 <> 'o'
+U+0C93 <> 'oo'
+U+0C94 <> 'au'
+
+U+0C95 <> 'ka'
+U+0C95 / [UCASEpunct] [ws]? _ <> 'Ka'
+U+0C95 / _ [vowelMatras] <> 'k'
+U+0C95 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Ka'
+
+U+0C96 <> 'kha'
+U+0C96 / [UCASEpunct] [ws]? _ <> 'Kha'
+U+0C96 / _ [vowelMatras] <> 'kh'
+U+0C96 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Kha'
+
+U+0C97 <> 'ga'
+U+0C97 / _ [vowelMatras] <> 'g'
+U+0C97 / [UCASEpunct] [ws]? _ <> 'Ga'
+U+0C97 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Ga'
+
+U+0C98 <> 'gha'
+U+0C98 / [UCASEpunct] [ws]? _ <> 'Gha'
+U+0C98 / _ [vowelMatras] <> 'gh'
+U+0C98 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Gha'
+
+U+0C99 <> 'nga'
+U+0C99 / [UCASEpunct] [ws]? _ <> 'Nga'
+U+0C99 / _ [vowelMatras] <> 'ng'
+U+0C99 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Nga'
+
+U+0C9A <> 'cha'
+U+0C9A / [UCASEpunct] [ws]? _ <> 'Cha'
+U+0C9A / _ [vowelMatras] <> 'ch'
+U+0C9A / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Cha'
+
+U+0C9B <> 'chha'
+U+0C9B / [UCASEpunct] [ws]? _ <> 'Chha'
+U+0C9B / _ [vowelMatras] <> 'ch'
+U+0C9B / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Chha'
+
+U+0C9C <> 'ja'
+U+0C9C / [UCASEpunct] [ws]? _ <> 'Ja'
+U+0C9C / _ [vowelMatras] <> 'j'
+U+0C9C / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Ja'
+
+U+0C9D <> 'jha'
+U+0C9D / [UCASEpunct] [ws]? _ <> 'Jha'
+U+0C9D / _ [vowelMatras] <> 'jh'
+U+0C9D / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Jha'
+
+U+0C9E <> 'nja'
+U+0C9E / [UCASEpunct] [ws]? _ <> 'Nja'
+U+0C9E / _ [vowelMatras] <> 'nj'
+U+0C9E / [UCASEpunct] [ws]? _ [vowelMatras] <> 'nja'
+
+U+0C9F <> 'ta'
+U+0C9F / _ [vowelMatras] <> 't'
+U+0C9F / [UCASEpunct] [ws]? _ <> 'Ta'
+U+0C9F / [UCASEpunct] [ws]? _ [vowelMatras] <> 'T'
+
+U+0CA0 <> 'tha'
+U+0CA0 / _ [vowelMatras] <> 'th'
+U+0CA0 / [UCASEpunct] [ws]? _ <> 'Tha'
+U+0CA0 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Th'
+
+U+0CA1 <> 'da'
+U+0CA1 / _ [vowelMatras] <> 'd'
+U+0CA1 / [UCASEpunct] [ws]? _ <> 'Da'
+U+0CA1 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'D'
+
+U+0CA2 <> 'dha'
+U+0CA2 / _ [vowelMatras] <> 'dh'
+U+0CA2 / [UCASEpunct] [ws]? _ <> 'Dha'
+U+0CA2 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Dh'
+
+U+0CA3 <> 'nna'
+U+0CA3 / _ [vowelMatras] <> 'nn'
+U+0CA3 / [UCASEpunct] [ws]? _ <> 'Na'
+U+0CA3 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Nna'
+
+U+0CA4 <> 'ta'
+U+0CA4 / _ [vowelMatras] <> 't'
+U+0CA4 / [UCASEpunct] [ws]? _ <> 'Ta'
+U+0CA4 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'T'
+
+U+0CA5 <> 'tha'
+U+0CA5 / _ [vowelMatras] <> 'th'
+U+0CA5 / [UCASEpunct] [ws]? _ <> 'Tha'
+U+0CA5 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Th'
+
+U+0CA6 <> 'da'
+U+0CA6 / _ [vowelMatras] <> 'd'
+U+0CA6 / [UCASEpunct] [ws]? _ <> 'Da'
+U+0CA6 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'D'
+
+U+0CA7 <> 'dhh'
+U+0CA7 / _ [vowelMatras] <> 'dhh'
+U+0CA7 / [UCASEpunct] [ws]? _ <> 'Dhha'
+U+0CA7 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Dhh'
+
+U+0CA8 <> 'na'
+U+0CA8 / _ [vowelMatras] <> 'n'
+U+0CA8 / [UCASEpunct] [ws]? _ <> 'Na'
+U+0CA8 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'N'
+
+
+U+0CAA <> 'pa'
+U+0CAA / _ [vowelMatras] <> 'p'
+U+0CAA / [UCASEpunct] [ws]? _ <> 'Pa'
+U+0CAA / [UCASEpunct] [ws]? _ [vowelMatras] <> 'P'
+
+U+0CAB <> 'pha'
+U+0CAB / _ [vowelMatras] <> 'ph'
+U+0CAB / [UCASEpunct] [ws]? _ <> 'Pha'
+U+0CAB / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Ph'
+
+U+0CAC <> 'ba'
+U+0CAC / _ [vowelMatras] <> 'ba'
+U+0CAC / [UCASEpunct] [ws]? _ <> 'Ba'
+U+0CAC / [UCASEpunct] [ws]? _ [vowelMatras] <> 'B'
+
+U+0CAD <> 'bha'
+U+0CAD / _ [vowelMatras] <> 'bh'
+U+0CAD / [UCASEpunct] [ws]? _ <> 'Bha'
+U+0CAD / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Bh'
+
+U+0CAE <> 'ma'
+U+0CAE / _ [vowelMatras] <> 'm'
+U+0CAE / [UCASEpunct] [ws]? _ <> 'Ma'
+U+0CAE / [UCASEpunct] [ws]? _ [vowelMatras] <> 'M'
+
+U+0CAF <> 'ya'
+U+0CAF / _ [vowelMatras] <> 'y'
+U+0CAF / [UCASEpunct] [ws]? _ <> 'Ya'
+U+0CAF / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Y'
+
+U+0CB0 <> 'ra'
+U+0CB0 / _ [vowelMatras] <> 'r'
+U+0CB0 / [UCASEpunct] [ws]? _ <> 'Ra'
+U+0CB0 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'R'
+
+U+0CB1 <> 'rra'
+U+0CB1 / _ [vowelMatras] <> 'rr'
+U+0CB1 / [UCASEpunct] [ws]? _ <> 'Rra'
+U+0CB1 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Rr'
+
+U+0CB2 <> 'la'
+U+0CB2 / _ [vowelMatras] <> 'l'
+U+0CB2 / [UCASEpunct] [ws]? _ <> 'La'
+U+0CB2 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'L'
+
+U+0CB3 <> 'lla'
+U+0CB3 / _ [vowelMatras] <> 'll'
+U+0CB3 / [UCASEpunct] [ws]? _ <> 'Lla'
+U+0CB3 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Ll'
+
+U+0CB5 <> 'va'
+U+0CB5 / _ [vowelMatras] <> 'v'
+U+0CB5 / [UCASEpunct] [ws]? _ <> 'Va'
+U+0CB5 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'V'
+
+U+0CB6 <> 'ssa'
+U+0CB6 / _ [vowelMatras] <> 'ss'
+U+0CB6 / [UCASEpunct] [ws]? _ <> 'Ssa'
+U+0CB6 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Ss'
+
+U+0CB7 <> 'sha'
+U+0CB7 / _ [vowelMatras] <> 'sh'
+U+0CB7 / [UCASEpunct] [ws]? _ <> 'Sha'
+U+0CB7 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'Sh'
+
+U+0CB8 <> 'sa'
+U+0CB8 / _ [vowelMatras] <> 's'
+U+0CB8 / [UCASEpunct] [ws]? _ <> 'Sa'
+U+0CB8 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'S'
+
+U+0CB9 <> 'ha'
+U+0CB9 / _ [vowelMatras] <> 'h'
+U+0CB9 / [UCASEpunct] [ws]? _ <> 'Ha'
+U+0CB9 / [UCASEpunct] [ws]? _ [vowelMatras] <> 'H'
+
+U+0CBE <> 'a'
+U+0CBF <> 'i'
+U+0CC0 <> 'ii'
+U+0CC1 <> 'u'
+U+0CC2 <> 'uu'
+U+0CC3 <> 'ri'
+U+0CC4 <> 'rri'
+U+0CC6 <> 'e'
+U+0CC7 <> 'ee'
+U+0CC8 <> 'y'
+U+0CCA <> 'o'
+U+0CCB <> 'oo'
+U+0CCC <> 'au'
+U+0CCD >
+
+U+0CD5 <> "AA"
+U+0CD6 <> "AI"
+
+U+0CDE <> 'fa'
+U+0CDE / _ [vowelMatras] <> 'f'
+U+0CDE / [UCASEpunct] [ws]? _ <> 'Fa'
+U+0CDE / [UCASEpunct] [ws]? _ [vowelMatras] <> 'F'
+
+U+0CE0 <> 'rrr' 
+U+0CE1 <> 'lll'
+U+0CE2 <> 'll'
+U+0CE3 <> 'lll'
+
+U+0CE6 <> '0'
+U+0CE7 <> '1'
+U+0CE8 <> '2'
+U+0CE9 <> '3'
+U+0CEA <> '4'
+U+0CEB <> '5'
+U+0CEC <> '6'
+U+0CED <> '7'
+U+0CEE <> '8'
+U+0CEF <> '9'
+
+U+0CF1 > 
+U+0CF2 >
+
