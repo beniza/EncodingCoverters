@@ -2,7 +2,7 @@
 ;   Conversion Type = Legacy_to_from_Unicode
 ;   Left-hand side font = MAL Vayalar;11.25
 ;   Right-hand side font = Rachana_w01;11.25
-;   Main Window Position = 62,0,621,728
+;   Main Window Position = 1358,-8,1382,744
 ;   Left-hand side Character Map Window Position = 946,311,420,417
 ;   Right-hand side Character Map Window Position = 1068,375,298,353
 ;   Left-hand side code page = 42
@@ -18,14 +18,14 @@ EncodingName			"CDAC-Malayalam"
 DescriptiveName		    "CDAC/Winscript Malayalam "
 Version			        "2.0"
 Contact                 "mailto:sg@nlife.in"
-CreatedBy               "Vijayakumar, Presumably in 2002"
-ModifiedBy              "Vijay, Anitha. Year unknown"
 RegistrationAuthority   "NLCI"
 RegistrationName        "in.nlci.enconv.winscript.mlym"
 Copyright               "Released under MIT License. © 2002-2016 NLCI. Some rights reserved."
 LHSFlags                ()
 RHSFlags                ()
 
+; CreatedBy               "Vijayakumar, Presumably in 2002"
+; ModifiedBy              "Vijay, Anitha. Year unknown"
 pass(byte)
 
 Class[cons] = (73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108)
@@ -197,3 +197,5 @@ UniClass [VwlMatra] = (U+0D3E..U+0D43 U+0D46 U+0D47)
 194 <> malayalam_letter_chillu_L ; U+0d7d
 196 <> malayalam_letter_chillu_LL ; U+0d7e
 
+byteclass[ignorable] = (240 .. 255)
+[ignorable] >
