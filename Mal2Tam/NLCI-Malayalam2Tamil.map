@@ -1,0 +1,112 @@
+﻿; This file was created by <author> using TECkitMappingEditorU.exe v5.0.0.0 on 10/9/2023.
+;   Conversion Type = Unicode_to_Unicode
+;   Left-hand side font = Bailey;14.25
+;   Right-hand side font = Arial Unicode MS;15.75
+;   Main Window Position = 0,0,658,713
+;   Left-hand side Character Map Window Position = 470,377,457,447
+;   Right-hand side Character Map Window Position = 314,56,835,571
+;   Left-hand range = 0000-007F
+;   Right-hand range = Tamil
+
+LHSName                 "Malayalam-Unicode"
+RHSName                 "Tamil-Unicode"
+LHSDescription          "Malayalam Unicode v10"
+RHSDescription          "Tamil Unicode v5"
+Version                 "0.1"
+Contact                 "mailto:beniza@gmail.com"
+RegistrationAuthority   "NLCI"
+RegistrationName        "in.nlci.enconv.mal2tam"
+Copyright               "© 2023 NLCI. Some rights reserved. CC-By-SA V4.0"
+LHSFlags                ()
+RHSFlags                ()
+
+pass(Unicode)
+
+"അ" > "அ"
+"ആ" > "ஆ"
+"ഇ" > "இ"
+"ഈ" > "ஈ"
+"ഉ" > "உ"
+"ഊ" > "ஊ"
+"എ" > "எ"
+"ഏ" > "ஏ"
+"ഐ" > "ஐ"
+"ഒ" > "ஒ"
+"ഓ" > "ஓ"
+"ഔ" > "ஔ"
+"ക" > "க"
+"ഖ" > "க"
+"ഗ" > "க"
+"ഘ" > "க"
+"ങ" > "ங"
+"ച" > "ச"
+"ഛ" > "ச"
+"ജ" > "ஜ"
+"ഝ" > "ஜ"
+"ഞ" > "ஞ"
+"ട" > "ட"
+"ഠ" > "ட"
+"ഡ" > "ட"
+"ഢ" > "ட"
+"ണ" > "ண"
+"ത" > "த"
+"ഥ" > "த"
+"ദ" > "த"
+"ധ" > "த"
+"ന" > "ன"
+"പ" > "ப"
+"ഫ" > "ப"
+"ബ" > "ப"
+"ഭ" > "ப"
+"മ" > "ம"
+"യ" > "ய"
+"ര" > "ர"
+"ല" > "ல"
+"വ" > "வ"
+"ശ" > "ச"
+"ഷ" > "ச"
+"സ" > "ச"
+"ഹ" > "ஹ"
+"ള" > "ள"
+"ഴ" > "ழ"
+"റ" > "ற"
+"ൺ" >"ண்"
+"ൻ" > "ன்"
+"ൽ" > "ல்"
+"ർ" > "ர்"
+"ാ" > "ா"
+"ി" > "ி"
+"ീ" > "ீ"
+"ു" > "ு"
+"ൂ" > "ூ"
+"െ" > "ெ"
+"േ" > "ே"
+"ൈ" > "ை"
+"ൊ" > "ொ"
+"ോ" > "ோ"
+"ൌ" > "ௌ"
+"്" > "்"
+"ം" > "ம்"
+
+pass(Unicode)
+uniclass[tam] = ("அ"  "ஆ"  "இ"  "ஈ"  "உ"  "ஊ"  "எ"  "ஏ"  "ஐ"  "ஒ"  "ஓ"  "ஔ"\
+"க"  "க"  "க"  "க"  "ங"  "ச"  "ச"  "ஜ"  "ஜ"  "ஞ"  "ட"  "ட"\
+"ட"  "ட"  "ண"  "த"  "த"  "த"  "த"  "ந"  "ப"  "ப"  "ப"  "ப"\
+"ம"  "ய"  "ர"  "ல"  "வ"  "ச"  "ச"  "ச"  "ஹ"  "ள"  "ழ"  "ன"\
+"ா"  "ி"  "ீ"  "ு"  "ூ"  "ெ"  "ே"  "ை"  "ொ"  "ோ"  "ௌ"\
+"்"  "ஂ"  "ஃ")
+
+uniclass[tam1] = ("அ"  "ஆ"  "இ"  "ஈ"  "உ"  "ஊ"  "எ"  "ஏ"  "ஐ"  "ஒ"  "ஓ"  "ஔ"\
+"க"  "க"  "க"  "க"  "ங"  "ச"  "ச"  "ஜ"  "ஜ"  "ஞ"  "ட"  "ட"\
+"ட"  "ட"  "ண"  "த"  "த"  "த"  "த"  "ந"  "ப"  "ப"  "ப"  "ப"\
+"ம"  "ய"  "ர"  "ல"  "வ"  "ச"  "ச"  "ச"  "ஹ"  "ள"  "ழ"  "ன"\
+"ா"  "ி"  "ீ"  "ு"  "ூ"  "ெ"  "ே"  "ை"  "ொ"  "ோ"  "ௌ"\
+"்"  "ஂ"  "ஃ")
+
+"ந்ற" > "ன்ற"
+"ன" / (#|" "|"<")_ > "ந"
+"ன்" / _ "த" > "ந்"
+;"ன்ன" > "ந்ந"
+"ஒருன்ன" > "ஒருந்ந"
+;"ன்று" > "ன்டு"
+"கிறுத்த" > "கிருத்த"
