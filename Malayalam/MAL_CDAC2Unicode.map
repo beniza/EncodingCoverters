@@ -2,10 +2,11 @@
 ;   Conversion Type = Legacy_to_from_Unicode
 ;   Left-hand side font = MAL Vayalar;11.25
 ;   Right-hand side font = Rachana_w01;11.25
-;   Main Window Position = 1358,-8,1382,744
-;   Left-hand side Character Map Window Position = 946,311,420,417
-;   Right-hand side Character Map Window Position = 1068,375,298,353
+;   Main Window Position = 1358,0,178,736
+;   Left-hand side Character Map Window Position = 777,118,416,417
+;   Right-hand side Character Map Window Position = 1114,408,422,408
 ;   Left-hand side code page = 42
+;   Right-hand range = Malayalam
 
 ; Winscript Malayalam.map
 
@@ -104,6 +105,12 @@ UniClass [VwlMatra] = (U+0D3E..U+0D43 U+0D46 U+0D47)
 ;Generic additions
 138 <> malayalam_letter_vocalic_rr
 140 <> malayalam_letter_vocalic_ll
+
+; Quotes
+145 <> 0x2018
+146 <> 0x2019
+147 <> 0x201C
+148 <> 0x201D
 
 ;Double Consonants
 161 <> malayalam_letter_ka malayalam_sign_virama  malayalam_letter_ka
