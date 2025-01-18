@@ -2,9 +2,9 @@
 ;   Conversion Type = Legacy_to_from_Unicode
 ;   Left-hand side font = MAL Vayalar;11.25
 ;   Right-hand side font = Rachana_w01;11.25
-;   Main Window Position = 1358,0,178,736
-;   Left-hand side Character Map Window Position = 777,118,416,417
-;   Right-hand side Character Map Window Position = 1114,408,422,408
+;   Main Window Position = -12,0,1145,823
+;   Left-hand side Character Map Window Position = 1121,1,416,417
+;   Right-hand side Character Map Window Position = 1118,410,422,408
 ;   Left-hand side code page = 42
 ;   Right-hand range = Malayalam
 
@@ -13,6 +13,7 @@
 ; Mapping table for CDAC and NLCI's Winscript Malayalam font version 2.0
 ; New version by rde based on Winscript  Malayalam map:  By Anitha Vijay and vijay
 ; Modified and fine tuned by Beniza May 2008
+; Modified for including smart quotes by Beniza in Jan 2025
 ; If you are using a unicode font like Thoolika Unicode, to obtain 'Malayalam Chillu' you will have to use Zero_Width_Non_Joiner instead of Zero_Width_Joiner"
 
 EncodingName			"CDAC-Malayalam"
@@ -27,6 +28,8 @@ RHSFlags                ()
 
 ; CreatedBy               "Vijayakumar, Presumably in 2002"
 ; ModifiedBy              "Vijay, Anitha. Year unknown"
+
+
 pass(byte)
 
 Class[cons] = (73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108)
